@@ -1,7 +1,7 @@
-dependencies: /Users/elliotfiske/animation/3_lab/src/main.cpp \
+dependencies: /Users/elliotfiske/animation/keyframe_asgn/src/main.cpp \
   /Users/elliotfiske/animation/deps/glew-1.13.0/include/GL/glew.h \
   /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3.h \
-  /Users/elliotfiske/animation/3_lab/src/Camera.h \
+  /Users/elliotfiske/animation/keyframe_asgn/src/Camera.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/Dense \
   /Users/elliotfiske/animation/deps/eigen/Eigen/Core \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Core/util/DisableStupidWarnings.h \
@@ -152,7 +152,7 @@ dependencies: /Users/elliotfiske/animation/3_lab/src/main.cpp \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/RealQZ.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
-  /Users/elliotfiske/animation/3_lab/src/GLSL.h \
-  /Users/elliotfiske/animation/3_lab/src/Program.h \
-  /Users/elliotfiske/animation/3_lab/src/MatrixStack.h \
-  /Users/elliotfiske/animation/3_lab/src/Shape.h
+  /Users/elliotfiske/animation/keyframe_asgn/src/GLSL.h \
+  /Users/elliotfiske/animation/keyframe_asgn/src/Program.h \
+  /Users/elliotfiske/animation/keyframe_asgn/src/MatrixStack.h \
+  /Users/elliotfiske/animation/keyframe_asgn/src/Shape.h

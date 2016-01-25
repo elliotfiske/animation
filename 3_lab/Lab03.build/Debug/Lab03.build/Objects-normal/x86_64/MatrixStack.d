@@ -1,5 +1,6 @@
-dependencies: /Users/elliotfiske/animation/3_lab/src/MatrixStack.cpp \
-  /Users/elliotfiske/animation/3_lab/src/MatrixStack.h \
+dependencies: \
+  /Users/elliotfiske/animation/keyframe_asgn/src/MatrixStack.cpp \
+  /Users/elliotfiske/animation/keyframe_asgn/src/MatrixStack.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/Dense \
   /Users/elliotfiske/animation/deps/eigen/Eigen/Core \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Core/util/DisableStupidWarnings.h \

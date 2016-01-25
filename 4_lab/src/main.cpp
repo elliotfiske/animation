@@ -190,38 +190,20 @@ void buildTable()
    }
    
    float total_dist = 0.0f;
-   Vector3f pub;
-   bool set_prev_pval = false;
    
    for(int k = 0; k < ncps - 3; ++k) {
       Gk = G.block<3,4>(0,k);
-      // Iterates once per segment
       
-      int grab_last_vert = 0; // Won't get the last u-value unless we do this.
-      if (k == ncps - 4) {
-         grab_last_vert++;
-      }
-      
-      for (int sampleNum = 0; sampleNum < MAX_SAMPLES + grab_last_vert; sampleNum++) {
-         float u = (float) (sampleNum) / (float) MAX_SAMPLES;
-         float ub = (float) (sampleNum - 1) / (float) MAX_SAMPLES;
+      for (int sampleNum = 0; sampleNum < MAX_SAMPLES; sampleNum++) {
+         float ub = (float) (sampleNum + 1) / (float) MAX_SAMPLES;
+         float ua = (float) (sampleNum)     / (float) MAX_SAMPLES;
          
-         Vector4f uvec_a(1.0f, u, u*u, u*u*u);
-//         Vector4f uvec_b(1.0f, ub, ub*ub, ub*ub*ub);
-         Vector3f pua = Gk * B * uvec_a;
+         float ubua_2 =     (ub - ua) / 2.0f;
+         float ubua_2_pos = (ub + ua) / 2.0f;
          
-         if (!set_prev_pval) {
-            pub = pua;
-            set_prev_pval = true;
-            ub = 0; // First time, so we don't want a negative u value.
-         }
-         
-         float ubua_2 =     (ub - u) / 2.0f;
-         float ubua_2_pos = (ub + u) / 2.0f;
-         
-         Vector4f u_prime_1 = uvecify((ubua_2 * -0.77459f + ubua_2_pos));
-         Vector4f u_prime_2 = uvecify((ubua_2 * 0.0f      + ubua_2_pos));
-         Vector4f u_prime_3 = uvecify((ubua_2 * 0.77459f  + ubua_2_pos));
+         Vector4f u_prime_1 = uvecify(ubua_2 * -0.77459f + ubua_2_pos);
+         Vector4f u_prime_2 = uvecify(ubua_2 * 0.0f      + ubua_2_pos);
+         Vector4f u_prime_3 = uvecify(ubua_2 * 0.77459f  + ubua_2_pos);
 
          Vector3f p_prime_1 = Gk * B * u_prime_1;
          Vector3f p_prime_2 = Gk * B * u_prime_2;
@@ -235,21 +217,29 @@ void buildTable()
             w1*p_prime_1.norm() + w2*p_prime_2.norm() + w3*p_prime_3.norm()
          );
          
+         usTable.push_back(make_pair(ua + k, total_dist));
+         
          total_dist += s;
-         
-         usTable.push_back(make_pair(u + k, total_dist));
-         
-         pub = pua;
       }
    }
-   
-   
-   printf("LOL!\n");
 }
 
 float s2u(float s)
 {
-	return 0.0f;
+   for (int i = 0; i < usTable.size(); i++) {
+      if (s < usTable[i].second) {
+         float s0 = usTable[i-1].second;
+         float s1 = usTable[i].second;
+         
+         float u0 = usTable[i-1].first;
+         float u1 = usTable[i].first;
+         
+         float alpha = (s - s0) / (s1 - s0);
+         return (1.0f - alpha) * u0 + alpha * u1;
+      }
+   }
+   
+   return 0.0f;
 }
 
 void render()
