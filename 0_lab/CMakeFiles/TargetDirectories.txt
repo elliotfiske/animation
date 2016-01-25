@@ -1,0 +1,5 @@
+/Users/elliotfiske/animation/l0/CMakeFiles/Lab00.dir
+/Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninstall.dir
+/Users/elliotfiske/animation/l0/CMakeFiles/ALL_BUILD.dir
+/Users/elliotfiske/animation/l0/CMakeFiles/ZERO_CHECK.dir
+/Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir

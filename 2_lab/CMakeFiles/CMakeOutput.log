@@ -1,0 +1,783 @@
+The system is: Darwin - 14.5.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+0
+2016-01-08 10:09:33.266 xcodebuild[10313:1085217] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:33.269 xcodebuild[10313:1085217] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET CompilerIdC OF PROJECT CompilerIdC WITH THE DEFAULT CONFIGURATION (Debug) ===
+
+Check dependencies
+
+Write auxiliary files
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+chmod 0755 /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CompilerIdC.LinkFileList
+
+CompileC CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o CMakeCCompilerId.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.11 -g -fvisibility=hidden -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap -I/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources/i386 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/DerivedSources -F/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c -o /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o
+
+Ld CompilerIdC normal i386
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC -F/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CompilerIdC.LinkFileList -mmacosx-version-min=10.11 -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CompilerIdC_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC
+
+PhaseScriptExecution Run\ Script CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC
+    /bin/sh -c /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+GCC_VERSION=com.apple.compilers.llvm.clang.1_0
+
+** BUILD SUCCEEDED **
+
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC"
+
+The C compiler identification is AppleClang, found in "/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdC/CompilerIdC"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+0
+2016-01-08 10:09:35.092 xcodebuild[10328:1085334] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:35.093 xcodebuild[10328:1085334] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET CompilerIdCXX OF PROJECT CompilerIdCXX WITH THE DEFAULT CONFIGURATION (Debug) ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX.LinkFileList
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.hmap
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+chmod 0755 /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+
+CompileC CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.11 -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.hmap -I/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources/i386 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources -F/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp -o /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o
+
+Ld CompilerIdCXX normal i386
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX -F/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX.LinkFileList -mmacosx-version-min=10.11 -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX
+
+PhaseScriptExecution Run\ Script CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX
+    /bin/sh -c /Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+GCC_VERSION=com.apple.compilers.llvm.clang.1_0
+
+** BUILD SUCCEEDED **
+
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX"
+
+The CXX compiler identification is AppleClang, found in "/Users/elliotfiske/animation/2_lab/CMakeFiles/3.2.2/CompilerIdCXX/CompilerIdCXX"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec3627375805" "-configuration" "Debug"
+2016-01-08 10:09:35.888 xcodebuild[10345:1085386] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:35.889 xcodebuild[10345:1085386] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec3627375805 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/Objects-normal/x86_64/cmTryCompileExec3627375805.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/Objects-normal/x86_64/testCCompiler.o testCCompiler.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.11 -g -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/Objects-normal/x86_64/testCCompiler.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/Objects-normal/x86_64/testCCompiler.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/testCCompiler.c -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/Objects-normal/x86_64/testCCompiler.o
+
+Ld Debug/cmTryCompileExec3627375805 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/Objects-normal/x86_64/cmTryCompileExec3627375805.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3627375805.build/Objects-normal/x86_64/cmTryCompileExec3627375805_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3627375805
+
+** BUILD SUCCEEDED **
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec2153010541" "-configuration" "Debug"
+2016-01-08 10:09:36.634 xcodebuild[10361:1085433] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:36.635 xcodebuild[10361:1085433] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec2153010541 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/CMakeCCompilerABI.o /usr/local/Cellar/cmake/3.2.2/share/cmake/Modules/CMakeCCompilerABI.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.11 -g -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/CMakeCCompilerABI.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/CMakeCCompilerABI.dia -c /usr/local/Cellar/cmake/3.2.2/share/cmake/Modules/CMakeCCompilerABI.c -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/CMakeCCompilerABI.o
+
+Ld Debug/cmTryCompileExec2153010541 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541.LinkFileList -mmacosx-version-min=10.11 -v -Wl,-v -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec2153010541
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin14.5.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec2153010541 -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541.LinkFileList -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug
+@(#)PROGRAM:ld  PROJECT:ld64-253.9
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib
+Framework search paths:
+	/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/
+
+** BUILD SUCCEEDED **
+
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec2153010541" "-configuration" "Debug"]
+  ignore line: [2016-01-08 10:09:36.634 xcodebuild[10361:1085433] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs]
+  ignore line: [2016-01-08 10:09:36.635 xcodebuild[10361:1085433] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]]
+  ignore line: [=== BUILD TARGET cmTryCompileExec2153010541 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===]
+  ignore line: []
+  ignore line: [Check dependencies]
+  ignore line: []
+  ignore line: [Write auxiliary files]
+  ignore line: [/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64]
+  ignore line: [write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541.LinkFileList]
+  ignore line: []
+  ignore line: [CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/CMakeCCompilerABI.o /usr/local/Cellar/cmake/3.2.2/share/cmake/Modules/CMakeCCompilerABI.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler]
+  ignore line: [    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp]
+  ignore line: [    export LANG=en_US.US-ASCII]
+  ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.11 -g -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/CMakeCCompilerABI.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/CMakeCCompilerABI.dia -c /usr/local/Cellar/cmake/3.2.2/share/cmake/Modules/CMakeCCompilerABI.c -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/CMakeCCompilerABI.o]
+  ignore line: []
+  ignore line: [Ld Debug/cmTryCompileExec2153010541 normal x86_64]
+  ignore line: [    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp]
+  ignore line: [    export MACOSX_DEPLOYMENT_TARGET=10.11]
+  ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541.LinkFileList -mmacosx-version-min=10.11 -v -Wl,-v -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec2153010541]
+  ignore line: [Apple LLVM version 7.0.2 (clang-700.1.81)]
+  ignore line: [Target: x86_64-apple-darwin14.5.0]
+  ignore line: [Thread model: posix]
+  reduced line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec2153010541 -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541.LinkFileList -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug]
+            to: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec2153010541 -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541.LinkFileList -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a ]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec2153010541 -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541.LinkFileList -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541_dependency_info.dat -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a ]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.11.0] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec2153010541] ==> ignore
+    arg [-filelist] ==> ignore
+    arg [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541.LinkFileList] ==> ignore
+    arg [-v] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-dependency_info] ==> ignore
+    arg [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2153010541.build/Objects-normal/x86_64/cmTryCompileExec2153010541_dependency_info.dat] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib]
+  Framework search paths: [;/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug] ==> [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug], skipping non-system directory
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib]
+  collapse framework dir [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug] ==> [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug], skipping non-system directory
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks]
+  implicit libs: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks]
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec1492973980" "-configuration" "Debug"
+2016-01-08 10:09:37.392 xcodebuild[10377:1085486] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:37.393 xcodebuild[10377:1085486] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec1492973980 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/Objects-normal/x86_64/cmTryCompileExec1492973980.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/Objects-normal/x86_64/feature_tests.o /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.11 -g -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -std=c11 -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/Objects-normal/x86_64/feature_tests.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/Objects-normal/x86_64/feature_tests.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.c -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/Objects-normal/x86_64/feature_tests.o
+
+Ld Debug/cmTryCompileExec1492973980 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/Objects-normal/x86_64/cmTryCompileExec1492973980.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1492973980.build/Objects-normal/x86_64/cmTryCompileExec1492973980_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1492973980
+
+** BUILD SUCCEEDED **
+
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec3343091535" "-configuration" "Debug"
+2016-01-08 10:09:38.141 xcodebuild[10393:1085536] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:38.142 xcodebuild[10393:1085536] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec3343091535 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/Objects-normal/x86_64/cmTryCompileExec3343091535.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/Objects-normal/x86_64/feature_tests.o /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.11 -g -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -std=c99 -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/Objects-normal/x86_64/feature_tests.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/Objects-normal/x86_64/feature_tests.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.c -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/Objects-normal/x86_64/feature_tests.o
+
+Ld Debug/cmTryCompileExec3343091535 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/Objects-normal/x86_64/cmTryCompileExec3343091535.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3343091535.build/Objects-normal/x86_64/cmTryCompileExec3343091535_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3343091535
+
+** BUILD SUCCEEDED **
+
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec251172536" "-configuration" "Debug"
+2016-01-08 10:09:38.859 xcodebuild[10409:1085584] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:38.860 xcodebuild[10409:1085584] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec251172536 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/Objects-normal/x86_64/cmTryCompileExec251172536.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/Objects-normal/x86_64/feature_tests.o /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.11 -g -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -std=c90 -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/Objects-normal/x86_64/feature_tests.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/Objects-normal/x86_64/feature_tests.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.c -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/Objects-normal/x86_64/feature_tests.o
+
+Ld Debug/cmTryCompileExec251172536 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/Objects-normal/x86_64/cmTryCompileExec251172536.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec251172536.build/Objects-normal/x86_64/cmTryCompileExec251172536_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec251172536
+
+** BUILD SUCCEEDED **
+
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec3531362778" "-configuration" "Debug"
+2016-01-08 10:09:39.730 xcodebuild[10425:1085642] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:39.731 xcodebuild[10425:1085642] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec3531362778 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/Objects-normal/x86_64/cmTryCompileExec3531362778.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/Objects-normal/x86_64/testCXXCompiler.o testCXXCompiler.cxx normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.11 -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -g -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/Objects-normal/x86_64/testCXXCompiler.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/Objects-normal/x86_64/testCXXCompiler.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/testCXXCompiler.cxx -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/Objects-normal/x86_64/testCXXCompiler.o
+
+Ld Debug/cmTryCompileExec3531362778 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/Objects-normal/x86_64/cmTryCompileExec3531362778.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec3531362778.build/Objects-normal/x86_64/cmTryCompileExec3531362778_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec3531362778
+
+** BUILD SUCCEEDED **
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec107985280" "-configuration" "Debug"
+2016-01-08 10:09:40.530 xcodebuild[10441:1085691] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:40.531 xcodebuild[10441:1085691] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec107985280 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/CMakeCXXCompilerABI.o /usr/local/Cellar/cmake/3.2.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.11 -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -g -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/CMakeCXXCompilerABI.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/CMakeCXXCompilerABI.dia -c /usr/local/Cellar/cmake/3.2.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/CMakeCXXCompilerABI.o
+
+Ld Debug/cmTryCompileExec107985280 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280.LinkFileList -mmacosx-version-min=10.11 -v -Wl,-v -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec107985280
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin14.5.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec107985280 -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280.LinkFileList -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280_dependency_info.dat -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug
+@(#)PROGRAM:ld  PROJECT:ld64-253.9
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib
+Framework search paths:
+	/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/
+
+** BUILD SUCCEEDED **
+
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec107985280" "-configuration" "Debug"]
+  ignore line: [2016-01-08 10:09:40.530 xcodebuild[10441:1085691] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs]
+  ignore line: [2016-01-08 10:09:40.531 xcodebuild[10441:1085691] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]]
+  ignore line: [=== BUILD TARGET cmTryCompileExec107985280 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===]
+  ignore line: []
+  ignore line: [Check dependencies]
+  ignore line: []
+  ignore line: [Write auxiliary files]
+  ignore line: [/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64]
+  ignore line: [write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280.LinkFileList]
+  ignore line: []
+  ignore line: [CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/CMakeCXXCompilerABI.o /usr/local/Cellar/cmake/3.2.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler]
+  ignore line: [    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp]
+  ignore line: [    export LANG=en_US.US-ASCII]
+  ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.11 -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -g -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/CMakeCXXCompilerABI.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/CMakeCXXCompilerABI.dia -c /usr/local/Cellar/cmake/3.2.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/CMakeCXXCompilerABI.o]
+  ignore line: []
+  ignore line: [Ld Debug/cmTryCompileExec107985280 normal x86_64]
+  ignore line: [    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp]
+  ignore line: [    export MACOSX_DEPLOYMENT_TARGET=10.11]
+  ignore line: [    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280.LinkFileList -mmacosx-version-min=10.11 -v -Wl,-v -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec107985280]
+  ignore line: [Apple LLVM version 7.0.2 (clang-700.1.81)]
+  ignore line: [Target: x86_64-apple-darwin14.5.0]
+  ignore line: [Thread model: posix]
+  reduced line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec107985280 -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280.LinkFileList -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280_dependency_info.dat -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug]
+            to: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec107985280 -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280.LinkFileList -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280_dependency_info.dat -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a ]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec107985280 -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280.LinkFileList -v -search_paths_first -headerpad_max_install_names -dependency_info /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280_dependency_info.dat -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a ]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.11.0] ==> ignore
+    arg [-syslibroot] ==> ignore
+    arg [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk] ==> ignore
+    arg [-o] ==> ignore
+    arg [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec107985280] ==> ignore
+    arg [-filelist] ==> ignore
+    arg [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280.LinkFileList] ==> ignore
+    arg [-v] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-dependency_info] ==> ignore
+    arg [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec107985280.build/Objects-normal/x86_64/cmTryCompileExec107985280_dependency_info.dat] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lSystem] ==> lib [System]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib]
+  Framework search paths: [;/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug] ==> [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug], skipping non-system directory
+  collapse library dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib]
+  collapse framework dir [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug] ==> [/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug], skipping non-system directory
+  collapse framework dir [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/] ==> [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks]
+  implicit libs: [c++;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib]
+  implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks]
+
+
+
+
+Detecting CXX [-std=c++1y] compiler features compiled with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec755875090" "-configuration" "Debug"
+2016-01-08 10:09:41.287 xcodebuild[10457:1085742] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:41.288 xcodebuild[10457:1085742] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec755875090 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/Objects-normal/x86_64/cmTryCompileExec755875090.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/Objects-normal/x86_64/feature_tests.o /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.cxx normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.11 -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -g -std=c++1y -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/Objects-normal/x86_64/feature_tests.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/Objects-normal/x86_64/feature_tests.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.cxx -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/Objects-normal/x86_64/feature_tests.o
+
+Ld Debug/cmTryCompileExec755875090 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/Objects-normal/x86_64/cmTryCompileExec755875090.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec755875090.build/Objects-normal/x86_64/cmTryCompileExec755875090_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec755875090
+
+** BUILD SUCCEEDED **
+
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec1456943599" "-configuration" "Debug"
+2016-01-08 10:09:42.149 xcodebuild[10474:1085883] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:42.150 xcodebuild[10474:1085883] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec1456943599 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/Objects-normal/x86_64/cmTryCompileExec1456943599.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/Objects-normal/x86_64/feature_tests.o /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.cxx normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.11 -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -g -std=c++11 -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/Objects-normal/x86_64/feature_tests.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/Objects-normal/x86_64/feature_tests.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.cxx -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/Objects-normal/x86_64/feature_tests.o
+
+Ld Debug/cmTryCompileExec1456943599 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/Objects-normal/x86_64/cmTryCompileExec1456943599.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1456943599.build/Objects-normal/x86_64/cmTryCompileExec1456943599_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1456943599
+
+** BUILD SUCCEEDED **
+
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec623397937" "-configuration" "Debug"
+2016-01-08 10:09:42.925 xcodebuild[10490:1085932] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:42.926 xcodebuild[10490:1085932] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec623397937 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/Objects-normal/x86_64/cmTryCompileExec623397937.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/Objects-normal/x86_64/feature_tests.o /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.cxx normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.11 -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -g -std=c++98 -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/Objects-normal/x86_64/feature_tests.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/Objects-normal/x86_64/feature_tests.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/feature_tests.cxx -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/Objects-normal/x86_64/feature_tests.o
+
+Ld Debug/cmTryCompileExec623397937 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/Objects-normal/x86_64/cmTryCompileExec623397937.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec623397937.build/Objects-normal/x86_64/cmTryCompileExec623397937_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec623397937
+
+** BUILD SUCCEEDED **
+
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec1983879068" "-configuration" "Debug"
+2016-01-08 10:09:44.204 xcodebuild[10506:1085979] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:44.205 xcodebuild[10506:1085979] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec1983879068 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/Objects-normal/x86_64/cmTryCompileExec1983879068.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/Objects-normal/x86_64/CheckIncludeFiles.o CheckIncludeFiles.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.11 -g -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/Objects-normal/x86_64/CheckIncludeFiles.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/Objects-normal/x86_64/CheckIncludeFiles.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CheckIncludeFiles.c -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/Objects-normal/x86_64/CheckIncludeFiles.o
+
+Ld Debug/cmTryCompileExec1983879068 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/Objects-normal/x86_64/cmTryCompileExec1983879068.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec1983879068.build/Objects-normal/x86_64/cmTryCompileExec1983879068_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1983879068
+
+** BUILD SUCCEEDED **
+
+
+
+Determining if the pthread_create exist passed with the following output:
+Change Dir: /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/xcodebuild" "-project" "CMAKE_TRY_COMPILE.xcodeproj" "build" "-target" "cmTryCompileExec2780569952" "-configuration" "Debug"
+2016-01-08 10:09:45.024 xcodebuild[10522:1086049] [MT] PluginLoading: Required plug-in compatibility UUID F41BD31E-2683-44B8-AE7F-5F09E919790E for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+2016-01-08 10:09:45.025 xcodebuild[10522:1086049] Failed to load plugin at: /Users/elliotfiske/Library/Application Support/Developer/Shared/Xcode/Plug-ins/Unity4XC.xcplugin, skipping.  Reason for failure: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+=== BUILD TARGET cmTryCompileExec2780569952 OF PROJECT CMAKE_TRY_COMPILE WITH CONFIGURATION Debug ===
+
+Check dependencies
+
+Write auxiliary files
+/bin/mkdir -p /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/Objects-normal/x86_64
+write-file /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/Objects-normal/x86_64/cmTryCompileExec2780569952.LinkFileList
+
+CompileC CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/Objects-normal/x86_64/CheckSymbolExists.o CheckSymbolExists.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export LANG=en_US.US-ASCII
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -DCMAKE_INTDIR=\"Debug\" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -mmacosx-version-min=10.11 -g -Wno-sign-conversion -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/include -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/DerivedSources/x86_64 -I/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -MMD -MT dependencies -MF /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/Objects-normal/x86_64/CheckSymbolExists.d --serialize-diagnostics /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/Objects-normal/x86_64/CheckSymbolExists.dia -c /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CheckSymbolExists.c -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/Objects-normal/x86_64/CheckSymbolExists.o
+
+Ld Debug/cmTryCompileExec2780569952 normal x86_64
+    cd /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp
+    export MACOSX_DEPLOYMENT_TARGET=10.11
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -L/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -F/Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug -filelist /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/Objects-normal/x86_64/cmTryCompileExec2780569952.LinkFileList -mmacosx-version-min=10.11 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Xlinker -dependency_info -Xlinker /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CMAKE_TRY_COMPILE.build/Debug/cmTryCompileExec2780569952.build/Objects-normal/x86_64/cmTryCompileExec2780569952_dependency_info.dat -o /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec2780569952
+
+** BUILD SUCCEEDED **
+
+
+File /Users/elliotfiske/animation/2_lab/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
