@@ -90,10 +90,12 @@ static void init()
 	prog->setShaderNames(RESOURCE_DIR + "simple_vert.glsl", RESOURCE_DIR + "simple_frag.glsl");
 	prog->setVerbose(false); // Set this to true when debugging.
 	prog->init();
-	prog->addUniform("P");
+	prog->addUniform("uProjMatrix");
 	prog->addUniform("MV");
-	prog->addAttribute("vertPos");
-	prog->addAttribute("vertNor");
+   prog->addUniform("UaColor");
+   prog->addUniform("UdColor");
+	prog->addAttribute("aPosition");
+	prog->addAttribute("aNormal");
 	
 	bunny = make_shared<Shape>();
 	bunny->loadMesh(RESOURCE_DIR + "bunny.obj");
@@ -318,7 +320,7 @@ void render()
 	prog->bind();
 	
 	// Send projection matrix (same for all helis)
-	glUniformMatrix4fv(prog->getUniform("P"), 1, GL_FALSE, P->topMatrix().data());
+	glUniformMatrix4fv(prog->getUniform("uProjMatrix"), 1, GL_FALSE, P->topMatrix().data());
    
    Eigen::Quaternionf quatern_prop1;
    

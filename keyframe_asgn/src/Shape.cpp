@@ -79,13 +79,13 @@ void Shape::init()
 void Shape::draw(const shared_ptr<Program> prog) const
 {
 	// Bind position buffer
-	int h_pos = prog->getAttribute("vertPos");
+	int h_pos = prog->getAttribute("aPosition");
 	GLSL::enableVertexAttribArray(h_pos);
 	glBindBuffer(GL_ARRAY_BUFFER, posBufID);
 	glVertexAttribPointer(h_pos, 3, GL_FLOAT, GL_FALSE, 0, (const void *)0);
 	
 	// Bind normal buffer
-	int h_nor = prog->getAttribute("vertNor");
+	int h_nor = prog->getAttribute("aNormal");
 	if(h_nor != -1 && norBufID != 0) {
 		GLSL::enableVertexAttribArray(h_nor);
 		glBindBuffer(GL_ARRAY_BUFFER, norBufID);

@@ -56,19 +56,22 @@ void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, d
    prop1_center << -0.0133f, 0.4819f, 0.0f;
    prop2_center << 0.6228f, 0.1179f, 0.1365f;
    
+   // BODY
+   glUniform3f(prog->getUniform("UaColor"), 0.0f, 0.0f, 0.3f);
+   glUniform3f(prog->getUniform("UdColor"), 0.0f, 0.0f, 0.8f);
+   
    MV->pushMatrix();
-   //      MV->translate(p0);
-   //      MV->multMatrix(addQuaternionToStack(q0));
    MV->translate(pos);
    MV->multMatrix(addQuaternionToStack(rot));
    glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
    helibody_1->draw(prog);
    MV->popMatrix();
    
-   
+   // BODY 2
+   glUniform3f(prog->getUniform("UaColor"), 0.0f, 0.3f, 0.0f);
+   glUniform3f(prog->getUniform("UdColor"), 0.0f, 0.8f, 0.0f);
    
    MV->pushMatrix();
-   //      MV->translate(p0);
    MV->translate(pos);
    MV->multMatrix(addQuaternionToStack(rot));
    glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
@@ -76,6 +79,10 @@ void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, d
    MV->popMatrix();
    
    
+   
+   // PROPELLORS
+   glUniform3f(prog->getUniform("UaColor"), 0.2f, 0.2f, 0.2f);
+   glUniform3f(prog->getUniform("UdColor"), 0.8f, 0.8f, 0.8f);
    
    MV->pushMatrix();
    
@@ -90,7 +97,6 @@ void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, d
    glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
    heliprop_1->draw(prog);
    MV->popMatrix();
-   
    
    
    MV->pushMatrix();
