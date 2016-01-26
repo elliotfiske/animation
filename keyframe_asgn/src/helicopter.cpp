@@ -43,8 +43,8 @@ Matrix4f addQuaternionToStack(const Quaternionf& rot) {
    return R;
 }
 
-void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, double t, MatrixStack* MV_void, std::shared_ptr<Program> prog) {
-   MatrixStack *MV = (MatrixStack *) MV_void;
+void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, double t, MatrixStack* MV, std::shared_ptr<Program> prog) {
+
 
    Eigen::Vector3f axis_prop1, axis_prop2;
    axis_prop1 << 0.0f, 1.0f, 0.0f;

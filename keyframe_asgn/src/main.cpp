@@ -122,12 +122,26 @@ static void init()
    
    // Make some arbitrary rotation keyframes to spin me right round
    //   quaternions.push_back(AngleAxisf(90.0f, Vector3f(0.0f, 1.0f, 0.0f)));
-   Eigen::Vector3f y_axis;
+   Vector3f y_axis, z_axis;
    y_axis << 0.0f, 1.0f, 0.0f;
+   z_axis << 0.0f, 0.0f, 1.0f;
    
-   Eigen::Quaternionf q1;
-   q1 = Eigen::AngleAxisf(90.0f, y_axis);
+   Quaternionf q1, q2, q3, q4, q5, q6;
+   q1 = AngleAxisf(0.0f, y_axis);
+   q2 = AngleAxisf(3.0f/4.0f * M_PI, y_axis);
+   q3 = AngleAxisf(M_PI, z_axis);
    
+   quaternions.push_back(q1);
+   quaternions.push_back(q2);
+   quaternions.push_back(q3);
+   quaternions.push_back(q1);
+   quaternions.push_back(q2);
+   quaternions.push_back(q1);
+   
+   // Same as first 4
+   quaternions.push_back(q1);
+   quaternions.push_back(q2);
+   quaternions.push_back(q3);
    quaternions.push_back(q1);
    
    
@@ -294,11 +308,11 @@ void render()
          G.block<3, 1>(0, cp_ndx) = cps[cp_ndx + helicopter_ndx];
       }
       
-      Vector4f curr_helicopter_d_u_vec(0.0f, 1.0f, 2.0f, 3.0f); // u == 0
-      Vector3f curr_helicopter_tangent = (G * Bcr * curr_helicopter_d_u_vec).normalized();
-      Quaternionf curr_heli_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), curr_helicopter_tangent);
+//      Vector4f curr_helicopter_d_u_vec(0.0f, 1.0f, 2.0f, 3.0f); // u == 0
+//      Vector3f curr_helicopter_tangent = (G * Bcr * curr_helicopter_d_u_vec).normalized();
+//      Quaternionf curr_heli_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), curr_helicopter_tangent);
       
-      drawHelicopter(cps[helicopter_ndx], curr_heli_rot, t, MV.get(), prog);
+      drawHelicopter(cps[helicopter_ndx], quaternions[helicopter_ndx], t, MV.get(), prog);
    }
    
    // Draw interpolated helicopter
@@ -311,23 +325,32 @@ void render()
    d_u_vec << 0, 1, 2*u, 3*u*u;
    
    MatrixXf G(3, 4);
+   MatrixXf G_quads(4, 4);
    for (int i = 0; i < 4; i++) {
       G.block<3, 1>(0, i) = cps[i + k];
+      G_quads.block<3, 1>(0, i) = quaternions[i + k].vec();
+      G_quads(3, i) = quaternions[i+k].w();
    }
    
    Vector3f interpolated_pos = G * Bcr * u_vec;
    Vector3f tangent = (G * Bcr * d_u_vec).normalized();
    
-//   Vector4f uVec(1.0f, u, u*u, u*u*u);
-//   Vector4f qVec = (G * (Bcr * uVec));
-//   Quaternionf q;
-//   q.w() = qVec(0);
-//   q.vec() = qVec.segment<3>(1);
-//   q.normalize();
+   Vector4f uVec(1.0f, u, u*u, u*u*u);
+   Vector4f qVec = (G_quads * (Bcr * uVec));
+   Quaternionf q;
+   q.w() = qVec(0);
+   q.vec() = qVec.segment<3>(1);
+   q.normalize();
+   
+//   Quaternionf adjustment;
+//   adjustment = AngleAxisf(M_PI, Vector3f(0.0f, 0.0f, 1.0f));
+//   q *= adjustment;
    
    Quaternionf interp_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), tangent);
    
-   drawHelicopter(interpolated_pos, interp_rot, t, MV.get(), prog);
+   MV->rotate(M_PI, Vector3f(0.0f, 0.0f, 1.0f));
+   drawHelicopter(interpolated_pos, q, t, MV.get(), prog);
+   MV->rotate(M_PI, Vector3f(0.0f, 0.0f, 1.0f));
 	
 	// Unbind the program
 	prog->unbind();
