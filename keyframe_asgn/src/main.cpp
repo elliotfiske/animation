@@ -138,7 +138,9 @@ vector<Matrix4f> drawSpline(Matrix4f currMVMat) {
    glBegin(GL_POINTS);
    for(int i = 0; i < ncps; ++i) {
       Vector3f cp = cps[i];
-      glVertex3f(cp(0), cp(1), cp(2));
+      if(keyToggles[(unsigned)'k']) {
+         glVertex3f(cp(0), cp(1), cp(2));
+      }
    }
    glEnd();
    glLineWidth(1.0f);
@@ -147,7 +149,7 @@ vector<Matrix4f> drawSpline(Matrix4f currMVMat) {
       glBegin(GL_LINE_STRIP);
       for(int i = 0; i < ncps; ++i) {
          Vector3f cp = cps[i];
-         glVertex3f(cp(0), cp(1), cp(2));
+//         glVertex3f(cp(0), cp(1), cp(2));
       }
       glEnd();
    }
@@ -171,7 +173,9 @@ vector<Matrix4f> drawSpline(Matrix4f currMVMat) {
          // Compute spline point at u
          Vector4f uVec(1.0f, u, u*u, u*u*u);
          Vector3f P = Gk * Bcr * uVec;
-         glVertex3fv(P.data());
+         if(keyToggles[(unsigned)'k']) {
+            glVertex3fv(P.data());
+         }
       }
       glEnd();
    }
