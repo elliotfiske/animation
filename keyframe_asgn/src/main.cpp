@@ -26,6 +26,7 @@ shared_ptr<Shape> bunny;
 
 Matrix4f Bcr; // Catmull-Rom B matrix
 vector<Vector3f> cps; // Control points
+vector<Quaternionf> quaternions; // Random quaternions
 
 static void error_callback(int error, const char *description)
 {
@@ -118,6 +119,17 @@ static void init()
    cps.push_back(Vector3f(1.2f, 1.0f, 0.0f) * SPREAD);
    cps.push_back(Vector3f(-1.2f, 1.2f, -0.5f) * SPREAD);
    cps.push_back(Vector3f(-1.2f, 0.8f, 0.5f) * SPREAD);
+   
+   // Make some arbitrary rotation keyframes to spin me right round
+   //   quaternions.push_back(AngleAxisf(90.0f, Vector3f(0.0f, 1.0f, 0.0f)));
+   Eigen::Vector3f y_axis;
+   y_axis << 0.0f, 1.0f, 0.0f;
+   
+   Eigen::Quaternionf q1;
+   q1 = Eigen::AngleAxisf(90.0f, y_axis);
+   
+   quaternions.push_back(q1);
+   
    
 	// Initialize time.
 	glfwSetTime(0.0);
@@ -271,23 +283,32 @@ void render()
 	// Send projection matrix (same for all helis)
 	glUniformMatrix4fv(prog->getUniform("P"), 1, GL_FALSE, P->topMatrix().data());
    
-   Eigen::Vector3f axis_prop1;
-   axis_prop1 << 0.0f, t * 0.2f, 0.0f;
-   
    Eigen::Quaternionf quatern_prop1;
-   quatern_prop1 = Eigen::AngleAxisf(90.0f, axis_prop1);
    
    // Draw the static helicopters
-   for (int i = 0; i < cps.size() - 3; i++) {
-      drawHelicopter(cps[i], quatern_prop1, t, MV.get(), prog);
+   for (int helicopter_ndx = 0; helicopter_ndx < cps.size() - 3; helicopter_ndx++) {
+      
+      // Generate the G Matrix for this helicopter's corresponding control points
+      MatrixXf G(3, 4);
+      for (int cp_ndx = 0; cp_ndx < 4; cp_ndx++) {
+         G.block<3, 1>(0, cp_ndx) = cps[cp_ndx + helicopter_ndx];
+      }
+      
+      Vector4f curr_helicopter_d_u_vec(0.0f, 1.0f, 2.0f, 3.0f); // u == 0
+      Vector3f curr_helicopter_tangent = (G * Bcr * curr_helicopter_d_u_vec).normalized();
+      Quaternionf curr_heli_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), curr_helicopter_tangent);
+      
+      drawHelicopter(cps[helicopter_ndx], curr_heli_rot, t, MV.get(), prog);
    }
    
    // Draw interpolated helicopter
    float kfloat;
-   float u = std::modf(std::fmod(t*1.2f, cps.size()-4.0f), &kfloat);
+   float u = std::modf(std::fmod(t*0.4f, cps.size()-4.0f), &kfloat);
    int k = (int)std::floor(kfloat);
-   Vector4f u_vec;
+   Vector4f u_vec, d_u_vec;
+   
    u_vec << 1, u, u*u, u*u*u;
+   d_u_vec << 0, 1, 2*u, 3*u*u;
    
    MatrixXf G(3, 4);
    for (int i = 0; i < 4; i++) {
@@ -295,7 +316,18 @@ void render()
    }
    
    Vector3f interpolated_pos = G * Bcr * u_vec;
-   drawHelicopter(interpolated_pos, quatern_prop1, t, MV.get(), prog);
+   Vector3f tangent = (G * Bcr * d_u_vec).normalized();
+   
+//   Vector4f uVec(1.0f, u, u*u, u*u*u);
+//   Vector4f qVec = (G * (Bcr * uVec));
+//   Quaternionf q;
+//   q.w() = qVec(0);
+//   q.vec() = qVec.segment<3>(1);
+//   q.normalize();
+   
+   Quaternionf interp_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), tangent);
+   
+   drawHelicopter(interpolated_pos, interp_rot, t, MV.get(), prog);
 	
 	// Unbind the program
 	prog->unbind();
