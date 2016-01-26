@@ -72,6 +72,7 @@
 		A41ECEB2B4DE4436905EC84A /* GLSL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 457D4DFA06BA4A7B879541B4 /* GLSL.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		AF39113138CA4207A9D405DF /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = E86CFD04C0BC4E38A668ADFC /* context.c */; settings = {COMPILER_FLAGS = ""; }; };
 		C94BB7151C5704A1004E48FE /* helicopter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94BB7131C5704A1004E48FE /* helicopter.cpp */; };
+		C94BB7181C576AB1004E48FE /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94BB7161C576AB1004E48FE /* util.cpp */; };
 		D73A0CA29B934734A2A48C12 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FA787500A5F47F3A3BBDAE8 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		E23C0ED16B494DCDB1FCD420 /* mach_time.c in Sources */ = {isa = PBXBuildFile; fileRef = F7E89737B3DF48408A66806E /* mach_time.c */; settings = {COMPILER_FLAGS = ""; }; };
 		E61CA513C8664443907CD6C9 /* input.c in Sources */ = {isa = PBXBuildFile; fileRef = 4092453DCF39406CB034D03E /* input.c */; settings = {COMPILER_FLAGS = ""; }; };
@@ -164,6 +165,8 @@
 		C75FA7B800234977B572BA05 /* Program.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Program.cpp; path = src/Program.cpp; sourceTree = SOURCE_ROOT; };
 		C94BB7131C5704A1004E48FE /* helicopter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = helicopter.cpp; path = src/helicopter.cpp; sourceTree = "<group>"; };
 		C94BB7141C5704A1004E48FE /* helicopter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = helicopter.hpp; path = src/helicopter.hpp; sourceTree = "<group>"; };
+		C94BB7161C576AB1004E48FE /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = src/util.cpp; sourceTree = "<group>"; };
+		C94BB7171C576AB1004E48FE /* util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = util.hpp; path = src/util.hpp; sourceTree = "<group>"; };
 		D22A869961E647DA971397F2 /* iokit_joystick.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = iokit_joystick.h; path = "../deps/glfw-3.1.2/src/iokit_joystick.h"; sourceTree = SOURCE_ROOT; };
 		DBB3499D03B749BB9E566AA2 /* Program.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Program.h; path = src/Program.h; sourceTree = SOURCE_ROOT; };
 		DCF3BE27495F4ADCBD851096 /* MatrixStack.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MatrixStack.cpp; path = src/MatrixStack.cpp; sourceTree = SOURCE_ROOT; };
@@ -311,6 +314,8 @@
 		CCB2A200C7EC4E0EB22E8941 = {
 			isa = PBXGroup;
 			children = (
+				C94BB7161C576AB1004E48FE /* util.cpp */,
+				C94BB7171C576AB1004E48FE /* util.hpp */,
 				C94BB7131C5704A1004E48FE /* helicopter.cpp */,
 				C94BB7141C5704A1004E48FE /* helicopter.hpp */,
 				E7FA98A40F47430E9CA60E28 /* Sources */,
@@ -479,6 +484,7 @@
 				939855CAF7B74E028E990864 /* Shape.cpp in Sources */,
 				C94BB7151C5704A1004E48FE /* helicopter.cpp in Sources */,
 				D73A0CA29B934734A2A48C12 /* main.cpp in Sources */,
+				C94BB7181C576AB1004E48FE /* util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

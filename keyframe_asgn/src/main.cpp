@@ -11,6 +11,7 @@
 #include "MatrixStack.h"
 #include "Shape.h"
 #include "helicopter.hpp"
+#include "util.hpp"
 
 using namespace std;
 using namespace Eigen;
@@ -27,6 +28,10 @@ shared_ptr<Shape> bunny;
 Matrix4f Bcr; // Catmull-Rom B matrix
 vector<Vector3f> cps; // Control points
 vector<pair<Quaternionf, Quaternionf> > quaternions; // Random quaternions
+vector<pair<float,float> > usTable;
+
+float smax = 0; // Total distance of spline
+#define TMAX 5  // Total length of animation
 
 static void error_callback(int error, const char *description)
 {
@@ -151,6 +156,7 @@ static void init()
    quaternions.push_back(make_pair(roll_2, static_roll_2));
    quaternions.push_back(make_pair(tilt_forward, static_tilt_forward));
    
+   smax = buildTable(usTable, cps, Bcr);
    
 	// Initialize time.
 	glfwSetTime(0.0);
@@ -164,29 +170,7 @@ static void init()
 vector<Matrix4f> drawSpline(Matrix4f currMVMat) {
    vector<Matrix4f> result;
    
-   // Draw control points
    int ncps = (int)cps.size();
-   glPointSize(5.0f);
-   glColor3f(1.0f, 0.0f, 0.0f);
-   glBegin(GL_POINTS);
-   for(int i = 0; i < ncps; ++i) {
-      Vector3f cp = cps[i];
-      if(keyToggles[(unsigned)'k']) {
-//         glVertex3f(cp(0), cp(1), cp(2));
-      }
-   }
-   glEnd();
-   glLineWidth(1.0f);
-   if(keyToggles[(unsigned)'l']) {
-      glColor3f(1.0f, 0.5f, 0.5f);
-      glBegin(GL_LINE_STRIP);
-      for(int i = 0; i < ncps; ++i) {
-         Vector3f cp = cps[i];
-//         glVertex3f(cp(0), cp(1), cp(2));
-      }
-      glEnd();
-   }
-   
    // Draw spline
    MatrixXf G(3,ncps);
    MatrixXf Gk(3,4);
@@ -216,10 +200,33 @@ vector<Matrix4f> drawSpline(Matrix4f currMVMat) {
    return result;
 }
 
+/* Get the corresponding s-value from the given u-value */
+float s2u(float s)
+{
+   for (int i = 0; i < usTable.size(); i++) {
+      if (s < usTable[i].second) {
+         float s0 = usTable[i-1].second;
+         float s1 = usTable[i].second;
+         
+         float u0 = usTable[i-1].first;
+         float u1 = usTable[i].first;
+         
+         float alpha = (s - s0) / (s1 - s0);
+         return (1.0f - alpha) * u0 + alpha * u1;
+      }
+   }
+   
+   return 0.0f;
+}
+
 void render()
 {
    // Update time.
    double t = glfwGetTime();
+   
+   float tNorm = std::fmod(t, TMAX) / TMAX;
+   float sNorm = tNorm;
+   float s = smax * sNorm;
 	
 	// Get current frame buffer size.
 	int width, height;
@@ -324,6 +331,7 @@ void render()
    float kfloat;
    float u = std::modf(std::fmod(t*0.4f, cps.size()-4.0f), &kfloat);
    int k = (int)std::floor(kfloat);
+   printf("K: %d\n", k);
    Vector4f u_vec, d_u_vec;
    
    u_vec << 1, u, u*u, u*u*u;

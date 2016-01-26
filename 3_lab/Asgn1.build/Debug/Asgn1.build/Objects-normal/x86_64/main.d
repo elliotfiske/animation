@@ -156,4 +156,5 @@ dependencies: /Users/elliotfiske/animation/keyframe_asgn/src/main.cpp \
   /Users/elliotfiske/animation/keyframe_asgn/src/Program.h \
   /Users/elliotfiske/animation/keyframe_asgn/src/MatrixStack.h \
   /Users/elliotfiske/animation/keyframe_asgn/src/Shape.h \
-  /Users/elliotfiske/animation/keyframe_asgn/src/helicopter.hpp
+  /Users/elliotfiske/animation/keyframe_asgn/src/helicopter.hpp \
+  /Users/elliotfiske/animation/keyframe_asgn/src/util.hpp
