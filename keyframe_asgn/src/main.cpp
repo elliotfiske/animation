@@ -31,7 +31,8 @@ vector<pair<Quaternionf, Quaternionf> > quaternions; // Random quaternions
 vector<pair<float,float> > usTable;
 
 float smax = 0; // Total distance of spline
-#define TMAX 5  // Total length of animation
+#define TMAX 10  // Total length of animation
+float time_offset = 0;
 
 static void error_callback(int error, const char *description)
 {
@@ -224,11 +225,10 @@ void render()
    // Update time.
    double t = glfwGetTime();
    
-   float tNorm = std::fmod(t, TMAX) / TMAX;
+   float tNorm = std::fmod(t + time_offset, TMAX) / TMAX;
    float sNorm = tNorm;
    float s = smax * sNorm;
    float u = s2u(s);
-   printf("u: %f\n", u);
    
    float k = 0;
    
@@ -236,7 +236,7 @@ void render()
       u--;
       k++;
    }
-	
+   
 	// Get current frame buffer size.
 	int width, height;
 	glfwGetFramebufferSize(window, &width, &height);

@@ -67,5 +67,5 @@ float buildTable(std::vector<std::pair<float,float> > *usTable, std::vector<Eige
       }
    }
    
-   return total_dist - s;
+   return (*usTable)[(ncps-4) * MAX_SAMPLES].second;
 }

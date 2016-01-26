@@ -73,6 +73,8 @@
 		AF39113138CA4207A9D405DF /* context.c in Sources */ = {isa = PBXBuildFile; fileRef = E86CFD04C0BC4E38A668ADFC /* context.c */; settings = {COMPILER_FLAGS = ""; }; };
 		C94BB7151C5704A1004E48FE /* helicopter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94BB7131C5704A1004E48FE /* helicopter.cpp */; };
 		C94BB7181C576AB1004E48FE /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94BB7161C576AB1004E48FE /* util.cpp */; };
+		C94BB71B1C577BE3004E48FE /* LightingShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94BB7191C577BE3004E48FE /* LightingShader.cpp */; };
+		C94BB71E1C577C12004E48FE /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94BB71C1C577C12004E48FE /* shader.cpp */; };
 		D73A0CA29B934734A2A48C12 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FA787500A5F47F3A3BBDAE8 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		E23C0ED16B494DCDB1FCD420 /* mach_time.c in Sources */ = {isa = PBXBuildFile; fileRef = F7E89737B3DF48408A66806E /* mach_time.c */; settings = {COMPILER_FLAGS = ""; }; };
 		E61CA513C8664443907CD6C9 /* input.c in Sources */ = {isa = PBXBuildFile; fileRef = 4092453DCF39406CB034D03E /* input.c */; settings = {COMPILER_FLAGS = ""; }; };
@@ -167,6 +169,10 @@
 		C94BB7141C5704A1004E48FE /* helicopter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = helicopter.hpp; path = src/helicopter.hpp; sourceTree = "<group>"; };
 		C94BB7161C576AB1004E48FE /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = util.cpp; path = src/util.cpp; sourceTree = "<group>"; };
 		C94BB7171C576AB1004E48FE /* util.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = util.hpp; path = src/util.hpp; sourceTree = "<group>"; };
+		C94BB7191C577BE3004E48FE /* LightingShader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LightingShader.cpp; path = src/LightingShader.cpp; sourceTree = "<group>"; };
+		C94BB71A1C577BE3004E48FE /* LightingShader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightingShader.h; path = src/LightingShader.h; sourceTree = "<group>"; };
+		C94BB71C1C577C12004E48FE /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shader.cpp; path = src/shader.cpp; sourceTree = "<group>"; };
+		C94BB71D1C577C12004E48FE /* shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shader.h; path = src/shader.h; sourceTree = "<group>"; };
 		D22A869961E647DA971397F2 /* iokit_joystick.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = iokit_joystick.h; path = "../deps/glfw-3.1.2/src/iokit_joystick.h"; sourceTree = SOURCE_ROOT; };
 		DBB3499D03B749BB9E566AA2 /* Program.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Program.h; path = src/Program.h; sourceTree = SOURCE_ROOT; };
 		DCF3BE27495F4ADCBD851096 /* MatrixStack.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MatrixStack.cpp; path = src/MatrixStack.cpp; sourceTree = SOURCE_ROOT; };
@@ -234,6 +240,10 @@
 				8890D4B398204D81BBF78484 /* CMakeLists.txt */,
 				84092CD9E5DF47BD943C4A0D /* simple_frag.glsl */,
 				AEC69890C43B439B96E3162E /* simple_vert.glsl */,
+				C94BB7191C577BE3004E48FE /* LightingShader.cpp */,
+				C94BB71C1C577C12004E48FE /* shader.cpp */,
+				C94BB71D1C577C12004E48FE /* shader.h */,
+				C94BB71A1C577BE3004E48FE /* LightingShader.h */,
 			);
 			name = Lab03;
 			sourceTree = "<group>";
@@ -477,10 +487,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94BB71E1C577C12004E48FE /* shader.cpp in Sources */,
 				F196BF3C44764D6DB8E54A72 /* Camera.cpp in Sources */,
 				A41ECEB2B4DE4436905EC84A /* GLSL.cpp in Sources */,
 				78FA86EE10B94683B3E6B4C0 /* MatrixStack.cpp in Sources */,
 				6AD68281DA134F65B3B55FCE /* Program.cpp in Sources */,
+				C94BB71B1C577BE3004E48FE /* LightingShader.cpp in Sources */,
 				939855CAF7B74E028E990864 /* Shape.cpp in Sources */,
 				C94BB7151C5704A1004E48FE /* helicopter.cpp in Sources */,
 				D73A0CA29B934734A2A48C12 /* main.cpp in Sources */,
