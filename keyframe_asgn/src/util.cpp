@@ -19,9 +19,9 @@ Vector4f uvecify(float u) {
    return Vector4f(0.0f, 1.0f, 2*u, 3*u*u);
 }
 
-float buildTable(std::vector<std::pair<float,float> > usTable, std::vector<Vector3f> cps, Eigen::Matrix4f Bcr)
+float buildTable(std::vector<std::pair<float,float> > *usTable, std::vector<Eigen::Vector3f> cps, Eigen::Matrix4f Bcr)
 {
-   usTable.clear();
+   usTable->clear();
    
    int ncps = cps.size();
    
@@ -33,6 +33,7 @@ float buildTable(std::vector<std::pair<float,float> > usTable, std::vector<Vecto
    }
    
    float total_dist = 0.0f;
+   float s = 0;
    
    for(int k = 0; k < ncps - 3; ++k) {
       Gk = G.block<3,4>(0,k);
@@ -56,15 +57,15 @@ float buildTable(std::vector<std::pair<float,float> > usTable, std::vector<Vecto
          float w2 = 8.0f/9.0f;
          float w3 = 5.0f/9.0f;
          
-         float s = ubua_2 * (
-                             w1*p_prime_1.norm() + w2*p_prime_2.norm() + w3*p_prime_3.norm()
-                             );
+         s = ubua_2 * (
+           w1*p_prime_1.norm() + w2*p_prime_2.norm() + w3*p_prime_3.norm()
+         );
          
-         usTable.push_back(make_pair(ua + k, total_dist));
+         usTable->push_back(make_pair(ua + k, total_dist));
          
          total_dist += s;
       }
    }
    
-   return total_dist;
+   return total_dist - s;
 }

@@ -156,7 +156,7 @@ static void init()
    quaternions.push_back(make_pair(roll_2, static_roll_2));
    quaternions.push_back(make_pair(tilt_forward, static_tilt_forward));
    
-   smax = buildTable(usTable, cps, Bcr);
+   smax = buildTable(&usTable, cps, Bcr);
    
 	// Initialize time.
 	glfwSetTime(0.0);
@@ -227,6 +227,15 @@ void render()
    float tNorm = std::fmod(t, TMAX) / TMAX;
    float sNorm = tNorm;
    float s = smax * sNorm;
+   float u = s2u(s);
+   printf("u: %f\n", u);
+   
+   float k = 0;
+   
+   while (u > 1) {
+      u--;
+      k++;
+   }
 	
 	// Get current frame buffer size.
 	int width, height;
@@ -328,10 +337,6 @@ void render()
    }
    
    // Draw interpolated helicopter
-   float kfloat;
-   float u = std::modf(std::fmod(t*0.4f, cps.size()-4.0f), &kfloat);
-   int k = (int)std::floor(kfloat);
-   printf("K: %d\n", k);
    Vector4f u_vec, d_u_vec;
    
    u_vec << 1, u, u*u, u*u*u;
