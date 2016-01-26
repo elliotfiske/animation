@@ -63,7 +63,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/elliotfiske/animation/3_lab/resources"
+            argument = "/Users/elliotfiske/animation/keyframe_asgn/resources"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

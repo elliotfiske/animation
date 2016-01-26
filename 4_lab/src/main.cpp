@@ -298,19 +298,13 @@ void render()
 		for(int i = 0; i < ncps; ++i) {
 			G.block<3,1>(0,i) = cps[i];
 		}
-		glLineWidth(3.0f);
+		glLineWidth(1.0f);
 		for(int k = 0; k < ncps - 3; ++k) {
 			int n = 32; // curve discretization
 			// Gk is the 3x4 block starting at column k
 			Gk = G.block<3,4>(0,k);
 			glBegin(GL_LINE_STRIP);
-			if(k % 2 == 0) {
-				// Even segment color
-				glColor3f(0.0f, 1.0f, 0.0f);
-			} else {
-				// Odd segment color
-				glColor3f(0.0f, 0.0f, 1.0f);
-			}
+         glColor3f(1.0f, 0.0f, 0.0f);
 			for(int i = 0; i < n; ++i) {
 				// u goes from 0 to 1 within this segment
 				float u = i / (n - 1.0f);

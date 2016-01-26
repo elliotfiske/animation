@@ -10,6 +10,7 @@
 #include "Program.h"
 #include "MatrixStack.h"
 #include "Shape.h"
+#include "helicopter.hpp"
 
 using namespace std;
 using namespace Eigen;
@@ -22,6 +23,9 @@ string RESOURCE_DIR = ""; // Where the resources are loaded from
 shared_ptr<Program> prog;
 shared_ptr<Camera> camera;
 shared_ptr<Shape> bunny;
+
+Matrix4f Bcr; // Catmull-Rom B matrix
+vector<Vector3f> cps; // Control points
 
 static void error_callback(int error, const char *description)
 {
@@ -87,9 +91,34 @@ static void init()
 	bunny = make_shared<Shape>();
 	bunny->loadMesh(RESOURCE_DIR + "bunny.obj");
 	bunny->init();
-	
+   
+   loadHelicopter(RESOURCE_DIR);
+   
 	camera = make_shared<Camera>();
-	
+   
+   Bcr << 0.0f, -1.0f,  2.0f, -1.0f,
+          2.0f,  0.0f, -5.0f,  3.0f,
+          0.0f,  1.0f,  4.0f, -3.0f,
+          0.0f,  0.0f, -1.0f,  1.0f;
+   Bcr *= 0.5;
+   
+   // Control Points were kind of close together. Spread 'em out!
+   float SPREAD = 1.5f;
+   
+   // Init control points
+   cps.push_back(Vector3f(0.0f, 0.0f, 0.0f)   * SPREAD);
+   cps.push_back(Vector3f(1.2f, 1.0f, 0.0f)   * SPREAD);
+   cps.push_back(Vector3f(-1.2f, 1.2f, -0.5f) * SPREAD);
+   cps.push_back(Vector3f(-1.2f, 0.8f, 0.5f)  * SPREAD);
+   cps.push_back(Vector3f(1.2f, 0.0f, 0.7f)   * SPREAD);
+   cps.push_back(Vector3f(1.0f, 0.0f, -0.7f)  * SPREAD);
+   
+   // Same as first 4, to connect everybody :3
+   cps.push_back(Vector3f(0.0f, 0.0f, 0.0f) * SPREAD);
+   cps.push_back(Vector3f(1.2f, 1.0f, 0.0f) * SPREAD);
+   cps.push_back(Vector3f(-1.2f, 1.2f, -0.5f) * SPREAD);
+   cps.push_back(Vector3f(-1.2f, 0.8f, 0.5f) * SPREAD);
+   
 	// Initialize time.
 	glfwSetTime(0.0);
 	
@@ -99,10 +128,55 @@ static void init()
 	GLSL::checkError(GET_FILE_LINE);
 }
 
-Matrix4f addQuaternionToStack(Quaternionf rot) {
-   Matrix4f R = Matrix4f::Identity();
-   R.block<3, 3>(0, 0) = rot.toRotationMatrix();
-   return R;
+vector<Matrix4f> drawSpline(Matrix4f currMVMat) {
+   vector<Matrix4f> result;
+   
+   // Draw control points
+   int ncps = (int)cps.size();
+   glPointSize(5.0f);
+   glColor3f(1.0f, 0.0f, 0.0f);
+   glBegin(GL_POINTS);
+   for(int i = 0; i < ncps; ++i) {
+      Vector3f cp = cps[i];
+      glVertex3f(cp(0), cp(1), cp(2));
+   }
+   glEnd();
+   glLineWidth(1.0f);
+   if(keyToggles[(unsigned)'l']) {
+      glColor3f(1.0f, 0.5f, 0.5f);
+      glBegin(GL_LINE_STRIP);
+      for(int i = 0; i < ncps; ++i) {
+         Vector3f cp = cps[i];
+         glVertex3f(cp(0), cp(1), cp(2));
+      }
+      glEnd();
+   }
+   
+   // Draw spline
+   MatrixXf G(3,ncps);
+   MatrixXf Gk(3,4);
+   for(int i = 0; i < ncps; ++i) {
+      G.block<3,1>(0,i) = cps[i];
+   }
+   glLineWidth(1.0f);
+   for(int k = 0; k < ncps - 3; ++k) {
+      int n = 32; // curve discretization
+      // Gk is the 3x4 block starting at column k
+      Gk = G.block<3,4>(0,k);
+      glBegin(GL_LINE_STRIP);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      for(int i = 0; i < n; ++i) {
+         // u goes from 0 to 1 within this segment
+         float u = i / (n - 1.0f);
+         // Compute spline point at u
+         Vector4f uVec(1.0f, u, u*u, u*u*u);
+         Vector3f P = Gk * Bcr * uVec;
+         glVertex3fv(P.data());
+      }
+      glEnd();
+   }
+   
+   return result;
 }
 
 void render()
@@ -172,6 +246,9 @@ void render()
 	glVertex3f(0, 0, 1);
 	glEnd();
 	glLineWidth(1);
+   
+   // Draw spliny the spline
+   drawSpline(MV->topMatrix());
 	
 	// Pop modelview matrix
 	glPopMatrix();
@@ -198,56 +275,14 @@ void render()
 	
 	// Alpha is the linear interpolation parameter between 0 and 1
 	float alpha = std::fmod(t, 1.0f);
-	
-	// The axes of rotatio for the source and target bunnies
-	Eigen::Vector3f axis0, axis1;
-	axis0(0) = keyToggles[(unsigned)'x'] ? 1.0 : 0.0f;
-	axis0(1) = keyToggles[(unsigned)'y'] ? 1.0 : 0.0f;
-	axis0(2) = keyToggles[(unsigned)'z'] ? 1.0 : 0.0f;
-	axis1(0) = keyToggles[(unsigned)'X'] ? 1.0 : 0.0f;
-	axis1(1) = keyToggles[(unsigned)'Y'] ? 1.0 : 0.0f;
-	axis1(2) = keyToggles[(unsigned)'Z'] ? 1.0 : 0.0f;
-	if(axis0.norm() > 0.0f) {
-		axis0.normalize();
-	}
-	if(axis1.norm() > 0.0f) {
-		axis1.normalize();
-	}
-	
-	Eigen::Quaternionf q0, q1;
-	q0 = Eigen::AngleAxisf(90.0f/180.0f*M_PI, axis0);
-	q1 = Eigen::AngleAxisf(90.0f/180.0f*M_PI, axis1);
-	
-	Eigen::Vector3f p0, p1, new_center, combo;
-	p0 << -1.0f, 0.0f, 0.0f;
-	p1 <<  1.0f, 0.0f, 0.0f;
-   new_center << 0.2802, -0.932, -0.0851;
    
+   Eigen::Vector3f axis_prop1;
+   axis_prop1 << 0.0f, 1.0f, 0.0f;
    
-   MV->pushMatrix();
-      MV->translate(p0);
-      MV->multMatrix(addQuaternionToStack(q0));
-      MV->translate(new_center);
-      glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
-      bunny->draw(prog);
-	MV->popMatrix();
+   Eigen::Quaternionf quatern_prop1;
+   quatern_prop1 = Eigen::AngleAxisf(0.0f, axis_prop1);
    
-   MV->pushMatrix();
-      MV->translate(p1);
-      MV->multMatrix(addQuaternionToStack(q1));
-      MV->translate(new_center);
-      glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
-      bunny->draw(prog);
-   MV->popMatrix();
-   
-   MV->pushMatrix();
-      combo = p0 * (1 - alpha) + p1 * alpha;
-      MV->translate(combo);
-      MV->multMatrix(addQuaternionToStack(q0.slerp(alpha, q1)));
-      MV->translate(new_center);
-      glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
-      bunny->draw(prog);
-   MV->popMatrix();
+   drawHelicopter(center, quatern_prop1, t, MV.get(), prog);
 	
 	// Unbind the program
 	prog->unbind();
