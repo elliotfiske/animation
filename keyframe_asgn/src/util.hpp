@@ -14,5 +14,6 @@
 #include <Eigen/Dense>
 
 float buildTable(std::vector<std::pair<float,float> > *usTable, std::vector<Eigen::Vector3f> cps, Eigen::Matrix4f Bcr);
+void drawFrame();
 
 #endif /* util_hpp */

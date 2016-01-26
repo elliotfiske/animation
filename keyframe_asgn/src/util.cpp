@@ -8,6 +8,7 @@
 //  grids and frames.
 
 #include "util.hpp"
+#include "GLSL.h"
 
 using namespace std;
 using namespace Eigen;
@@ -68,4 +69,35 @@ float buildTable(std::vector<std::pair<float,float> > *usTable, std::vector<Eige
    }
    
    return (*usTable)[(ncps-4) * MAX_SAMPLES].second;
+}
+
+void drawFrame() {
+   // Draw frame
+   glLineWidth(2);
+   glBegin(GL_LINES);
+   glColor3f(1, 0, 0);
+   glVertex3f(0, 0, 0);
+   glVertex3f(1, 0, 0);
+   glColor3f(0, 1, 0);
+   glVertex3f(0, 0, 0);
+   glVertex3f(0, 1, 0);
+   glColor3f(0, 0, 1);
+   glVertex3f(0, 0, 0);
+   glVertex3f(0, 0, 1);
+   
+   // Draw grid
+   glColor3f(0.7f, 0.7f, 0.7f);
+   for (int x = -10; x < 10; x++) {
+      glVertex3f(x, 0, -10.0f);
+      glVertex3f(x, 0,  10.0f);
+   }
+   
+   for (int z = -10; z < 10; z++) {
+      glVertex3f(-10.0f, 0, z);
+      glVertex3f( 10.0f, 0, z);
+   }
+   
+   
+   glEnd();
+   glLineWidth(1);
 }

@@ -222,6 +222,9 @@ float s2u(float s)
    return 0.0f;
 }
 
+Quaternionf lastCopterQuat;
+Vector3f lastCopterPosn(0.0f, 0.0f, 0.0f);
+
 void render()
 {
    // Update time.
@@ -268,7 +271,15 @@ void render()
 	P->pushMatrix();
 	camera->applyProjectionMatrix(P);
 	MV->pushMatrix();
-	camera->applyViewMatrix(MV);
+   
+   if (keyToggles[(unsigned)' ']) {
+      Vector3f eyeposn = lastCopterQuat.toRotationMatrix() * Vector3f(5.0f, 0.0f, 0.0f);
+      Vector3f upvec = lastCopterQuat.toRotationMatrix() * Vector3f(0.0f, 1.0f, 0.0f);
+      MV->lookAt(lastCopterPosn + eyeposn, lastCopterPosn, upvec.normalized());
+   }
+   else {
+      camera->applyViewMatrix(MV);
+   }
 	
 	//////////////////////////////////////////////////////
 	// Draw origin frame using old-style OpenGL
@@ -287,20 +298,7 @@ void render()
 	glPushMatrix();
 	glLoadMatrixf(MV->topMatrix().data());
 	
-	// Draw frame
-	glLineWidth(2);
-	glBegin(GL_LINES);
-	glColor3f(1, 0, 0);
-	glVertex3f(0, 0, 0);
-	glVertex3f(1, 0, 0);
-	glColor3f(0, 1, 0);
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 1, 0);
-	glColor3f(0, 0, 1);
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 0, 1);
-	glEnd();
-	glLineWidth(1);
+   drawFrame();
    
    // Draw spliny the spline
    drawSpline(MV->topMatrix());
@@ -334,7 +332,6 @@ void render()
       }
       
       Quaternionf thisQuat = quaternions[helicopter_ndx].second;
-//      if (helicopter_ndx == 2) thisQuat = AngleAxisf(-0.25f * M_PI, Vector3f(1.0f, 0.0f, 0.0f));
       drawHelicopter(cps[helicopter_ndx], thisQuat, t, MV.get(), prog);
    }
    
@@ -357,7 +354,6 @@ void render()
    }
    
    Vector3f interpolated_pos = G * Bcr * u_vec;
-   Vector3f tangent = (G * Bcr * d_u_vec).normalized();
    
    Vector4f uVec(1.0f, u, u*u, u*u*u);
    Vector4f qVec = (G_quads * (Bcr * uVec));
@@ -369,12 +365,11 @@ void render()
    Quaternionf adjustment;
    adjustment = AngleAxisf(M_PI, Vector3f(0.0f, 0.0f, 1.0f));
    q *= adjustment;
-//   adjustment = AngleAxisf(M_PI, Vector3f(0.0f, 1.0f, 0.0f));
-//   q *= adjustment;
-   
-   Quaternionf interp_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), tangent);
    
    drawHelicopter(interpolated_pos, q, t, MV.get(), prog);
+   
+   lastCopterPosn = interpolated_pos;
+   lastCopterQuat = q;
 	
 	// Unbind the program
 	prog->unbind();

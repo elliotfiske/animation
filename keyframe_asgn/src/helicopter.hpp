@@ -18,5 +18,6 @@
 
 void loadHelicopter(std::string RESOURCE_DIR);
 void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, double t, MatrixStack* MV, std::shared_ptr<Program> prog);
+Eigen::Matrix4f addQuaternionToStack(const Eigen::Quaternionf& rot);
 
 #endif /* helicopter_hpp */

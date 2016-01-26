@@ -37,7 +37,7 @@ void loadHelicopter(std::string RESOURCE_DIR) {
 }
 
 
-Matrix4f addQuaternionToStack(const Quaternionf& rot) {
+Eigen::Matrix4f addQuaternionToStack(const Eigen::Quaternionf& rot) {
    Matrix4f R = Matrix4f::Identity();
    R.block<3, 3>(0, 0) = rot.toRotationMatrix();
    return R;

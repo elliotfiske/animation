@@ -288,6 +288,8 @@
 		91318D2850B24D65A94B50F9 /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
+				C94BB7171C576AB1004E48FE /* util.hpp */,
+				C94BB7141C5704A1004E48FE /* helicopter.hpp */,
 				F6E612756EE647EA94746EB9 /* Camera.h */,
 				4E6FE6D31EBC42E4ADA0943B /* GLSL.h */,
 				3703B352D9EC47FFB1093220 /* MatrixStack.h */,
@@ -301,6 +303,8 @@
 		C81AB523DE2F49A0B3CA9291 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				C94BB7161C576AB1004E48FE /* util.cpp */,
+				C94BB7131C5704A1004E48FE /* helicopter.cpp */,
 				AA3115D69B904C938B0BA74D /* Camera.cpp */,
 				457D4DFA06BA4A7B879541B4 /* GLSL.cpp */,
 				DCF3BE27495F4ADCBD851096 /* MatrixStack.cpp */,
@@ -314,10 +318,6 @@
 		CCB2A200C7EC4E0EB22E8941 = {
 			isa = PBXGroup;
 			children = (
-				C94BB7161C576AB1004E48FE /* util.cpp */,
-				C94BB7171C576AB1004E48FE /* util.hpp */,
-				C94BB7131C5704A1004E48FE /* helicopter.cpp */,
-				C94BB7141C5704A1004E48FE /* helicopter.hpp */,
 				E7FA98A40F47430E9CA60E28 /* Sources */,
 				272DE38565AD41399F70C9C2 /* Resources */,
 				6705C9EA43BF4188B6AD98B0 /* Products */,

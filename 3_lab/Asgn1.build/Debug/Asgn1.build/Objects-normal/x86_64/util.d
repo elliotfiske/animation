@@ -149,4 +149,6 @@ dependencies: /Users/elliotfiske/animation/keyframe_asgn/src/util.cpp \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/RealQZ.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
-  /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+  /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  /Users/elliotfiske/animation/keyframe_asgn/src/GLSL.h \
+  /Users/elliotfiske/animation/deps/glew-1.13.0/include/GL/glew.h
