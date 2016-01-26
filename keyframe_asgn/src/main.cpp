@@ -26,7 +26,7 @@ shared_ptr<Shape> bunny;
 
 Matrix4f Bcr; // Catmull-Rom B matrix
 vector<Vector3f> cps; // Control points
-vector<Quaternionf> quaternions; // Random quaternions
+vector<pair<Quaternionf, Quaternionf> > quaternions; // Random quaternions
 
 static void error_callback(int error, const char *description)
 {
@@ -109,9 +109,8 @@ static void init()
    // Init control points
    cps.push_back(Vector3f(0.0f, 0.0f, 0.0f)   * SPREAD);
    cps.push_back(Vector3f(1.2f, 1.0f, 0.0f)   * SPREAD);
-   cps.push_back(Vector3f(-1.2f, 1.2f, -0.5f) * SPREAD);
+   cps.push_back(Vector3f(-2.2f, 1.2f, -0.5f) * SPREAD);
    cps.push_back(Vector3f(-1.2f, 0.8f, 0.5f)  * SPREAD);
-   cps.push_back(Vector3f(1.2f, 0.0f, 0.7f)   * SPREAD);
    cps.push_back(Vector3f(1.0f, 0.0f, -0.7f)  * SPREAD);
    
    // Same as first 4, to connect everybody :3
@@ -121,28 +120,36 @@ static void init()
    cps.push_back(Vector3f(-1.2f, 0.8f, 0.5f) * SPREAD);
    
    // Make some arbitrary rotation keyframes to spin me right round
-   //   quaternions.push_back(AngleAxisf(90.0f, Vector3f(0.0f, 1.0f, 0.0f)));
-   Vector3f y_axis, z_axis;
+   Vector3f y_axis, z_axis, x_axis;
    y_axis << 0.0f, 1.0f, 0.0f;
    z_axis << 0.0f, 0.0f, 1.0f;
+   x_axis << 1.0f, 0.0f, 0.0f;
    
-   Quaternionf q1, q2, q3, q4, q5, q6;
-   q1 = AngleAxisf(0.0f, y_axis);
-   q2 = AngleAxisf(3.0f/4.0f * M_PI, y_axis);
-   q3 = AngleAxisf(M_PI, z_axis);
+   Quaternionf normal, turn_around, roll_1, roll_2, tilt_forward, static_roll_1, static_roll_2, static_tilt_forward;
+   normal       = AngleAxisf(0.0f, y_axis);
+   turn_around  = AngleAxisf(3.0f/4.0f   * M_PI, y_axis);
+   roll_1         = AngleAxisf(0.5f      * M_PI, z_axis);
+   roll_2         = AngleAxisf(1.4f      * M_PI, z_axis);
+   tilt_forward = AngleAxisf(-0.5f       * M_PI, x_axis);
+   static_roll_1  = AngleAxisf(-0.5f     * M_PI, x_axis);
+   static_roll_2  = AngleAxisf(-1.4f     * M_PI, x_axis);
+   static_tilt_forward = AngleAxisf(0.5f * M_PI, z_axis);
    
-   quaternions.push_back(q1);
-   quaternions.push_back(q2);
-   quaternions.push_back(q3);
-   quaternions.push_back(q1);
-   quaternions.push_back(q2);
-   quaternions.push_back(q1);
+   // For reasons I don't quite understand, the Catmull-Rom lerp switches the
+   //  X and Z axes. Therefore, I put 2 different sets of quaternion keyframes:
+   //  one for the 'static' copters, and 2 switched-axes for the 'interpolated' copter.
+   
+   quaternions.push_back(make_pair(normal, normal));
+   quaternions.push_back(make_pair(roll_1, static_roll_1));
+   quaternions.push_back(make_pair(roll_2, static_roll_2));
+   quaternions.push_back(make_pair(tilt_forward, static_tilt_forward));
+   quaternions.push_back(make_pair(turn_around, turn_around));
    
    // Same as first 4
-   quaternions.push_back(q1);
-   quaternions.push_back(q2);
-   quaternions.push_back(q3);
-   quaternions.push_back(q1);
+   quaternions.push_back(make_pair(normal, normal));
+   quaternions.push_back(make_pair(roll_1, static_roll_1));
+   quaternions.push_back(make_pair(roll_2, static_roll_2));
+   quaternions.push_back(make_pair(tilt_forward, static_tilt_forward));
    
    
 	// Initialize time.
@@ -165,7 +172,7 @@ vector<Matrix4f> drawSpline(Matrix4f currMVMat) {
    for(int i = 0; i < ncps; ++i) {
       Vector3f cp = cps[i];
       if(keyToggles[(unsigned)'k']) {
-         glVertex3f(cp(0), cp(1), cp(2));
+//         glVertex3f(cp(0), cp(1), cp(2));
       }
    }
    glEnd();
@@ -187,7 +194,7 @@ vector<Matrix4f> drawSpline(Matrix4f currMVMat) {
       G.block<3,1>(0,i) = cps[i];
    }
    glLineWidth(1.0f);
-   for(int k = 0; k < ncps - 3; ++k) {
+   for(int k = 0; k < ncps - 4; ++k) {
       int n = 32; // curve discretization
       // Gk is the 3x4 block starting at column k
       Gk = G.block<3,4>(0,k);
@@ -308,11 +315,9 @@ void render()
          G.block<3, 1>(0, cp_ndx) = cps[cp_ndx + helicopter_ndx];
       }
       
-//      Vector4f curr_helicopter_d_u_vec(0.0f, 1.0f, 2.0f, 3.0f); // u == 0
-//      Vector3f curr_helicopter_tangent = (G * Bcr * curr_helicopter_d_u_vec).normalized();
-//      Quaternionf curr_heli_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), curr_helicopter_tangent);
-      
-      drawHelicopter(cps[helicopter_ndx], quaternions[helicopter_ndx], t, MV.get(), prog, false);
+      Quaternionf thisQuat = quaternions[helicopter_ndx].second;
+//      if (helicopter_ndx == 2) thisQuat = AngleAxisf(-0.25f * M_PI, Vector3f(1.0f, 0.0f, 0.0f));
+      drawHelicopter(cps[helicopter_ndx], thisQuat, t, MV.get(), prog);
    }
    
    // Draw interpolated helicopter
@@ -328,8 +333,12 @@ void render()
    MatrixXf G_quads(4, 4);
    for (int i = 0; i < 4; i++) {
       G.block<3, 1>(0, i) = cps[i + k];
-      G_quads.block<3, 1>(0, i) = quaternions[i + k].vec();
-      G_quads(3, i) = quaternions[i+k].w();
+      Quaternionf quaternionToAdd = quaternions[i + k].first;
+      if (k != cps.size() && quaternions[i+k].first.dot(quaternions[i+k+1].first) < 0) {
+         quaternionToAdd.inverse(); // Take the shortest path
+      }
+      
+      G_quads.block<4, 1>(0, i) = quaternionToAdd.coeffs();
    }
    
    Vector3f interpolated_pos = G * Bcr * u_vec;
@@ -342,13 +351,15 @@ void render()
    q.vec() = qVec.segment<3>(1);
    q.normalize();
    
-//   Quaternionf adjustment;
-//   adjustment = AngleAxisf(M_PI, Vector3f(0.0f, 0.0f, 1.0f));
+   Quaternionf adjustment;
+   adjustment = AngleAxisf(M_PI, Vector3f(0.0f, 0.0f, 1.0f));
+   q *= adjustment;
+//   adjustment = AngleAxisf(M_PI, Vector3f(0.0f, 1.0f, 0.0f));
 //   q *= adjustment;
    
    Quaternionf interp_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), tangent);
    
-   drawHelicopter(interpolated_pos, q, t, MV.get(), prog, true);
+   drawHelicopter(interpolated_pos, q, t, MV.get(), prog);
 	
 	// Unbind the program
 	prog->unbind();
