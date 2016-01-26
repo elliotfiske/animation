@@ -43,7 +43,7 @@ Matrix4f addQuaternionToStack(const Quaternionf& rot) {
    return R;
 }
 
-void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, double t, MatrixStack* MV, std::shared_ptr<Program> prog) {
+void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, double t, MatrixStack* MV, std::shared_ptr<Program> prog, bool interpolated) {
 
 
    Eigen::Vector3f axis_prop1, axis_prop2;
@@ -63,6 +63,7 @@ void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, d
    //      MV->multMatrix(addQuaternionToStack(q0));
    MV->translate(pos);
    MV->multMatrix(addQuaternionToStack(rot));
+   if (interpolated) MV->rotate(180.0f, Vector3f(0.0f, 0.0f, 1.0f));
    glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
    helibody_1->draw(prog);
    MV->popMatrix();
@@ -73,6 +74,7 @@ void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, d
    //      MV->translate(p0);
    MV->translate(pos);
    MV->multMatrix(addQuaternionToStack(rot));
+      if (interpolated) MV->rotate(180.0f, Vector3f(0.0f, 0.0f, 1.0f));
    glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
    helibody_2->draw(prog);
    MV->popMatrix();
@@ -83,6 +85,7 @@ void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, d
    
    MV->translate(pos);
    MV->multMatrix(addQuaternionToStack(rot));
+      if (interpolated) MV->rotate(180.0f, Vector3f(0.0f, 0.0f, 1.0f));
    
    // Spinning propellor
    MV->translate(-prop1_center);
@@ -98,6 +101,7 @@ void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, d
    MV->pushMatrix();
    MV->translate(pos);
    MV->multMatrix(addQuaternionToStack(rot));
+      if (interpolated) MV->rotate(180.0f, Vector3f(0.0f, 0.0f, 1.0f));
    
    // Spinning propellor
    MV->translate(prop2_center);

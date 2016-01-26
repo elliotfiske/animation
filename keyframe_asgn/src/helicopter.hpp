@@ -17,6 +17,6 @@
 #include "Program.h"
 
 void loadHelicopter(std::string RESOURCE_DIR);
-void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, double t, MatrixStack* MV_void, std::shared_ptr<Program> prog);
+void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, double t, MatrixStack* MV, std::shared_ptr<Program> prog, bool interpolated);
 
 #endif /* helicopter_hpp */

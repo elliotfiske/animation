@@ -312,7 +312,7 @@ void render()
 //      Vector3f curr_helicopter_tangent = (G * Bcr * curr_helicopter_d_u_vec).normalized();
 //      Quaternionf curr_heli_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), curr_helicopter_tangent);
       
-      drawHelicopter(cps[helicopter_ndx], quaternions[helicopter_ndx], t, MV.get(), prog);
+      drawHelicopter(cps[helicopter_ndx], quaternions[helicopter_ndx], t, MV.get(), prog, false);
    }
    
    // Draw interpolated helicopter
@@ -348,9 +348,7 @@ void render()
    
    Quaternionf interp_rot = Quaternionf::FromTwoVectors(Vector3f(-1.0f, 0.0f, 0.0f), tangent);
    
-   MV->rotate(M_PI, Vector3f(0.0f, 0.0f, 1.0f));
-   drawHelicopter(interpolated_pos, q, t, MV.get(), prog);
-   MV->rotate(M_PI, Vector3f(0.0f, 0.0f, 1.0f));
+   drawHelicopter(interpolated_pos, q, t, MV.get(), prog, true);
 	
 	// Unbind the program
 	prog->unbind();
