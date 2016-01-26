@@ -185,8 +185,8 @@ vector<Matrix4f> drawSpline(Matrix4f currMVMat) {
 
 void render()
 {
-	// Update time.
-	double t = glfwGetTime();
+   // Update time.
+   double t = glfwGetTime();
 	
 	// Get current frame buffer size.
 	int width, height;
@@ -268,25 +268,34 @@ void render()
 	// Bind the program
 	prog->bind();
 	
-	// Send projection matrix (same for all bunnies)
+	// Send projection matrix (same for all helis)
 	glUniformMatrix4fv(prog->getUniform("P"), 1, GL_FALSE, P->topMatrix().data());
-	
-	// Apply some transformations to the modelview matrix.
-	// Each bunny should get a different transformation.
-	
-	// The center of the bunny is at (-0.2802, 0.932, 0.0851)
-	Eigen::Vector3f center(-0.2802, 0.932, 0.0851);
-	
-	// Alpha is the linear interpolation parameter between 0 and 1
-	float alpha = std::fmod(t, 1.0f);
    
    Eigen::Vector3f axis_prop1;
-   axis_prop1 << 0.0f, 1.0f, 0.0f;
+   axis_prop1 << 0.0f, t * 0.2f, 0.0f;
    
    Eigen::Quaternionf quatern_prop1;
-   quatern_prop1 = Eigen::AngleAxisf(0.0f, axis_prop1);
+   quatern_prop1 = Eigen::AngleAxisf(90.0f, axis_prop1);
    
-   drawHelicopter(center, quatern_prop1, t, MV.get(), prog);
+   // Draw the static helicopters
+   for (int i = 0; i < cps.size() - 3; i++) {
+      drawHelicopter(cps[i], quatern_prop1, t, MV.get(), prog);
+   }
+   
+   // Draw interpolated helicopter
+   float kfloat;
+   float u = std::modf(std::fmod(t*1.2f, cps.size()-4.0f), &kfloat);
+   int k = (int)std::floor(kfloat);
+   Vector4f u_vec;
+   u_vec << 1, u, u*u, u*u*u;
+   
+   MatrixXf G(3, 4);
+   for (int i = 0; i < 4; i++) {
+      G.block<3, 1>(0, i) = cps[i + k];
+   }
+   
+   Vector3f interpolated_pos = G * Bcr * u_vec;
+   drawHelicopter(interpolated_pos, quatern_prop1, t, MV.get(), prog);
 	
 	// Unbind the program
 	prog->unbind();

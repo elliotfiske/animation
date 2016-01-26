@@ -37,13 +37,13 @@ void loadHelicopter(std::string RESOURCE_DIR) {
 }
 
 
-Matrix4f addQuaternionToStack(Quaternionf rot) {
+Matrix4f addQuaternionToStack(const Quaternionf& rot) {
    Matrix4f R = Matrix4f::Identity();
    R.block<3, 3>(0, 0) = rot.toRotationMatrix();
    return R;
 }
 
-void drawHelicopter(Eigen::Vector3f pos, Eigen::Quaternionf rot, double t, MatrixStack* MV_void, std::shared_ptr<Program> prog) {
+void drawHelicopter(const Eigen::Vector3f& pos, const Eigen::Quaternionf& rot, double t, MatrixStack* MV_void, std::shared_ptr<Program> prog) {
    MatrixStack *MV = (MatrixStack *) MV_void;
 
    Eigen::Vector3f axis_prop1, axis_prop2;
@@ -54,15 +54,15 @@ void drawHelicopter(Eigen::Vector3f pos, Eigen::Quaternionf rot, double t, Matri
    quatern_prop1 = Eigen::AngleAxisf(t*90.0f/180.0f*M_PI, axis_prop1);
    quatern_prop2 = Eigen::AngleAxisf(t*90.0f/180.0f*M_PI, axis_prop2);
    
-   Eigen::Vector3f heli_center, combo, prop1_center, prop2_center;
-   heli_center << 0.2802f + t, -0.932f, -0.0851f;
+   Eigen::Vector3f prop1_center, prop2_center;
    prop1_center << -0.0133f, 0.4819f, 0.0f;
    prop2_center << 0.6228f, 0.1179f, 0.1365f;
    
    MV->pushMatrix();
    //      MV->translate(p0);
    //      MV->multMatrix(addQuaternionToStack(q0));
-   MV->translate(heli_center);
+   MV->translate(pos);
+   MV->multMatrix(addQuaternionToStack(rot));
    glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
    helibody_1->draw(prog);
    MV->popMatrix();
@@ -71,8 +71,8 @@ void drawHelicopter(Eigen::Vector3f pos, Eigen::Quaternionf rot, double t, Matri
    
    MV->pushMatrix();
    //      MV->translate(p0);
-   //      MV->multMatrix(addQuaternionToStack(q0));
-   MV->translate(heli_center);
+   MV->translate(pos);
+   MV->multMatrix(addQuaternionToStack(rot));
    glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
    helibody_2->draw(prog);
    MV->popMatrix();
@@ -80,7 +80,9 @@ void drawHelicopter(Eigen::Vector3f pos, Eigen::Quaternionf rot, double t, Matri
    
    
    MV->pushMatrix();
-   MV->translate(heli_center);
+   
+   MV->translate(pos);
+   MV->multMatrix(addQuaternionToStack(rot));
    
    // Spinning propellor
    MV->translate(-prop1_center);
@@ -94,7 +96,8 @@ void drawHelicopter(Eigen::Vector3f pos, Eigen::Quaternionf rot, double t, Matri
    
    
    MV->pushMatrix();
-   MV->translate(heli_center);
+   MV->translate(pos);
+   MV->multMatrix(addQuaternionToStack(rot));
    
    // Spinning propellor
    MV->translate(prop2_center);
