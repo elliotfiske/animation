@@ -20,7 +20,7 @@ Vector4f uvecify(float u) {
    return Vector4f(0.0f, 1.0f, 2*u, 3*u*u);
 }
 
-float buildTable(std::vector<std::pair<float,float> > *usTable, std::vector<Eigen::Vector3f> cps, Eigen::Matrix4f Bcr)
+float buildTable(std::vector<std::pair<float,float> > *usTable, std::vector<Eigen::Vector3f> cps, const Eigen::Matrix4f& Bcr)
 {
    usTable->clear();
    

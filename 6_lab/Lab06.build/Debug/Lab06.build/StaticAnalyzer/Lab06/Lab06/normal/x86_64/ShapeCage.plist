@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+ <key>clang_version</key>
+<string>Apple LLVM version 7.0.2 (clang-700.1.81)</string>
+ <key>files</key>
+ <array>
+  <string>/Users/elliotfiske/animation/deps/eigen/Eigen/src/Core/arch/SSE/MathFunctions.h</string>
+  <string>/Users/elliotfiske/animation/6_lab/src/ShapeCage.cpp</string>
+ </array>
+ <key>diagnostics</key>
+ <array>
+  <dict>
+   <key>path</key>
+   <array>
+    <dict>
+     <key>kind</key><string>event</string>
+     <key>location</key>
+     <dict>
+      <key>line</key><integer>129</integer>
+      <key>col</key><integer>12</integer>
+      <key>file</key><integer>0</integer>
+     </dict>
+     <key>ranges</key>
+     <array>
+       <array>
+        <dict>
+         <key>line</key><integer>129</integer>
+         <key>col</key><integer>12</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>129</integer>
+         <key>col</key><integer>14</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+       </array>
+       <array>
+        <dict>
+         <key>line</key><integer>129</integer>
+         <key>col</key><integer>18</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>129</integer>
+         <key>col</key><integer>33</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+       </array>
+     </array>
+     <key>depth</key><integer>0</integer>
+     <key>extended_message</key>
+     <string>Value stored to &apos;tmp&apos; during its initialization is never read</string>
+     <key>message</key>
+     <string>Value stored to &apos;tmp&apos; during its initialization is never read</string>
+    </dict>
+   </array>
+   <key>description</key><string>Value stored to &apos;tmp&apos; during its initialization is never read</string>
+   <key>category</key><string>Dead store</string>
+   <key>type</key><string>Dead initialization</string>
+  <key>issue_context_kind</key><string>function</string>
+  <key>issue_context</key><string>pexp</string>
+  <key>issue_hash</key><string>21</string>
+  <key>location</key>
+  <dict>
+   <key>line</key><integer>129</integer>
+   <key>col</key><integer>12</integer>
+   <key>file</key><integer>0</integer>
+  </dict>
+  </dict>
+  <dict>
+   <key>path</key>
+   <array>
+    <dict>
+     <key>kind</key><string>event</string>
+     <key>location</key>
+     <dict>
+      <key>line</key><integer>198</integer>
+      <key>col</key><integer>12</integer>
+      <key>file</key><integer>0</integer>
+     </dict>
+     <key>ranges</key>
+     <array>
+       <array>
+        <dict>
+         <key>line</key><integer>198</integer>
+         <key>col</key><integer>12</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>198</integer>
+         <key>col</key><integer>14</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+       </array>
+       <array>
+        <dict>
+         <key>line</key><integer>198</integer>
+         <key>col</key><integer>18</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>198</integer>
+         <key>col</key><integer>33</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+       </array>
+     </array>
+     <key>depth</key><integer>0</integer>
+     <key>extended_message</key>
+     <string>Value stored to &apos;tmp&apos; during its initialization is never read</string>
+     <key>message</key>
+     <string>Value stored to &apos;tmp&apos; during its initialization is never read</string>
+    </dict>
+   </array>
+   <key>description</key><string>Value stored to &apos;tmp&apos; during its initialization is never read</string>
+   <key>category</key><string>Dead store</string>
+   <key>type</key><string>Dead initialization</string>
+  <key>issue_context_kind</key><string>function</string>
+  <key>issue_context</key><string>pexp</string>
+  <key>issue_hash</key><string>25</string>
+  <key>location</key>
+  <dict>
+   <key>line</key><integer>198</integer>
+   <key>col</key><integer>12</integer>
+   <key>file</key><integer>0</integer>
+  </dict>
+  </dict>
+  <dict>
+   <key>path</key>
+   <array>
+    <dict>
+     <key>kind</key><string>event</string>
+     <key>location</key>
+     <dict>
+      <key>line</key><integer>282</integer>
+      <key>col</key><integer>18</integer>
+      <key>file</key><integer>0</integer>
+     </dict>
+     <key>ranges</key>
+     <array>
+       <array>
+        <dict>
+         <key>line</key><integer>282</integer>
+         <key>col</key><integer>18</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>282</integer>
+         <key>col</key><integer>21</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+       </array>
+       <array>
+        <dict>
+         <key>line</key><integer>282</integer>
+         <key>col</key><integer>25</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>282</integer>
+         <key>col</key><integer>40</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+       </array>
+     </array>
+     <key>depth</key><integer>0</integer>
+     <key>extended_message</key>
+     <string>Value stored to &apos;xmm2&apos; during its initialization is never read</string>
+     <key>message</key>
+     <string>Value stored to &apos;xmm2&apos; during its initialization is never read</string>
+    </dict>
+   </array>
+   <key>description</key><string>Value stored to &apos;xmm2&apos; during its initialization is never read</string>
+   <key>category</key><string>Dead store</string>
+   <key>type</key><string>Dead initialization</string>
+  <key>issue_context_kind</key><string>function</string>
+  <key>issue_context</key><string>psin</string>
+  <key>issue_hash</key><string>23</string>
+  <key>location</key>
+  <dict>
+   <key>line</key><integer>282</integer>
+   <key>col</key><integer>18</integer>
+   <key>file</key><integer>0</integer>
+  </dict>
+  </dict>
+  <dict>
+   <key>path</key>
+   <array>
+    <dict>
+     <key>kind</key><string>event</string>
+     <key>location</key>
+     <dict>
+      <key>line</key><integer>381</integer>
+      <key>col</key><integer>18</integer>
+      <key>file</key><integer>0</integer>
+     </dict>
+     <key>ranges</key>
+     <array>
+       <array>
+        <dict>
+         <key>line</key><integer>381</integer>
+         <key>col</key><integer>18</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>381</integer>
+         <key>col</key><integer>21</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+       </array>
+       <array>
+        <dict>
+         <key>line</key><integer>381</integer>
+         <key>col</key><integer>25</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>381</integer>
+         <key>col</key><integer>40</integer>
+         <key>file</key><integer>0</integer>
+        </dict>
+       </array>
+     </array>
+     <key>depth</key><integer>0</integer>
+     <key>extended_message</key>
+     <string>Value stored to &apos;xmm2&apos; during its initialization is never read</string>
+     <key>message</key>
+     <string>Value stored to &apos;xmm2&apos; during its initialization is never read</string>
+    </dict>
+   </array>
+   <key>description</key><string>Value stored to &apos;xmm2&apos; during its initialization is never read</string>
+   <key>category</key><string>Dead store</string>
+   <key>type</key><string>Dead initialization</string>
+  <key>issue_context_kind</key><string>function</string>
+  <key>issue_context</key><string>pcos</string>
+  <key>issue_hash</key><string>21</string>
+  <key>location</key>
+  <dict>
+   <key>line</key><integer>381</integer>
+   <key>col</key><integer>18</integer>
+   <key>file</key><integer>0</integer>
+  </dict>
+  </dict>
+  <dict>
+   <key>path</key>
+   <array>
+    <dict>
+     <key>kind</key><string>event</string>
+     <key>location</key>
+     <dict>
+      <key>line</key><integer>53</integer>
+      <key>col</key><integer>6</integer>
+      <key>file</key><integer>1</integer>
+     </dict>
+     <key>ranges</key>
+     <array>
+       <array>
+        <dict>
+         <key>line</key><integer>53</integer>
+         <key>col</key><integer>6</integer>
+         <key>file</key><integer>1</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>53</integer>
+         <key>col</key><integer>10</integer>
+         <key>file</key><integer>1</integer>
+        </dict>
+       </array>
+       <array>
+        <dict>
+         <key>line</key><integer>53</integer>
+         <key>col</key><integer>14</integer>
+         <key>file</key><integer>1</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>53</integer>
+         <key>col</key><integer>28</integer>
+         <key>file</key><integer>1</integer>
+        </dict>
+       </array>
+     </array>
+     <key>depth</key><integer>0</integer>
+     <key>extended_message</key>
+     <string>Value stored to &apos;nrows&apos; during its initialization is never read</string>
+     <key>message</key>
+     <string>Value stored to &apos;nrows&apos; during its initialization is never read</string>
+    </dict>
+   </array>
+   <key>description</key><string>Value stored to &apos;nrows&apos; during its initialization is never read</string>
+   <key>category</key><string>Dead store</string>
+   <key>type</key><string>Dead initialization</string>
+  <key>issue_context_kind</key><string>C++ method</string>
+  <key>issue_context</key><string>toLocal</string>
+  <key>issue_hash</key><string>6</string>
+  <key>location</key>
+  <dict>
+   <key>line</key><integer>53</integer>
+   <key>col</key><integer>6</integer>
+   <key>file</key><integer>1</integer>
+  </dict>
+  </dict>
+  <dict>
+   <key>path</key>
+   <array>
+    <dict>
+     <key>kind</key><string>event</string>
+     <key>location</key>
+     <dict>
+      <key>line</key><integer>54</integer>
+      <key>col</key><integer>6</integer>
+      <key>file</key><integer>1</integer>
+     </dict>
+     <key>ranges</key>
+     <array>
+       <array>
+        <dict>
+         <key>line</key><integer>54</integer>
+         <key>col</key><integer>6</integer>
+         <key>file</key><integer>1</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>54</integer>
+         <key>col</key><integer>10</integer>
+         <key>file</key><integer>1</integer>
+        </dict>
+       </array>
+       <array>
+        <dict>
+         <key>line</key><integer>54</integer>
+         <key>col</key><integer>14</integer>
+         <key>file</key><integer>1</integer>
+        </dict>
+        <dict>
+         <key>line</key><integer>54</integer>
+         <key>col</key><integer>28</integer>
+         <key>file</key><integer>1</integer>
+        </dict>
+       </array>
+     </array>
+     <key>depth</key><integer>0</integer>
+     <key>extended_message</key>
+     <string>Value stored to &apos;ncols&apos; during its initialization is never read</string>
+     <key>message</key>
+     <string>Value stored to &apos;ncols&apos; during its initialization is never read</string>
+    </dict>
+   </array>
+   <key>description</key><string>Value stored to &apos;ncols&apos; during its initialization is never read</string>
+   <key>category</key><string>Dead store</string>
+   <key>type</key><string>Dead initialization</string>
+  <key>issue_context_kind</key><string>C++ method</string>
+  <key>issue_context</key><string>toLocal</string>
+  <key>issue_hash</key><string>7</string>
+  <key>location</key>
+  <dict>
+   <key>line</key><integer>54</integer>
+   <key>col</key><integer>6</integer>
+   <key>file</key><integer>1</integer>
+  </dict>
+  </dict>
+ </array>
+</dict>
+</plist>

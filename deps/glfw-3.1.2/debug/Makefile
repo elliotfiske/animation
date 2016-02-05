@@ -42,10 +42,10 @@ RM = /usr/local/Cellar/cmake/3.2.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/elliotfiske/animation/HELI-DELIVERABLE-test1
+CMAKE_SOURCE_DIR = /Users/elliotfiske/Downloads/efiske
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build
+CMAKE_BINARY_DIR = /Users/elliotfiske/Downloads/efiske/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -113,14 +113,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build/CMakeFiles /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/progress.marks
-	cd /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build/CMakeFiles 0
+	cd /Users/elliotfiske/Downloads/efiske/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/elliotfiske/Downloads/efiske/build/CMakeFiles /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/progress.marks
+	cd /Users/elliotfiske/Downloads/efiske/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/elliotfiske/Downloads/efiske/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/clean
+	cd /Users/elliotfiske/Downloads/efiske/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/clean
 .PHONY : clean
 
 # The main clean target
@@ -129,22 +129,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/preinstall
+	cd /Users/elliotfiske/Downloads/efiske/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/preinstall
+	cd /Users/elliotfiske/Downloads/efiske/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/elliotfiske/Downloads/efiske/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninstall.dir/rule:
-	cd /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninstall.dir/rule
+	cd /Users/elliotfiske/Downloads/efiske/build && $(MAKE) -f CMakeFiles/Makefile2 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninstall.dir/rule
 .PHONY : /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -153,7 +153,7 @@ uninstall: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninsta
 
 # fast build rule for target.
 uninstall/fast:
-	cd /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build && $(MAKE) -f /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninstall.dir/build.make /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninstall.dir/build
+	cd /Users/elliotfiske/Downloads/efiske/build && $(MAKE) -f /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninstall.dir/build.make /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
 # Help Target
@@ -180,6 +180,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/elliotfiske/animation/HELI-DELIVERABLE-test1/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/elliotfiske/Downloads/efiske/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
