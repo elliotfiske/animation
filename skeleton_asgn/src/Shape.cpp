@@ -63,7 +63,7 @@ void Shape::loadMesh(const std::string &meshName, const std::string &resource_di
          bind_pose = load_animation(resource_dir + "cheb_skel_walk.txt");
          anim_frames = bind_pose;
          
-         num_frames = bind_pose.size() - 1;
+         num_frames = bind_pose.size() / NUM_BONES;
       }
 	}
 }
@@ -110,10 +110,11 @@ void Shape::init()
 void Shape::draw(const shared_ptr<Program> prog) const
 {
    k++;
+   k %= num_frames - 1;
    
    // Modify the position buffer with our cute new skinnings and stuff
    vector<float> skinned_vertices;
-   for (int i = 0; i < posBuf.size() / 3; i += 3) {
+   for (int i = 0; i < posBuf.size(); i += 3) {
       Vector4f orig_vertex;
       orig_vertex << posBuf[i], posBuf[i+1], posBuf[i+2], 1;
       
@@ -123,29 +124,27 @@ void Shape::draw(const shared_ptr<Program> prog) const
       
       for (int j = 0; j < NUM_BONES; j++) {
          Vector4f weight_changed_vertex;
-         weight_changed_vertex << orig_vertex.x(), orig_vertex.y(), orig_vertex.z(), 0;
+         weight_changed_vertex << orig_vertex.x(), orig_vertex.y(), orig_vertex.z(), 1;
          
          weight_changed_vertex = bind_pose[j].inverse() * weight_changed_vertex;
-         weight_changed_vertex = anim_frames[k*NUM_BONES + j] * weight_changed_vertex;
-         weight_changed_vertex *= skinning_weights[i*NUM_BONES + j];
+         weight_changed_vertex = anim_frames[(k+1)*NUM_BONES + j] * weight_changed_vertex;
+         weight_changed_vertex *= skinning_weights[i/3*NUM_BONES + j];
          
          result_vertex += weight_changed_vertex;
       }
       
-      skinned_vertices.push_back(orig_vertex.x());
-      skinned_vertices.push_back(orig_vertex.y());
-      skinned_vertices.push_back(orig_vertex.z());
+      skinned_vertices.push_back(result_vertex.x());
+      skinned_vertices.push_back(result_vertex.y());
+      skinned_vertices.push_back(result_vertex.z());
    }
    
    // Send the modified position array to the GPU
-//	glGenBuffers(1, &new_pos_buf_ID);
    glBindBuffer(GL_ARRAY_BUFFER, posBufID);
    glBufferData(GL_ARRAY_BUFFER, skinned_vertices.size()*sizeof(float), &skinned_vertices[0], GL_DYNAMIC_DRAW);
    
 	// Bind position buffer
 	int h_pos = prog->getAttribute("vertPos");
 	GLSL::enableVertexAttribArray(h_pos);
-//	glBindBuffer(GL_ARRAY_BUFFER, posBufID);
 	glVertexAttribPointer(h_pos, 3, GL_FLOAT, GL_FALSE, 0, (const void *)0);
 	
 	// Bind normal buffer
