@@ -112,10 +112,10 @@ void Shape::draw(const shared_ptr<Program> prog) const
    k++;
    
    // Modify the position buffer with our cute new skinnings and stuff
-   vector<float> skinned_vertices(posBuf.size());
-   for (int i = 0; i < posBuf.size() / 3; i++) {
+   vector<float> skinned_vertices;
+   for (int i = 0; i < posBuf.size() / 3; i += 3) {
       Vector4f orig_vertex;
-      orig_vertex << posBuf[i], posBuf[i+1], posBuf[i+2], 0;
+      orig_vertex << posBuf[i], posBuf[i+1], posBuf[i+2], 1;
       
       Vector4f result_vertex; // Stores the result of adding up all the results
       // from multiplying orig_vertex by each bone
@@ -132,21 +132,20 @@ void Shape::draw(const shared_ptr<Program> prog) const
          result_vertex += weight_changed_vertex;
       }
       
-      skinned_vertices.push_back(result_vertex.x());
-      skinned_vertices.push_back(result_vertex.y());
-      skinned_vertices.push_back(result_vertex.z());
-      skinned_vertices.push_back(0);
+      skinned_vertices.push_back(orig_vertex.x());
+      skinned_vertices.push_back(orig_vertex.y());
+      skinned_vertices.push_back(orig_vertex.z());
    }
    
    // Send the modified position array to the GPU
-	glGenBuffers(1, &new_pos_buf_ID);
-   glBindBuffer(GL_ARRAY_BUFFER, new_pos_buf_ID);
-   glBufferData(GL_ARRAY_BUFFER, posBuf.size()*sizeof(float), &posBuf[0], GL_DYNAMIC_DRAW);
+//	glGenBuffers(1, &new_pos_buf_ID);
+   glBindBuffer(GL_ARRAY_BUFFER, posBufID);
+   glBufferData(GL_ARRAY_BUFFER, skinned_vertices.size()*sizeof(float), &skinned_vertices[0], GL_DYNAMIC_DRAW);
    
 	// Bind position buffer
 	int h_pos = prog->getAttribute("vertPos");
 	GLSL::enableVertexAttribArray(h_pos);
-	glBindBuffer(GL_ARRAY_BUFFER, new_pos_buf_ID);
+//	glBindBuffer(GL_ARRAY_BUFFER, posBufID);
 	glVertexAttribPointer(h_pos, 3, GL_FLOAT, GL_FALSE, 0, (const void *)0);
 	
 	// Bind normal buffer
