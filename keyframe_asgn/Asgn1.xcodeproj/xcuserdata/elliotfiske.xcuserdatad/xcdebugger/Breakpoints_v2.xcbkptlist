@@ -175,7 +175,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "buildTable(std::vector&lt;std::pair&lt;float,float&gt; &gt; *usTable, std::vector&lt;Eigen::Vector3f&gt; cps, Eigen::Matrix4f Bcr)"
+            landmarkName = "buildTable(std::vector&lt;std::pair&lt;float,float&gt; &gt; *usTable, std::vector&lt;Eigen::Vector3f&gt; cps, const Eigen::Matrix4f&amp; Bcr)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
