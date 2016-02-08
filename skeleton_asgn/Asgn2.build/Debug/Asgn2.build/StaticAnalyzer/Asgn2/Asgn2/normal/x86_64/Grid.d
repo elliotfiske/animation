@@ -150,4 +150,7 @@ dependencies: /Users/elliotfiske/animation/skeleton_asgn/src/Grid.cpp \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/RealQZ.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
-  /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+  /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  /Users/elliotfiske/animation/deps/eigen/Eigen/StdVector \
+  /Users/elliotfiske/animation/deps/eigen/Eigen/src/StlSupport/StdVector.h \
+  /Users/elliotfiske/animation/deps/eigen/Eigen/src/StlSupport/details.h

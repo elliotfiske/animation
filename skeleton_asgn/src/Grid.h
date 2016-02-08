@@ -6,8 +6,10 @@
 
 #define EIGEN_DONT_ALIGN_STATICALLY
 #include <Eigen/Dense>
+#include <Eigen/StdVector>
 
 std::vector<float> load_weights(const std::string &filename);
+std::vector<Eigen::Matrix4f,Eigen::aligned_allocator<Eigen::Matrix4f> > load_animation(const std::string &filename);
 
 class Grid
 {

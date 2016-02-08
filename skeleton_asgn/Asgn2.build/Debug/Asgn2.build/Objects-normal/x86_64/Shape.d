@@ -150,6 +150,9 @@ dependencies: /Users/elliotfiske/animation/skeleton_asgn/src/Shape.cpp \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/RealQZ.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  /Users/elliotfiske/animation/deps/eigen/Eigen/StdVector \
+  /Users/elliotfiske/animation/deps/eigen/Eigen/src/StlSupport/StdVector.h \
+  /Users/elliotfiske/animation/deps/eigen/Eigen/src/StlSupport/details.h \
   /Users/elliotfiske/animation/skeleton_asgn/src/GLSL.h \
   /Users/elliotfiske/animation/deps/glew-1.13.0/include/GL/glew.h \
   /Users/elliotfiske/animation/skeleton_asgn/src/Program.h \

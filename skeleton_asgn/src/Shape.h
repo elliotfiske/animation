@@ -5,8 +5,11 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <Eigen/Dense>
 
 class Program;
+
+Eigen::Matrix4f get_curr_anim();
 
 class Shape
 {

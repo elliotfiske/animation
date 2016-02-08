@@ -216,6 +216,7 @@ void render()
 	p1 <<  1.0f, 0.0f, 0.0f;
 	
 	MV->pushMatrix();
+//   MV->multMatrix(get_curr_anim());
 	glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
 	MV->popMatrix();
 	wobbler->draw(prog);

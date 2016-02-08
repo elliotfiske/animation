@@ -7,6 +7,7 @@
 #include <sstream>
 
 #include "Grid.h"
+#include <Eigen/StdVector>
 
 using namespace std;
 using namespace Eigen;
@@ -190,7 +191,9 @@ std::vector<float> load_weights(const std::string &filename)
    in.open(filename);
    string line;
    if(!in.good()) {
+      std::cout << "#####    ALERT    ######" << endl;
       std::cout << "Cannot read " << filename << endl;
+      std::cout << "#####    ALERT    ######" << endl;
       return vector<float>(0);
    }
    
@@ -201,25 +204,73 @@ std::vector<float> load_weights(const std::string &filename)
    int num_verts, num_bones;
    in >> num_verts;
    in >> num_bones;
-   while(1) {
-      getline(in, line);
-      if(in.eof()) {
-         break;
-      }
-      // Skip empty lines
-      if(line.size() < 2) {
-         continue;
-      }
-      // Skip comments
-      if(line.at(0) == '#') {
-         continue;
-      }
-      // Parse line
-      stringstream ss(line);
+   
+   // Get floats until there's none left
+   while(!in.eof()) {
+      // Push float to result
       float weight;
-      ss >> weight;
+      in >> weight;
       result.push_back(weight);
    }
+   in.close();
+   
+   return result;
+}
+
+
+
+std::vector<Eigen::Matrix4f,Eigen::aligned_allocator<Eigen::Matrix4f> > load_animation(const std::string &filename)
+{
+   std::vector<Eigen::Matrix4f,Eigen::aligned_allocator<Eigen::Matrix4f> > result;
+   Quaternionf q;
+   Matrix4f new_matrix = Matrix4f::Identity();
+   
+   ifstream in;
+   in.open(filename);
+   string line;
+   if(!in.good()) {
+      std::cout << "#####    ALERT    ######" << endl;
+      std::cout << "Cannot read " << filename << endl;
+      std::cout << "#####    ALERT    ######" << endl;
+      return result;
+   }
+   
+   // Discard first 3 lines
+   getline(in, line);
+   getline(in, line);
+   getline(in, line);
+   
+   int num_frames, num_bones;
+   in >> num_frames;
+   in >> num_bones;
+   
+   int matrix_counter = 0;
+   
+   while(matrix_counter < num_bones * num_frames) {
+      matrix_counter++;
+      
+      // Push float to result
+      
+      float x, y, z, w, px, py, pz;
+      in >> x;
+      in >> y;
+      in >> z;
+      in >> w;
+      
+      in >> px;
+      in >> py;
+      in >> pz;
+      
+      q.vec() << x, y, z;
+      q.w() = w;
+      
+      new_matrix.block<3, 3>(0, 0) = q.toRotationMatrix();
+      new_matrix.block<3, 1>(0, 3) << px, py, pz;
+      
+      result.push_back(new_matrix);
+   }
+   getline(in, line);
+   
    in.close();
    
    return result;
