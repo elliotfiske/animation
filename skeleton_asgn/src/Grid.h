@@ -7,6 +7,8 @@
 #define EIGEN_DONT_ALIGN_STATICALLY
 #include <Eigen/Dense>
 
+std::vector<float> load_weights(const std::string &filename);
+
 class Grid
 {
 public:
@@ -27,6 +29,7 @@ public:
 	const std::vector<Eigen::Vector2f> & getAllCPs() const;
 	void save(const char *filename) const;
 	void load(const char *filename);
+   
 	
 private:
 	

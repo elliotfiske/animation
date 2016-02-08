@@ -74,6 +74,7 @@
 		AC3ABB1864A14556BBAD5745 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C11D0AA9429A453783E97DED /* Camera.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		AE88297447E8406B8B89ECCC /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE75E8255E2D4BBCB19A2FFC /* Program.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		B0CE1F9D40C741968E2FBDCE /* mach_time.c in Sources */ = {isa = PBXBuildFile; fileRef = C404BC33F4C740E8A28BA029 /* mach_time.c */; settings = {COMPILER_FLAGS = ""; }; };
+		C917FB241C6840C1000A4A04 /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C917FB221C68401C000A4A04 /* Grid.cpp */; };
 		D1CBFBE87F754BAE8B35F9B5 /* cocoa_monitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 529F14F787B547A0AFC730A7 /* cocoa_monitor.m */; settings = {COMPILER_FLAGS = ""; }; };
 		DDF8252CBDFA409EABD73454 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52A84EB454844956A7A0EC45 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 /* End PBXBuildFile section */
@@ -162,8 +163,8 @@
 		C917FB1D1C683A3F000A4A04 /* cheb_skel_walk.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cheb_skel_walk.txt; path = resources/cheb_skel_walk.txt; sourceTree = "<group>"; };
 		C917FB1E1C683A3F000A4A04 /* cheb2.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cheb2.obj; path = resources/cheb2.obj; sourceTree = "<group>"; };
 		C917FB1F1C683A3F000A4A04 /* bunny.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bunny.obj; path = resources/bunny.obj; sourceTree = "<group>"; };
-		C917FB201C683A56000A4A04 /* Grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grid.cpp; sourceTree = "<group>"; };
-		C917FB211C683A56000A4A04 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
+		C917FB221C68401C000A4A04 /* Grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Grid.cpp; path = src/Grid.cpp; sourceTree = "<group>"; };
+		C917FB231C68401C000A4A04 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Grid.h; path = src/Grid.h; sourceTree = "<group>"; };
 		CD165ABBD6114F5C8A62AF00 /* MatrixStack.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MatrixStack.cpp; path = src/MatrixStack.cpp; sourceTree = SOURCE_ROOT; };
 		D0E7AB10B8CD4DD8A93B0BCD /* cocoa_window.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_window.m; path = "../deps/glfw-3.1.2/src/cocoa_window.m"; sourceTree = SOURCE_ROOT; };
 		D1CCA4BCC47E45058F19B931 /* GLSL.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GLSL.cpp; path = src/GLSL.cpp; sourceTree = SOURCE_ROOT; };
@@ -253,7 +254,7 @@
 		84066FFA7C5B41F98A5D0A59 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				C917FB201C683A56000A4A04 /* Grid.cpp */,
+				C917FB221C68401C000A4A04 /* Grid.cpp */,
 				C11D0AA9429A453783E97DED /* Camera.cpp */,
 				D1CCA4BCC47E45058F19B931 /* GLSL.cpp */,
 				CD165ABBD6114F5C8A62AF00 /* MatrixStack.cpp */,
@@ -354,7 +355,7 @@
 		FE7B5976DB23465BBD33920C /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
-				C917FB211C683A56000A4A04 /* Grid.h */,
+				C917FB231C68401C000A4A04 /* Grid.h */,
 				BBC78FFE2CC647B1B25639F3 /* Camera.h */,
 				1B8613472B1B40049AFB50F9 /* GLSL.h */,
 				A3EE9C8D407C451AB363B903 /* MatrixStack.h */,
@@ -505,6 +506,7 @@
 				320F7D90A6BA44F89096D6BB /* MatrixStack.cpp in Sources */,
 				AE88297447E8406B8B89ECCC /* Program.cpp in Sources */,
 				938603B043AF467ABB42E033 /* Shape.cpp in Sources */,
+				C917FB241C6840C1000A4A04 /* Grid.cpp in Sources */,
 				DDF8252CBDFA409EABD73454 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

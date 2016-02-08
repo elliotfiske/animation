@@ -142,6 +142,7 @@ void Grid::save(const char *filename) const
 	out.close();
 }
 
+// TODO: delete me
 void Grid::load(const char *filename)
 {
 	ifstream in;
@@ -178,4 +179,48 @@ void Grid::load(const char *filename)
 		cps.push_back(cp);
 	}
 	in.close();
+}
+
+
+std::vector<float> load_weights(const std::string &filename)
+{
+   vector<float> result;
+   
+   ifstream in;
+   in.open(filename);
+   string line;
+   if(!in.good()) {
+      std::cout << "Cannot read " << filename << endl;
+      return vector<float>(0);
+   }
+   
+   // Discard first 2 lines
+   getline(in, line);
+   getline(in, line);
+   
+   int num_verts, num_bones;
+   in >> num_verts;
+   in >> num_bones;
+   while(1) {
+      getline(in, line);
+      if(in.eof()) {
+         break;
+      }
+      // Skip empty lines
+      if(line.size() < 2) {
+         continue;
+      }
+      // Skip comments
+      if(line.at(0) == '#') {
+         continue;
+      }
+      // Parse line
+      stringstream ss(line);
+      float weight;
+      ss >> weight;
+      result.push_back(weight);
+   }
+   in.close();
+   
+   return result;
 }

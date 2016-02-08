@@ -84,7 +84,7 @@ static void init()
 	prog->addAttribute("vertNor");
 	
 	wobbler = make_shared<Shape>();
-	wobbler->loadMesh(RESOURCE_DIR + "cheb2.obj");
+	wobbler->loadMesh(RESOURCE_DIR + "cheb2.obj", RESOURCE_DIR);
 	wobbler->init();
 	
 	camera = make_shared<Camera>();

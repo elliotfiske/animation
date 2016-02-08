@@ -6,11 +6,15 @@
 
 #include "GLSL.h"
 #include "Program.h"
+#include "Grid.h"
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #include "tiny_obj_loader.h"
 
 using namespace std;
+
+bool loaded_weights = false;
+vector<float> skinning_weights;
 
 Shape::Shape() :
 	eleBufID(0),
@@ -24,7 +28,7 @@ Shape::~Shape()
 {
 }
 
-void Shape::loadMesh(const string &meshName)
+void Shape::loadMesh(const std::string &meshName, const std::string &resource_dir)
 {
 	// Load geometry
 	// Some obj files contain material information.
@@ -40,6 +44,12 @@ void Shape::loadMesh(const string &meshName)
 		norBuf = shapes[0].mesh.normals;
 		texBuf = shapes[0].mesh.texcoords;
 		eleBuf = shapes[0].mesh.indices;
+      
+      // Create buffer for skinning weights
+      if (!loaded_weights) {
+         loaded_weights = true;
+         skinning_weights = load_weights(resource_dir + "cheb_attachment.txt");
+      }
 	}
 }
 

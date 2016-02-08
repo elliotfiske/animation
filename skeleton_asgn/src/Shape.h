@@ -13,7 +13,7 @@ class Shape
 public:
 	Shape();
 	virtual ~Shape();
-	void loadMesh(const std::string &meshName);
+   void loadMesh(const std::string &meshName, const std::string &resource_dir);
 	void init();
 	void draw(const std::shared_ptr<Program> prog) const;
 	
