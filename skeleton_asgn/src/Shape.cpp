@@ -180,13 +180,13 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       do_cpu_skinning();
    }
    else {
-      glUniformMatrix4fv(prog->getUniform("BONE_POS"), 1, GL_FALSE, anim_frames[k].data());
+      glUniformMatrix4fv(prog->getUniform("BONE_POS"), 1, GL_FALSE, anim_frames[(k + 1) * NUM_BONES].data());
    }
    
 	// Bind position buffer
 	int h_pos = prog->getAttribute("vertPos");
-   glBindBuffer(GL_ARRAY_BUFFER, posBufID);
 	GLSL::enableVertexAttribArray(h_pos);
+   glBindBuffer(GL_ARRAY_BUFFER, posBufID);
 	glVertexAttribPointer(h_pos, 3, GL_FLOAT, GL_FALSE, 0, (const void *)0);
 	
 	// Bind normal buffer

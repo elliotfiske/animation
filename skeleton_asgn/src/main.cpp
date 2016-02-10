@@ -85,17 +85,17 @@ static void init()
    prog->addAttribute("vertTex");
    
    // New stuff
-//   prog->addAttribute("weights0");
-//   prog->addAttribute("weights1");
-//   prog->addAttribute("weights2");
-//   prog->addAttribute("weights3");
-//	
-//   prog->addAttribute("bones0");
-//   prog->addAttribute("bones1");
-//   prog->addAttribute("bones2");
-//   prog->addAttribute("bones3");
-//   
-//   prog->addAttribute("num_bones");
+   prog->addAttribute("weights0");
+   prog->addAttribute("weights1");
+   prog->addAttribute("weights2");
+   prog->addAttribute("weights3");
+	
+   prog->addAttribute("bones0");
+   prog->addAttribute("bones1");
+   prog->addAttribute("bones2");
+   prog->addAttribute("bones3");
+   
+   prog->addAttribute("num_bones");
    
    prog->addUniform("BONE_POS");
    
@@ -270,7 +270,7 @@ int main(int argc, char **argv)
 		return -1;
 	}
 	// Create a windowed mode window and its OpenGL context.
-	window = glfwCreateWindow(640, 480, "YOUR NAME", NULL, NULL);
+	window = glfwCreateWindow(640, 480, "ELLIOT FISKE", NULL, NULL);
 	if(!window) {
 		glfwTerminate();
 		return -1;
