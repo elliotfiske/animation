@@ -82,8 +82,23 @@ static void init()
 	prog->addUniform("MV");
 	prog->addAttribute("vertPos");
 	prog->addAttribute("vertNor");
+   
+   // New stuff
+   prog->addAttribute("weights0");
+   prog->addAttribute("weights1");
+   prog->addAttribute("weights2");
+   prog->addAttribute("weights3");
 	
-	wobbler = make_shared<Shape>();
+   prog->addAttribute("bones0");
+   prog->addAttribute("bones1");
+   prog->addAttribute("bones2");
+   prog->addAttribute("bones3");
+   
+   prog->addAttribute("num_bones");
+   
+   prog->addUniform("BONE_POS");
+   
+   wobbler = make_shared<Shape>();
 	wobbler->loadMesh(RESOURCE_DIR + "cheb2.obj", RESOURCE_DIR);
 	wobbler->init();
 	
@@ -219,7 +234,9 @@ void render()
 //   MV->multMatrix(get_curr_anim());
 	glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
 	MV->popMatrix();
-	wobbler->draw(prog);
+   
+   bool cpu_skinning = keyToggles[(unsigned) 'g'];
+	wobbler->draw(prog, cpu_skinning);
 	
 	// Unbind the program
 	prog->unbind();

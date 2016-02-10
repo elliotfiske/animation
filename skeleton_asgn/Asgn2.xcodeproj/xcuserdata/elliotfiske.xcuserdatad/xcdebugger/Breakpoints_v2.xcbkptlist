@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476617979.17536"
+            timestampString = "476777397.507618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "Shape::loadMesh(const std::string &amp;meshName, const std::string &amp;resource_dir)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476617979.17536"
+            timestampString = "476650524.363354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "Shape::loadMesh(const std::string &amp;meshName, const std::string &amp;resource_dir)"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476649082.519859"
+            timestampString = "476779350.780316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "Shape::draw(const shared_ptr&lt;Program&gt; prog)"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "Shape::draw(const std::shared_ptr&lt;Program&gt; prog, bool cpu_skinning)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476649082.519859"
+            timestampString = "476777397.507618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "Shape::draw(const shared_ptr&lt;Program&gt; prog)"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "Shape::loadMesh(const std::string &amp;meshName, const std::string &amp;resource_dir)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476649077.148804"
+            timestampString = "476777397.507618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "Shape::draw(const shared_ptr&lt;Program&gt; prog)"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "Shape::loadMesh(const std::string &amp;meshName, const std::string &amp;resource_dir)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
