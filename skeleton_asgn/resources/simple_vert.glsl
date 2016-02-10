@@ -28,7 +28,8 @@ uniform mat4 BONE_POS[18];
 
 void main()
 {
-//   vertPos = BONE_POS[0] * vertPos;
-	gl_Position = P * MV * vertPos + 0.0001 * vec4(vertTex, 0, 0);
+   vec4 boned_pos = BONE_POS[0] * vertPos;
+   
+	gl_Position = P * MV * boned_pos + 0.0001 * vec4(vertTex, 0, 0);
 	fragNor = (MV * vec4(vertNor, 0.0)).xyz;
 }
