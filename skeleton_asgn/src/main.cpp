@@ -98,12 +98,13 @@ static void init()
    prog->addAttribute("num_bones");
    
    prog->addUniform("BONE_POS");
+   prog->addUniform("BIND_BONE_POS");
    
    prog->setVerbose(true);
    
    wobbler = make_shared<Shape>();
 	wobbler->loadMesh(RESOURCE_DIR + "cheb2.obj", RESOURCE_DIR);
-	wobbler->init();
+	wobbler->init(prog);
 	
 	camera = make_shared<Camera>();
 	

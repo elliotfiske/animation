@@ -34,7 +34,8 @@ Shape::Shape() :
 	eleBufID(0),
 	posBufID(0),
 	norBufID(0),
-	texBufID(0)
+	texBufID(0),
+   weightBufID(0)
 {
 }
 
@@ -66,10 +67,15 @@ void Shape::loadMesh(const std::string &meshName, const std::string &resource_di
          bind_pose = load_animation(resource_dir + "cheb_skel_jumpAround.txt");
          anim_frames = bind_pose;
          
+         // Invert the bind pose matrices
+         for (int ndx = 0; ndx < NUM_BONES; ndx++) {
+            bind_pose[ndx] = bind_pose[ndx].inverse().eval();
+         }
+         
          num_frames = bind_pose.size() / NUM_BONES;
          
          for (int ndx = 0; ndx < posBuf.size(); ndx++) {
-            valid_bones.push_back(vector<int>());
+            valid_bones.push_back(vector<int>(16));
          }
          
          for (int ndx = 0; ndx < skinning_weights.size(); ndx++) {
@@ -88,12 +94,17 @@ Eigen::Matrix4f get_curr_anim() {
    return anim_frames[k];
 }
 
-void Shape::init()
+void Shape::init(const std::shared_ptr<Program> prog)
 {
 	// Send the position array to the GPU
 	glGenBuffers(1, &posBufID);
 	glBindBuffer(GL_ARRAY_BUFFER, posBufID);
 	glBufferData(GL_ARRAY_BUFFER, posBuf.size()*sizeof(float), &posBuf[0], GL_STATIC_DRAW);
+   
+   // Set up the skinning weights array
+   glGenBuffers(1, &weightBufID);
+   glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
+   glBufferData(GL_ARRAY_BUFFER, skinning_weights.size()*sizeof(float), &skinning_weights[0], GL_STATIC_DRAW);
 	
 	// Send the normal array to the GPU
 	if(!norBuf.empty()) {
@@ -140,7 +151,7 @@ void Shape::do_cpu_skinning() const {
          Vector4f weight_changed_vertex;
          weight_changed_vertex << orig_vertex.x(), orig_vertex.y(), orig_vertex.z(), 1;
          
-         weight_changed_vertex = bind_pose[j].inverse() * weight_changed_vertex;
+         weight_changed_vertex = bind_pose[j] * weight_changed_vertex;
          weight_changed_vertex = anim_frames[(k+1)*NUM_BONES + j] * weight_changed_vertex;
          weight_changed_vertex *= skinning_weights[i/3*NUM_BONES + j];
          
@@ -180,7 +191,26 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       do_cpu_skinning();
    }
    else {
-      glUniformMatrix4fv(prog->getUniform("BONE_POS"), 1, GL_FALSE, anim_frames[(k + 1) * NUM_BONES].data());
+      // Send the bone positions and bind poses to the GPU
+      glUniformMatrix4fv(prog->getUniform("BONE_POS"), 18, GL_FALSE, anim_frames[(k + 1) * NUM_BONES].data());
+      glUniformMatrix4fv(prog->getUniform("BIND_BONE_POS"), 18, GL_FALSE, anim_frames[0].data());
+      
+//      // Send the skinning weights to the GPU
+//      int h_weight0 = prog->getAttribute("weights0");
+//      int h_weight1 = prog->getAttribute("weights1");
+//      int h_weight2 = prog->getAttribute("weights2");
+//      int h_weight3 = prog->getAttribute("weights3");
+//      GLSL::enableVertexAttribArray(h_weight0);
+//      GLSL::enableVertexAttribArray(h_weight1);
+//      GLSL::enableVertexAttribArray(h_weight2);
+//      GLSL::enableVertexAttribArray(h_weight3);
+//      glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
+//      unsigned stride = 16*sizeof(float);
+//      
+//      glVertexAttribPointer(h_weight0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
+//      glVertexAttribPointer(h_weight1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
+//      glVertexAttribPointer(h_weight2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
+//      glVertexAttribPointer(h_weight3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
    }
    
 	// Bind position buffer

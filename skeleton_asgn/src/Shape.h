@@ -17,7 +17,7 @@ public:
 	Shape();
 	virtual ~Shape();
    void loadMesh(const std::string &meshName, const std::string &resource_dir);
-	void init();
+	void init(const std::shared_ptr<Program> prog);
    void draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const;
 	
 private:
@@ -29,6 +29,7 @@ private:
 	unsigned posBufID;
 	unsigned norBufID;
 	unsigned texBufID;
+   unsigned weightBufID;
    
    void do_cpu_skinning() const;
    void do_gpu_skinning() const;

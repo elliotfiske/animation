@@ -26,9 +26,12 @@ attribute float num_bones;
 // The rigidtransform of all the bones
 uniform mat4 BONE_POS[18];
 
+// Mj(0)-1
+uniform mat4 BIND_BONE_POS[18];
+
 void main()
 {
-   vec4 boned_pos = BONE_POS[0] * vertPos;
+   vec4 boned_pos = BIND_BONE_POS[0] * BONE_POS[0] * vertPos;
    
 	gl_Position = P * MV * boned_pos;
 	fragNor = (MV * vec4(vertNor, 0.0)).xyz;
