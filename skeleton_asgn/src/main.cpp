@@ -89,6 +89,7 @@ static void init()
    prog->addAttribute("weights1");
    prog->addAttribute("weights2");
    prog->addAttribute("weights3");
+   prog->addAttribute("weights4_nah");
 	
    prog->addAttribute("bones0");
    prog->addAttribute("bones1");

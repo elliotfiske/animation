@@ -206,7 +206,7 @@ std::vector<float> load_weights(const std::string &filename)
    in >> num_bones;
    
    // Get floats until there's none left
-   while(!in.eof()) {
+   for (int ndx = 0; ndx < num_verts * num_bones; ndx++) {
       // Push float to result
       float weight;
       in >> weight;

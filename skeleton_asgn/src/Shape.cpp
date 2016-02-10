@@ -195,22 +195,25 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       glUniformMatrix4fv(prog->getUniform("BONE_POS"), 18, GL_FALSE, anim_frames[(k + 1) * NUM_BONES].data());
       glUniformMatrix4fv(prog->getUniform("BIND_BONE_POS"), 18, GL_FALSE, anim_frames[0].data());
       
-//      // Send the skinning weights to the GPU
-//      int h_weight0 = prog->getAttribute("weights0");
-//      int h_weight1 = prog->getAttribute("weights1");
-//      int h_weight2 = prog->getAttribute("weights2");
-//      int h_weight3 = prog->getAttribute("weights3");
-//      GLSL::enableVertexAttribArray(h_weight0);
-//      GLSL::enableVertexAttribArray(h_weight1);
-//      GLSL::enableVertexAttribArray(h_weight2);
-//      GLSL::enableVertexAttribArray(h_weight3);
-//      glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
-//      unsigned stride = 16*sizeof(float);
-//      
-//      glVertexAttribPointer(h_weight0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
-//      glVertexAttribPointer(h_weight1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
-//      glVertexAttribPointer(h_weight2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
-//      glVertexAttribPointer(h_weight3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
+      // Send the skinning weights to the GPU
+      int h_weight0 = prog->getAttribute("weights0");
+      int h_weight1 = prog->getAttribute("weights1");
+      int h_weight2 = prog->getAttribute("weights2");
+      int h_weight3 = prog->getAttribute("weights3");
+      int h_weight4 = prog->getAttribute("weights4_nah");
+      GLSL::enableVertexAttribArray(h_weight0);
+      GLSL::enableVertexAttribArray(h_weight1);
+      GLSL::enableVertexAttribArray(h_weight2);
+      GLSL::enableVertexAttribArray(h_weight3);
+      GLSL::enableVertexAttribArray(h_weight4);
+      glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
+      unsigned stride = 16*sizeof(float);
+      
+      glVertexAttribPointer(h_weight0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
+      glVertexAttribPointer(h_weight1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
+      glVertexAttribPointer(h_weight2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
+      glVertexAttribPointer(h_weight3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
+      glVertexAttribPointer(h_weight4, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
    }
    
 	// Bind position buffer
