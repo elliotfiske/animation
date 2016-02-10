@@ -81,22 +81,25 @@ static void init()
 	prog->addUniform("P");
 	prog->addUniform("MV");
 	prog->addAttribute("vertPos");
-	prog->addAttribute("vertNor");
+   prog->addAttribute("vertNor");
+   prog->addAttribute("vertTex");
    
    // New stuff
-   prog->addAttribute("weights0");
-   prog->addAttribute("weights1");
-   prog->addAttribute("weights2");
-   prog->addAttribute("weights3");
-	
-   prog->addAttribute("bones0");
-   prog->addAttribute("bones1");
-   prog->addAttribute("bones2");
-   prog->addAttribute("bones3");
-   
-   prog->addAttribute("num_bones");
+//   prog->addAttribute("weights0");
+//   prog->addAttribute("weights1");
+//   prog->addAttribute("weights2");
+//   prog->addAttribute("weights3");
+//	
+//   prog->addAttribute("bones0");
+//   prog->addAttribute("bones1");
+//   prog->addAttribute("bones2");
+//   prog->addAttribute("bones3");
+//   
+//   prog->addAttribute("num_bones");
    
    prog->addUniform("BONE_POS");
+   
+   prog->setVerbose(true);
    
    wobbler = make_shared<Shape>();
 	wobbler->loadMesh(RESOURCE_DIR + "cheb2.obj", RESOURCE_DIR);

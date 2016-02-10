@@ -1,6 +1,7 @@
 #version 120
 attribute vec4 vertPos;
 attribute vec3 vertNor;
+attribute vec2 vertTex;
 uniform mat4 P;
 uniform mat4 MV;
 varying vec3 fragNor;
@@ -21,14 +22,13 @@ varying vec3 fragNor;
 //
 //// How many bones affect the current vertex?
 //attribute int num_bones;
-//
-//// The rigidtransform of all the bones
-//uniform mat4 BONE_POS[18];
+
+// The rigidtransform of all the bones
+uniform mat4 BONE_POS[18];
 
 void main()
 {
-   
-   
-	gl_Position = P * MV * vertPos;
+//   vertPos = BONE_POS[0] * vertPos;
+	gl_Position = P * MV * vertPos + 0.0001 * vec4(vertTex, 0, 0);
 	fragNor = (MV * vec4(vertNor, 0.0)).xyz;
 }

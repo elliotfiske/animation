@@ -43,7 +43,8 @@ bool Program::init()
 	
 	// Compile vertex shader
 	glCompileShader(VS);
-	glGetShaderiv(VS, GL_COMPILE_STATUS, &rc);
+   glGetShaderiv(VS, GL_COMPILE_STATUS, &rc);
+   GLSL::printShaderInfoLog(VS);
 	if(!rc) {
 		if(isVerbose()) {
 			GLSL::printShaderInfoLog(VS);
@@ -55,6 +56,7 @@ bool Program::init()
 	// Compile fragment shader
 	glCompileShader(FS);
 	glGetShaderiv(FS, GL_COMPILE_STATUS, &rc);
+   GLSL::printShaderInfoLog(FS);
 	if(!rc) {
 		if(isVerbose()) {
 			GLSL::printShaderInfoLog(FS);

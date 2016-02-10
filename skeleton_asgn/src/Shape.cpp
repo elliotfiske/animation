@@ -93,7 +93,7 @@ void Shape::init()
 	// Send the position array to the GPU
 	glGenBuffers(1, &posBufID);
 	glBindBuffer(GL_ARRAY_BUFFER, posBufID);
-	glBufferData(GL_ARRAY_BUFFER, posBuf.size()*sizeof(float), &posBuf[0], GL_DYNAMIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, posBuf.size()*sizeof(float), &posBuf[0], GL_STATIC_DRAW);
 	
 	// Send the normal array to the GPU
 	if(!norBuf.empty()) {
@@ -160,7 +160,8 @@ void Shape::do_cpu_skinning() const {
 void Shape::do_gpu_skinning() const {
 }
 
-bool prev_cpu_skinning = false;
+bool prev_cpu_skinning = true;
+bool did_it = false;
 
 void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
 {
@@ -168,11 +169,14 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
    k %= num_frames - 1;
    
    // Switching back to CPU skinning -> resend the vanilla vertices
-   if (!prev_cpu_skinning && cpu_skinning) {
-      // TODO: or not? idk
+   if ((!prev_cpu_skinning && cpu_skinning) || !did_it) {
+      glBindBuffer(GL_ARRAY_BUFFER, posBufID);
+      glBufferData(GL_ARRAY_BUFFER, posBuf.size()*sizeof(float), &posBuf[0], GL_STATIC_DRAW);
    }
    
-   if (!cpu_skinning) {
+   prev_cpu_skinning = cpu_skinning;
+   
+   if (cpu_skinning) {
       do_cpu_skinning();
    }
    else {
