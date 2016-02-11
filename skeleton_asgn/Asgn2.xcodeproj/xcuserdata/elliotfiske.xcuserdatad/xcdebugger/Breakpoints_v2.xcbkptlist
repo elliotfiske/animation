@@ -61,22 +61,6 @@
             timestampString = "476823228.380633"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "Shape::loadMesh(const std::string &amp;meshName, const std::string &amp;resource_dir)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Shape.cpp"
-            timestampString = "476823228.380633"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
             landmarkName = "Shape::loadMesh(const std::string &amp;meshName, const std::string &amp;resource_dir)"
@@ -90,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476823228.380633"
+            timestampString = "476850769.957985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "Shape::draw(const std::shared_ptr&lt;Program&gt; prog, bool cpu_skinning)"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476823228.380633"
+            timestampString = "476849725.875952"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "Shape::loadMesh(const std::string &amp;meshName, const std::string &amp;resource_dir)"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476849157.379338"
+            timestampString = "476851606.435426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "Shape::draw(const std::shared_ptr&lt;Program&gt; prog, bool cpu_skinning)"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,27 +138,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476849157.379338"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
-            landmarkName = "Shape::draw(const std::shared_ptr&lt;Program&gt; prog, bool cpu_skinning)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Shape.cpp"
-            timestampString = "476849157.379338"
+            timestampString = "476851606.435426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "247"
             endingLineNumber = "247"
+            landmarkName = "Shape::draw(const std::shared_ptr&lt;Program&gt; prog, bool cpu_skinning)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Shape.cpp"
+            timestampString = "476851606.435426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "Shape::draw(const std::shared_ptr&lt;Program&gt; prog, bool cpu_skinning)"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,12 +218,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476823228.380633"
+            timestampString = "476850769.957985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "Shape::init(const std::shared_ptr&lt;Program&gt; prog)"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "Shape::do_cpu_skinning()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -250,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476829731.650534"
+            timestampString = "476850769.957985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "Shape::init(const std::shared_ptr&lt;Program&gt; prog)"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,7 +282,69 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476836318.361195"
+            timestampString = "476850769.957985"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "Shape::init(const std::shared_ptr&lt;Program&gt; prog)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Shape.cpp"
+            timestampString = "476850769.957985"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "Shape::do_cpu_skinning()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Shape.cpp"
+            timestampString = "476850769.957985"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Shape.cpp"
+            timestampString = "476849760.501666"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "Shape::loadMesh(const std::string &amp;meshName, const std::string &amp;resource_dir)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "src/Shape.cpp"
+            timestampString = "476850769.957985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -314,28 +360,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/Shape.cpp"
-            timestampString = "476842484.671348"
+            timestampString = "476851606.435426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "Shape::do_cpu_skinning()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "src/Shape.cpp"
-            timestampString = "476842487.849458"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "Shape::do_cpu_skinning()"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "Shape::draw(const std::shared_ptr&lt;Program&gt; prog, bool cpu_skinning)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

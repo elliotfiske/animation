@@ -89,11 +89,6 @@ void Shape::loadMesh(const std::string &meshName, const std::string &resource_di
 	}
 }
 
-Eigen::Matrix4f get_curr_anim() {
-   k += 18;
-   return anim_frames[k];
-}
-
 void Shape::init(const std::shared_ptr<Program> prog)
 {
 	// Send the position array to the GPU
@@ -150,7 +145,7 @@ void Shape::do_cpu_skinning() const {
          
          Vector4f weight_changed_vertex;
          weight_changed_vertex << orig_vertex.x(), orig_vertex.y(), orig_vertex.z(), 1;
-         
+          
          weight_changed_vertex = bind_pose[j] * weight_changed_vertex;
          weight_changed_vertex = anim_frames[(k+1)*NUM_BONES + j] * weight_changed_vertex;
          weight_changed_vertex *= skinning_weights[i/3*NUM_BONES + j];
@@ -193,6 +188,7 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
    }
    else {
       // Send the bone positions and bind poses to the GPU
+      float *test = (float *) anim_frames.data();
       glUniformMatrix4fv(prog->getUniform("BONE_POS"), 18, GL_FALSE, anim_frames[(k + 1) * NUM_BONES].data());
       glUniformMatrix4fv(prog->getUniform("BIND_BONE_POS"), 18, GL_FALSE, anim_frames[0].data());
       GLSL::checkError(GET_FILE_LINE);

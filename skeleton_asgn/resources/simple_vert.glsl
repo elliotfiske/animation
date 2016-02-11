@@ -56,16 +56,15 @@ void main()
    
    for (int i = 0; i < 18; i++) {
       float curr_weight = getWeightForNdx(i);
-      if (curr_weight == 0) {
-         continue;
-      }
       
-      vec4 curr_result = BIND_BONE_POS[i] * vertPos;
-      curr_result[3] = 1;
-      curr_result = BONE_POS[i] * curr_result;
-      curr_result *= curr_weight;
+      vec4 weight_changed_vertex = vertPos;
+      weight_changed_vertex[3] = 1;
       
-      boned_pos += curr_result;
+      weight_changed_vertex = BIND_BONE_POS[i] * weight_changed_vertex;
+      weight_changed_vertex = BONE_POS[i] * weight_changed_vertex;
+      weight_changed_vertex *= curr_weight;
+      
+      boned_pos += weight_changed_vertex;
    }
    
    boned_pos.w = 1;
