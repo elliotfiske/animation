@@ -229,15 +229,12 @@ void render()
 	}
 	
 	MV->pushMatrix();
-//   MV->multMatrix(get_curr_anim());
 	glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
 	MV->popMatrix();
    
    bool cpu_skinning = keyToggles[(unsigned) 'g'];
    
-   GLSL::checkError(GET_FILE_LINE);
    glUniform1i(prog->getUniform("gpu_rendering"), cpu_skinning ? 0 : 1);
-   GLSL::checkError(GET_FILE_LINE);
    
 	wobbler->draw(prog, cpu_skinning);
 	

@@ -208,8 +208,8 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       GLSL::enableVertexAttribArray(h_weight2);
       GLSL::enableVertexAttribArray(h_weight3);
       GLSL::enableVertexAttribArray(h_weight4);
+      
       glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
-            GLSL::checkError(GET_FILE_LINE);
       unsigned stride = 18*sizeof(float); // TODO: in case you froget, change this back to 16 lawl
       
       glVertexAttribPointer(h_weight0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
@@ -217,7 +217,6 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       glVertexAttribPointer(h_weight2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
       glVertexAttribPointer(h_weight3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
       glVertexAttribPointer(h_weight4, 2, GL_FLOAT, GL_FALSE, stride, (const void *)( 16 * sizeof(float) ));
-      GLSL::checkError(GET_FILE_LINE);
    }
    
 	// Bind position buffer
