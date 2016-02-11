@@ -80,6 +80,7 @@ static void init()
 	prog->init();
 	prog->addUniform("P");
 	prog->addUniform("MV");
+   prog->addUniform("gpu_rendering");
 	prog->addAttribute("vertPos");
    prog->addAttribute("vertNor");
    prog->addAttribute("vertTex");
@@ -227,20 +228,17 @@ void render()
 		axis1.normalize();
 	}
 	
-	Eigen::Quaternionf q0, q1;
-	q0 = Eigen::AngleAxisf(90.0f/180.0f*M_PI, axis0);
-	q1 = Eigen::AngleAxisf(90.0f/180.0f*M_PI, axis1);
-	
-	Eigen::Vector3f p0, p1;
-	p0 << -1.0f, 0.0f, 0.0f;
-	p1 <<  1.0f, 0.0f, 0.0f;
-	
 	MV->pushMatrix();
 //   MV->multMatrix(get_curr_anim());
 	glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
 	MV->popMatrix();
    
    bool cpu_skinning = keyToggles[(unsigned) 'g'];
+   
+   GLSL::checkError(GET_FILE_LINE);
+   glUniform1i(prog->getUniform("gpu_rendering"), cpu_skinning ? 0 : 1);
+   GLSL::checkError(GET_FILE_LINE);
+   
 	wobbler->draw(prog, cpu_skinning);
 	
 	// Unbind the program

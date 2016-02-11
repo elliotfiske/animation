@@ -64,7 +64,7 @@ void Shape::loadMesh(const std::string &meshName, const std::string &resource_di
       if (!loaded_weights) {
          loaded_weights = true;
          skinning_weights = load_weights(resource_dir + "cheb_attachment.txt");
-         bind_pose = load_animation(resource_dir + "cheb_skel_jumpAround.txt");
+         bind_pose = load_animation(resource_dir + "cheb_skel_walk.txt");
          anim_frames = bind_pose;
          
          // Invert the bind pose matrices
@@ -75,7 +75,7 @@ void Shape::loadMesh(const std::string &meshName, const std::string &resource_di
          num_frames = bind_pose.size() / NUM_BONES;
          
          for (int ndx = 0; ndx < posBuf.size(); ndx++) {
-            valid_bones.push_back(vector<int>(16));
+            valid_bones.push_back(vector<int>(18));
          }
          
          for (int ndx = 0; ndx < skinning_weights.size(); ndx++) {
@@ -183,6 +183,7 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
    if ((!prev_cpu_skinning && cpu_skinning) || !did_it) {
       glBindBuffer(GL_ARRAY_BUFFER, posBufID);
       glBufferData(GL_ARRAY_BUFFER, posBuf.size()*sizeof(float), &posBuf[0], GL_STATIC_DRAW);
+      GLSL::checkError(GET_FILE_LINE);
    }
    
    prev_cpu_skinning = cpu_skinning;
@@ -194,6 +195,7 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       // Send the bone positions and bind poses to the GPU
       glUniformMatrix4fv(prog->getUniform("BONE_POS"), 18, GL_FALSE, anim_frames[(k + 1) * NUM_BONES].data());
       glUniformMatrix4fv(prog->getUniform("BIND_BONE_POS"), 18, GL_FALSE, anim_frames[0].data());
+      GLSL::checkError(GET_FILE_LINE);
       
       // Send the skinning weights to the GPU
       int h_weight0 = prog->getAttribute("weights0");
@@ -207,13 +209,15 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       GLSL::enableVertexAttribArray(h_weight3);
       GLSL::enableVertexAttribArray(h_weight4);
       glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
-      unsigned stride = 16*sizeof(float);
+            GLSL::checkError(GET_FILE_LINE);
+      unsigned stride = 18*sizeof(float); // TODO: in case you froget, change this back to 16 lawl
       
       glVertexAttribPointer(h_weight0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
       glVertexAttribPointer(h_weight1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
       glVertexAttribPointer(h_weight2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
       glVertexAttribPointer(h_weight3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
-      glVertexAttribPointer(h_weight4, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
+      glVertexAttribPointer(h_weight4, 2, GL_FLOAT, GL_FALSE, stride, (const void *)( 16 * sizeof(float) ));
+      GLSL::checkError(GET_FILE_LINE);
    }
    
 	// Bind position buffer
