@@ -75,7 +75,7 @@ void Shape::loadMesh(const std::string &meshName, const std::string &resource_di
          num_frames = bind_pose.size() / NUM_BONES;
          
          for (int ndx = 0; ndx < posBuf.size(); ndx++) {
-            valid_bones.push_back(vector<int>(18));
+            valid_bones.push_back(vector<int>(15));
          }
          
          for (int ndx = 0; ndx < skinning_weights.size(); ndx++) {
@@ -83,6 +83,13 @@ void Shape::loadMesh(const std::string &meshName, const std::string &resource_di
             
             if (abs(skinning_weights[ndx]) > 0.001f) {
                valid_bones[curr_vertex].push_back(ndx % NUM_BONES);
+            }
+         }
+         
+         // Pad out the valid_bones so that it always has 15 bone-dices for each vertex
+         for (int ndx = 0; ndx < posBuf.size(); ndx++) {
+            while (valid_bones[ndx].size() < 15) {
+               valid_bones[ndx].push_back(0);
             }
          }
       }
@@ -206,13 +213,12 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       GLSL::enableVertexAttribArray(h_weight4);
       
       glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
-      unsigned stride = 18*sizeof(float); // TODO: in case you froget, change this back to 16 lawl
+      unsigned stride = 16*sizeof(float); // TODO: in case you froget, change this back to 16 lawl
       
       glVertexAttribPointer(h_weight0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
       glVertexAttribPointer(h_weight1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
       glVertexAttribPointer(h_weight2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
       glVertexAttribPointer(h_weight3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
-      glVertexAttribPointer(h_weight4, 2, GL_FLOAT, GL_FALSE, stride, (const void *)( 16 * sizeof(float) ));
    }
    
 	// Bind position buffer

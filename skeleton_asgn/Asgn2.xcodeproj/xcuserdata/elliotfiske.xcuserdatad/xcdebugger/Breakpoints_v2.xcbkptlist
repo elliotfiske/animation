@@ -223,7 +223,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
             endingLineNumber = "134"
-            landmarkName = "Shape::do_cpu_skinning()"
+            landmarkName = "Shape::init(const std::shared_ptr&lt;Program&gt; prog)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -318,7 +318,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
-            endingLineNumber = "170">
+            endingLineNumber = "170"
+            landmarkName = "Shape::do_cpu_skinning()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
