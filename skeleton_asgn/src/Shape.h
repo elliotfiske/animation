@@ -30,6 +30,10 @@ private:
 	unsigned norBufID;
 	unsigned texBufID;
    unsigned weightBufID;
+   unsigned numBoneBufID;
+   unsigned boneNdxBufID;
+   
+   void processData(const std::string &resource_dir);
    
    void do_cpu_skinning() const;
    void do_gpu_skinning() const;

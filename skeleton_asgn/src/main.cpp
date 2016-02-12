@@ -76,7 +76,7 @@ static void init()
 	
 	prog = make_shared<Program>();
 	prog->setShaderNames(RESOURCE_DIR + "simple_vert.glsl", RESOURCE_DIR + "simple_frag.glsl");
-	prog->setVerbose(false); // Set this to true when debugging.
+	prog->setVerbose(true); // Set this to true when debugging.
 	prog->init();
 	prog->addUniform("P");
 	prog->addUniform("MV");
@@ -90,7 +90,6 @@ static void init()
    prog->addAttribute("weights1");
    prog->addAttribute("weights2");
    prog->addAttribute("weights3");
-   prog->addAttribute("weights4_nah");
 	
    prog->addAttribute("bones0");
    prog->addAttribute("bones1");
@@ -234,9 +233,9 @@ void render()
    
    bool cpu_skinning = keyToggles[(unsigned) 'g'];
    
-   glUniform1i(prog->getUniform("gpu_rendering"), cpu_skinning ? 0 : 1);
+   glUniform1i(prog->getUniform("gpu_rendering"), !cpu_skinning ? 0 : 1); // TODO: FIX ME lo
    
-	wobbler->draw(prog, cpu_skinning);
+	wobbler->draw(prog, !cpu_skinning);
 	
 	// Unbind the program
 	prog->unbind();
