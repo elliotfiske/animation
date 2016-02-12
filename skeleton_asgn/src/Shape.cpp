@@ -262,29 +262,7 @@ void Shape::do_gpu_skinning(const std::shared_ptr<Program> prog) const {
 
 bool prev_cpu_skinning = true;
 void Shape::disableVertexAttribs(const std::shared_ptr<Program> prog) const {
-   int h_weight0, h_weight1, h_weight2, h_weight3;
-   int h_bones0, h_bones1, h_bones2, h_bones3;
-   int h_num_bones;
    
-   h_weight0 = prog->getAttribute("weights0");
-   h_weight1 = prog->getAttribute("weights1");
-   h_weight2 = prog->getAttribute("weights2");
-   h_weight3 = prog->getAttribute("weights3");
-   h_bones0 = prog->getAttribute("bones0");
-   h_bones1 = prog->getAttribute("bones1");
-   h_bones2 = prog->getAttribute("bones2");
-   h_bones3 = prog->getAttribute("bones3");
-   h_num_bones = prog->getAttribute("num_bones");
-   
-   GLSL::disableVertexAttribArray(h_weight0);
-   GLSL::disableVertexAttribArray(h_weight1);
-   GLSL::disableVertexAttribArray(h_weight2);
-   GLSL::disableVertexAttribArray(h_weight3);
-   GLSL::disableVertexAttribArray(h_bones0);
-   GLSL::disableVertexAttribArray(h_bones1);
-   GLSL::disableVertexAttribArray(h_bones2);
-   GLSL::disableVertexAttribArray(h_bones3);
-   GLSL::disableVertexAttribArray(h_num_bones);
 }
 
 bool did_it = false;
@@ -344,7 +322,29 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
 		GLSL::disableVertexAttribArray(h_nor);
 	}
    
-   disableVertexAttribs(prog);
+   int h_weight0, h_weight1, h_weight2, h_weight3;
+   int h_bones0, h_bones1, h_bones2, h_bones3;
+   int h_num_bones;
+   
+   h_weight0 = prog->getAttribute("weights0");
+   h_weight1 = prog->getAttribute("weights1");
+   h_weight2 = prog->getAttribute("weights2");
+   h_weight3 = prog->getAttribute("weights3");
+   h_bones0 = prog->getAttribute("bones0");
+   h_bones1 = prog->getAttribute("bones1");
+   h_bones2 = prog->getAttribute("bones2");
+   h_bones3 = prog->getAttribute("bones3");
+   h_num_bones = prog->getAttribute("num_bones");
+   
+   GLSL::disableVertexAttribArray(h_weight0);
+   GLSL::disableVertexAttribArray(h_weight1);
+   GLSL::disableVertexAttribArray(h_weight2);
+   GLSL::disableVertexAttribArray(h_weight3);
+   GLSL::disableVertexAttribArray(h_bones0);
+   GLSL::disableVertexAttribArray(h_bones1);
+   GLSL::disableVertexAttribArray(h_bones2);
+   GLSL::disableVertexAttribArray(h_bones3);
+   GLSL::disableVertexAttribArray(h_num_bones);
 
 	GLSL::disableVertexAttribArray(h_pos);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
