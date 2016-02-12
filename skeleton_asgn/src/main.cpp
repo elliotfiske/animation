@@ -233,9 +233,9 @@ void render()
    
    bool cpu_skinning = keyToggles[(unsigned) 'g'];
    
-   glUniform1i(prog->getUniform("gpu_rendering"), !cpu_skinning ? 0 : 1); // TODO: FIX ME lo
+   glUniform1i(prog->getUniform("gpu_rendering"), cpu_skinning ? 0 : 1);
    
-	wobbler->draw(prog, !cpu_skinning);
+	wobbler->draw(prog, cpu_skinning);
 	
 	// Unbind the program
 	prog->unbind();

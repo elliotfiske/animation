@@ -65,34 +65,18 @@ void main()
 {
    vec4 result_vertex = vec4(0, 0, 0, 0);
    
-   int dumb_counter = 0;
-   vec3 dumb_color = vec3(0, 0, 0);
-   
-   float total_weight = 0;
-   
-   float last_bone_index = 0;
-   float first_bone_index = getBoneNdxForNdx(0);
-   
    for (int ndx = 0; ndx < num_bones; ndx++) {
-      
       int bone_ndx = int(getBoneNdxForNdx(ndx));
       
       float curr_weight = getWeightForNdx(ndx);
 
-      vec4 weight_changed_vertex = vertPos;
-
-      weight_changed_vertex = BIND_BONE_POS[bone_ndx] * weight_changed_vertex;
-      weight_changed_vertex = BONE_POS[bone_ndx] * weight_changed_vertex;
-      weight_changed_vertex *= curr_weight;
+      vec4 bind_pose_vert = BIND_BONE_POS[bone_ndx] * vertPos;
+      vec4 animated_vert = BONE_POS[bone_ndx] * bind_pose_vert;
+      vec4 weighted_vert = animated_vert * curr_weight;
       
-      result_vertex += weight_changed_vertex;
-      
-      total_weight += curr_weight;
-      
-      last_bone_index = float(bone_ndx);
+      result_vertex += weighted_vert;
    }
    
    gl_Position = P * MV * ((gpu_rendering == 1) ? result_vertex : vertPos);
 	fragNor = (MV * vec4(vertNor, 0.0)).xyz;
-   fragNor = vec3(0, BIND_BONE_POS[0][3][2], 0);
 }
