@@ -280,8 +280,8 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
    }
    else {
       // Send the bone positions and bind poses to the GPU
-      glUniformMatrix4fv(prog->getUniform("BONE_POS"), 18, GL_FALSE, anim_frames[(k + 1) * NUM_BONES].data());
-      glUniformMatrix4fv(prog->getUniform("BIND_BONE_POS"), 18, GL_FALSE, anim_frames[0].data());
+      glUniformMatrix4fv(prog->getUniform("BONE_POS"), 18, GL_TRUE, anim_frames[(k + 1) * NUM_BONES].data());
+      glUniformMatrix4fv(prog->getUniform("BIND_BONE_POS"), 18, GL_TRUE, anim_frames[0].data());
       GLSL::checkError(GET_FILE_LINE);
       
       // Tell the GPU how to interpret my skinning weights
@@ -364,7 +364,7 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
 		GLSL::disableVertexAttribArray(h_nor);
 	}
    
-   if (!cpu_skinning) {
+//   if (!cpu_skinning) {
       GLSL::disableVertexAttribArray(h_weight0);
       GLSL::disableVertexAttribArray(h_weight1);
       GLSL::disableVertexAttribArray(h_weight2);
@@ -374,8 +374,8 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       GLSL::disableVertexAttribArray(h_bones2);
       GLSL::disableVertexAttribArray(h_bones3);
       GLSL::disableVertexAttribArray(h_num_bones);
-   }
-   
+//   }
+
 	GLSL::disableVertexAttribArray(h_pos);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
