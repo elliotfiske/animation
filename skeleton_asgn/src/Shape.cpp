@@ -23,7 +23,7 @@ std::vector<Eigen::Matrix4f,Eigen::aligned_allocator<Eigen::Matrix4f> > anim_fra
 std::vector<Eigen::Matrix4f,Eigen::aligned_allocator<Eigen::Matrix4f> > bind_pose;
 
 // Stores which bones actually influence each vertex.
-vector<int>   valid_bones;
+vector<float>   valid_bones;
 vector<vector<int> > multid_valid_bones;
 vector<float> num_bones_for_vertex;
 vector<float> gpu_skinning_weights;
@@ -236,7 +236,7 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       
       // TODO: delete
       // Tell the GPU how to interpret my num_bones vertex array
-      unsigned stride = 16*sizeof(float);
+      unsigned stride = 15*sizeof(float);
       h_num_bones = prog->getAttribute("num_bones");
       GLSL::enableVertexAttribArray(h_num_bones);
       glBindBuffer(GL_ARRAY_BUFFER, numBoneBufID);
@@ -295,7 +295,7 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
       GLSL::enableVertexAttribArray(h_weight3);
       
       glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
-      unsigned stride = 16*sizeof(float);
+      unsigned stride = 15*sizeof(float);
       
       glVertexAttribPointer(h_weight0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
       glVertexAttribPointer(h_weight1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
@@ -354,7 +354,7 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, eleBufID);
 	
    // Draw
-   glDrawElements(GL_LINES, (int)eleBuf.size(), GL_UNSIGNED_INT, (const void *)0);
+   glDrawElements(GL_TRIANGLES, (int)eleBuf.size(), GL_UNSIGNED_INT, (const void *)0);
 	
 	// Disable and unbind
 	if(h_tex != -1) {
