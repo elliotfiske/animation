@@ -206,10 +206,87 @@ void Shape::do_cpu_skinning() const {
    glBufferData(GL_ARRAY_BUFFER, skinned_vertices.size()*sizeof(float), &skinned_vertices[0], GL_DYNAMIC_DRAW);
 }
 
-void Shape::do_gpu_skinning() const {
+void Shape::do_gpu_skinning(const std::shared_ptr<Program> prog) const {
+   int h_weight0, h_weight1, h_weight2, h_weight3;
+   int h_bones0, h_bones1, h_bones2, h_bones3;
+   int h_num_bones;
+   
+   // Send the bone positions and bind poses to the GPU
+   glUniformMatrix4fv(prog->getUniform("BONE_POS"), 18, GL_FALSE, anim_frames[(k + 1) * NUM_BONES].data());
+   glUniformMatrix4fv(prog->getUniform("BIND_BONE_POS"), 18, GL_FALSE, bind_pose[0].data());
+   GLSL::checkError(GET_FILE_LINE);
+   
+   // Tell the GPU how to interpret my skinning weights
+   h_weight0 = prog->getAttribute("weights0");
+   h_weight1 = prog->getAttribute("weights1");
+   h_weight2 = prog->getAttribute("weights2");
+   h_weight3 = prog->getAttribute("weights3");
+   GLSL::enableVertexAttribArray(h_weight0);
+   GLSL::enableVertexAttribArray(h_weight1);
+   GLSL::enableVertexAttribArray(h_weight2);
+   GLSL::enableVertexAttribArray(h_weight3);
+   
+   glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
+   unsigned stride = 15*sizeof(float);
+   
+   glVertexAttribPointer(h_weight0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
+   glVertexAttribPointer(h_weight1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
+   glVertexAttribPointer(h_weight2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
+   glVertexAttribPointer(h_weight3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
+   
+   
+   // Tell the GPU how to interpret my bone indices
+   h_bones0 = prog->getAttribute("bones0");
+   h_bones1 = prog->getAttribute("bones1");
+   h_bones2 = prog->getAttribute("bones2");
+   h_bones3 = prog->getAttribute("bones3");
+   GLSL::enableVertexAttribArray(h_bones0);
+   GLSL::enableVertexAttribArray(h_bones1);
+   GLSL::enableVertexAttribArray(h_bones2);
+   GLSL::enableVertexAttribArray(h_bones3);
+   
+   glBindBuffer(GL_ARRAY_BUFFER, boneNdxBufID);
+   // stride the same
+   
+   glVertexAttribPointer(h_bones0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
+   glVertexAttribPointer(h_bones1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
+   glVertexAttribPointer(h_bones2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
+   glVertexAttribPointer(h_bones3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
+   
+   // Tell the GPU how to interpret my num_bones vertex array
+   h_num_bones = prog->getAttribute("num_bones");
+   GLSL::enableVertexAttribArray(h_num_bones);
+   glBindBuffer(GL_ARRAY_BUFFER, numBoneBufID);
+   glVertexAttribPointer(h_num_bones, 1, GL_FLOAT, GL_FALSE, 0, 0);
 }
 
 bool prev_cpu_skinning = true;
+void Shape::disableVertexAttribs(const std::shared_ptr<Program> prog) const {
+   int h_weight0, h_weight1, h_weight2, h_weight3;
+   int h_bones0, h_bones1, h_bones2, h_bones3;
+   int h_num_bones;
+   
+   h_weight0 = prog->getAttribute("weights0");
+   h_weight1 = prog->getAttribute("weights1");
+   h_weight2 = prog->getAttribute("weights2");
+   h_weight3 = prog->getAttribute("weights3");
+   h_bones0 = prog->getAttribute("bones0");
+   h_bones1 = prog->getAttribute("bones1");
+   h_bones2 = prog->getAttribute("bones2");
+   h_bones3 = prog->getAttribute("bones3");
+   h_num_bones = prog->getAttribute("num_bones");
+   
+   GLSL::disableVertexAttribArray(h_weight0);
+   GLSL::disableVertexAttribArray(h_weight1);
+   GLSL::disableVertexAttribArray(h_weight2);
+   GLSL::disableVertexAttribArray(h_weight3);
+   GLSL::disableVertexAttribArray(h_bones0);
+   GLSL::disableVertexAttribArray(h_bones1);
+   GLSL::disableVertexAttribArray(h_bones2);
+   GLSL::disableVertexAttribArray(h_bones3);
+   GLSL::disableVertexAttribArray(h_num_bones);
+}
+
 bool did_it = false;
 
 void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
@@ -217,7 +294,6 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
    k++;
    k %= num_frames - 1;
    
-   // Switching back to CPU skinning -> resend the vanilla vertices
    if ((!prev_cpu_skinning && cpu_skinning) || !did_it) {
       glBindBuffer(GL_ARRAY_BUFFER, posBufID);
       glBufferData(GL_ARRAY_BUFFER, posBuf.size()*sizeof(float), &posBuf[0], GL_STATIC_DRAW);
@@ -226,63 +302,11 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
    
    prev_cpu_skinning = cpu_skinning;
    
-   int h_weight0, h_weight1, h_weight2, h_weight3;
-   int h_bones0, h_bones1, h_bones2, h_bones3;
-   int h_num_bones;
-   
    if (cpu_skinning) {
       do_cpu_skinning();
-      
    }
-//   else {
-      // Send the bone positions and bind poses to the GPU
-      glUniformMatrix4fv(prog->getUniform("BONE_POS"), 18, GL_FALSE, anim_frames[(k + 1) * NUM_BONES].data());
-      glUniformMatrix4fv(prog->getUniform("BIND_BONE_POS"), 18, GL_FALSE, anim_frames[0].data());
-      GLSL::checkError(GET_FILE_LINE);
-      
-      // Tell the GPU how to interpret my skinning weights
-      h_weight0 = prog->getAttribute("weights0");
-      h_weight1 = prog->getAttribute("weights1");
-      h_weight2 = prog->getAttribute("weights2");
-      h_weight3 = prog->getAttribute("weights3");
-      GLSL::enableVertexAttribArray(h_weight0);
-      GLSL::enableVertexAttribArray(h_weight1);
-      GLSL::enableVertexAttribArray(h_weight2);
-      GLSL::enableVertexAttribArray(h_weight3);
-      
-      glBindBuffer(GL_ARRAY_BUFFER, weightBufID);
-      unsigned stride = 15*sizeof(float);
-      
-      glVertexAttribPointer(h_weight0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
-      glVertexAttribPointer(h_weight1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
-      glVertexAttribPointer(h_weight2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
-      glVertexAttribPointer(h_weight3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
-      
-      
-      // Tell the GPU how to interpret my bone indices
-      h_bones0 = prog->getAttribute("bones0");
-      h_bones1 = prog->getAttribute("bones1");
-      h_bones2 = prog->getAttribute("bones2");
-      h_bones3 = prog->getAttribute("bones3");
-      GLSL::enableVertexAttribArray(h_bones0);
-      GLSL::enableVertexAttribArray(h_bones1);
-      GLSL::enableVertexAttribArray(h_bones2);
-      GLSL::enableVertexAttribArray(h_bones3);
-      
-      glBindBuffer(GL_ARRAY_BUFFER, boneNdxBufID);
-      // stride the same
-      
-      glVertexAttribPointer(h_bones0, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 0  * sizeof(float) ));
-      glVertexAttribPointer(h_bones1, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 4  * sizeof(float) ));
-      glVertexAttribPointer(h_bones2, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 8  * sizeof(float) ));
-      glVertexAttribPointer(h_bones3, 4, GL_FLOAT, GL_FALSE, stride, (const void *)( 12 * sizeof(float) ));
-      
-      // Tell the GPU how to interpret my num_bones vertex array
-      h_num_bones = prog->getAttribute("num_bones");
-      GLSL::enableVertexAttribArray(h_num_bones);
-      glBindBuffer(GL_ARRAY_BUFFER, numBoneBufID);
-      glVertexAttribPointer(h_num_bones, 1, GL_FLOAT, GL_FALSE, 0, 0);
-//   }
+   
+   do_gpu_skinning(prog);
    
 	// Bind position buffer
 	int h_pos = prog->getAttribute("vertPos");
@@ -320,17 +344,7 @@ void Shape::draw(const std::shared_ptr<Program> prog, bool cpu_skinning) const
 		GLSL::disableVertexAttribArray(h_nor);
 	}
    
-//   if (!cpu_skinning) {
-      GLSL::disableVertexAttribArray(h_weight0);
-      GLSL::disableVertexAttribArray(h_weight1);
-      GLSL::disableVertexAttribArray(h_weight2);
-      GLSL::disableVertexAttribArray(h_weight3);
-      GLSL::disableVertexAttribArray(h_bones0);
-      GLSL::disableVertexAttribArray(h_bones1);
-      GLSL::disableVertexAttribArray(h_bones2);
-      GLSL::disableVertexAttribArray(h_bones3);
-      GLSL::disableVertexAttribArray(h_num_bones);
-//   }
+   disableVertexAttribs(prog);
 
 	GLSL::disableVertexAttribArray(h_pos);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);

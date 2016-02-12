@@ -36,7 +36,8 @@ private:
    void processData(const std::string &resource_dir);
    
    void do_cpu_skinning() const;
-   void do_gpu_skinning() const;
+   void do_gpu_skinning(const std::shared_ptr<Program> prog) const;
+   void disableVertexAttribs(const std::shared_ptr<Program> prog) const;
 };
 
 #endif
