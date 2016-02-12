@@ -65,11 +65,27 @@ void main()
 {
    vec4 boned_pos = vec4(0, 0, 0, 0);
    
+   int dumb_counter = 0;
+   vec3 dumb_color = vec3(0, 0, 0);
+   
    for (int ndx = 0; ndx < num_bones; ndx++) {
       
-//      int bone_ndx = int(getBoneNdxForNdx(ndx));
-//
-//      float curr_weight = getWeightForNdx(ndx);
+      int bone_ndx = int(getBoneNdxForNdx(ndx));
+      
+      float curr_weight = getWeightForNdx(ndx);
+
+   if (dumb_counter == 0) {
+      dumb_color.x = curr_weight;
+   }
+      if (dumb_counter == 1) {
+         dumb_color.y = curr_weight;
+      }
+      
+      if (dumb_counter == 2) {
+         dumb_color.z = curr_weight;
+      }
+
+      dumb_counter++;
 //
 //      vec4 weight_changed_vertex = vertPos;
 //      weight_changed_vertex[3] = 1;
@@ -85,4 +101,5 @@ void main()
    
    gl_Position = P * MV * ((gpu_rendering == 1) ? boned_pos : vertPos);
 	fragNor = (MV * vec4(vertNor, 0.0)).xyz;
+   fragNor = dumb_color;
 }
