@@ -79,4 +79,5 @@ void main()
    
    gl_Position = P * MV * ((gpu_rendering == 1) ? result_vertex : vertPos);
 	fragNor = (MV * vec4(vertNor, 0.0)).xyz;
+	fragNor = vec3(0, num_bones/15, 0);
 }

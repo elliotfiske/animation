@@ -35,10 +35,10 @@ RM = /usr/local/Cellar/cmake/3.2.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/elliotfiske/Downloads/efiske
+CMAKE_SOURCE_DIR = "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/elliotfiske/Downloads/efiske/build
+CMAKE_BINARY_DIR = "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build"
 
 # Include any dependencies generated for this target.
 include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/depend.make
@@ -51,7 +51,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/context.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/context.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/context.c.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/context.c.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c
 
@@ -74,7 +74,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/init.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/init.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/init.c.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/init.c.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c
 
@@ -97,7 +97,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/input.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/input.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/input.c.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/input.c.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c
 
@@ -120,7 +120,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/monitor.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/monitor.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/monitor.c.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/monitor.c.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c
 
@@ -143,7 +143,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/window.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/window.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/window.c.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/window.c.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c
 
@@ -166,7 +166,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/cocoa_init.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/cocoa_init.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/cocoa_init.m.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/cocoa_init.m.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m
 
@@ -189,7 +189,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/cocoa_monitor.m.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m
 
@@ -212,7 +212,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/cocoa_window.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/cocoa_window.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/cocoa_window.m.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/cocoa_window.m.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m
 
@@ -235,7 +235,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/iokit_joystick.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/iokit_joystick.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/iokit_joystick.m.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/iokit_joystick.m.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m
 
@@ -258,7 +258,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/mach_time.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/mach_time.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/mach_time.c.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/mach_time.c.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c
 
@@ -281,7 +281,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/posix_tls.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/posix_tls.c.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/posix_tls.c.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/posix_tls.c.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c
 
@@ -304,7 +304,7 @@ include /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.d
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/nsgl_context.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/flags.make
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/nsgl_context.m.o: /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/elliotfiske/Downloads/efiske/build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build/CMakeFiles" $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/nsgl_context.m.o"
 	cd /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/glfw.dir/nsgl_context.m.o   -c /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m
 
@@ -384,6 +384,6 @@ glfw_EXTERNAL_OBJECTS =
 .PHONY : /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/clean
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/depend:
-	cd /Users/elliotfiske/Downloads/efiske/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/elliotfiske/Downloads/efiske /Users/elliotfiske/animation/deps/glfw-3.1.2/src /Users/elliotfiske/Downloads/efiske/build /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2" /Users/elliotfiske/animation/deps/glfw-3.1.2/src "/Users/elliotfiske/animation/skeleton_asgn_deliverable 2/build" /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/CMakeFiles/glfw.dir/depend
 

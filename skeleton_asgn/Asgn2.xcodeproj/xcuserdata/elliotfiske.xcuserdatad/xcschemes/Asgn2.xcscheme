@@ -42,7 +42,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -64,6 +64,18 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "/Users/elliotfiske/animation/skeleton_asgn/resources"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Users/elliotfiske/animation/skeleton_asgn/resources/cheb2.obj"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Users/elliotfiske/animation/skeleton_asgn/resources/cheb_attachment.txt"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Users/elliotfiske/animation/skeleton_asgn/resources/cheb_skel_wakeUpSequence.txt"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

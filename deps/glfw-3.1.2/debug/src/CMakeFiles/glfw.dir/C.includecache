@@ -84,32 +84,6 @@ GL/glext.h
 GL/glu.h
 -
 
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-sys/param.h
--
-
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-stdlib.h
--
-stdlib.h
--
-limits.h
--
-IOKit/graphics/IOGraphicsLib.h
--
-IOKit/graphics/IOGraphicsLib.h
--
-CoreVideo/CVBase.h
--
-CoreVideo/CVDisplayLink.h
--
-ApplicationServices/ApplicationServices.h
--
-
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_platform.h
 stdint.h
 -
@@ -124,26 +98,6 @@ iokit_joystick.h
 nsgl_context.h
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h
 
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-string.h
--
-crt_externs.h
--
-
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-stdio.h
--
-string.h
--
-limits.h
--
-stdio.h
--
-
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/egl_context.h
 dlfcn.h
 -
@@ -157,26 +111,6 @@ GL/glx.h
 -
 ../deps/GL/glxext.h
 /Users/elliotfiske/animation/deps/glfw-3.1.2/deps/GL/glxext.h
-
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-string.h
--
-stdlib.h
--
-stdio.h
--
-stdarg.h
--
-
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-stdlib.h
--
-malloc.h
--
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
 glfw_config.h
@@ -206,30 +140,8 @@ IOKit/hid/IOHIDLib.h
 IOKit/hid/IOHIDKeys.h
 -
 
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-unistd.h
--
-ctype.h
--
-mach/mach.h
--
-mach/mach_error.h
--
-CoreFoundation/CoreFoundation.h
--
-Kernel/IOKit/hidsystem/IOHIDUsageTables.h
--
-
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/linux_joystick.h
 regex.h
--
-
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-mach/mach_time.h
 -
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mir_platform.h
@@ -250,20 +162,6 @@ xkb_unicode.h
 egl_context.h
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/egl_context.h
 
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-math.h
--
-float.h
--
-string.h
--
-stdlib.h
--
-limits.h
--
-
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m
@@ -273,10 +171,6 @@ internal.h
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_time.h
 stdint.h
 -
-
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.h
 pthread.h
@@ -305,14 +199,6 @@ egl_context.h
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/egl_context.h
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/win32_tls.h
-
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c
-internal.h
-/Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h
-string.h
--
-stdlib.h
--
 
 /Users/elliotfiske/animation/deps/glfw-3.1.2/src/winmm_joystick.h
 
