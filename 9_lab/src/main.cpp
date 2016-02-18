@@ -247,10 +247,45 @@ void loadParticles(const char *filename)
 
 	// Rest of the lines:
 	// <mass> <position> <velocity> <color> <radius>
+   double mass, radius;
+   double x, y, z;
+   float  xf, yf, zf;
+   Vector3d position;
+   Vector3d velocity;
+   Vector3f color;
+   
 	
-	//
-	// IMPLEMENT ME
-	//
+   for (int ndx = 0; ndx < n; ndx++) {
+      in >> mass;
+      
+      // parse position
+      in >> x;
+      in >> y;
+      in >> z;
+      position << x, y, z;
+      
+      // parse velocity
+      in >> x;
+      in >> y;
+      in >> z;
+      velocity << x, y, z;
+      
+      // parse color
+      in >> xf;
+      in >> yf;
+      in >> zf;
+      color << xf, yf, zf;
+      
+      in >> radius;
+      auto p = make_shared<Particle>();
+      p->setMass(mass);
+      p->setPosition(position);
+      p->setVelocity(velocity);
+      p->setColor(color);
+      p->setRadius(radius);
+      
+      particles.push_back(p);
+   }
 
 	in.close();
 	cout << "Loaded galaxy from " << filename << endl;
@@ -264,8 +299,7 @@ void createParticles()
    e2 = 1e-4;
    
    double r = 1.0;
-   double a = 1.0;
-   
+   double a = 2.0;
    
    auto heavy = make_shared<Particle>();
    heavy->setMass(1e-3);
@@ -352,6 +386,13 @@ int main(int argc, char **argv)
 		for(int k = 0; k < steps; ++k) {
 			stepParticles();
 		}
+      
+      cout << "Particle positions: " << endl;
+      for (int ndx = 0; ndx < particles.size(); ndx++) {
+         Vector3d posn = particles[ndx]->getPosition();
+         cout << ndx << ": " << "(" << posn.x() << ", " << posn.y() << ", " << posn.z() << ")" << endl;
+      }
+      
 	} catch(const invalid_argument& ia) {
 		// `steps` could not be parsed
 		cout << "Running with OpenGL" << endl;
