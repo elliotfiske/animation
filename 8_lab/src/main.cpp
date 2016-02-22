@@ -53,13 +53,36 @@ struct CostFunctor {
   }
 };
 
+
+struct CostFunctor1 {
+   template <typename T>
+   bool operator()(const T* const x, T* residual) const {
+      T POINT_TWO = T(0.2);
+      T ONE = T(1.0);
+      T TWO = T(2.0);
+      T THREE = T(3.0);
+      
+      T X_PLUS_ONE = x[0] + ONE;
+      T Y_PLUS_ONE = x[1] + ONE;
+      
+      residual[0] = POINT_TWO * (
+                                 X_PLUS_ONE*X_PLUS_ONE + Y_PLUS_ONE*Y_PLUS_ONE
+                                 + sin(THREE*X_PLUS_ONE) + sin(THREE*Y_PLUS_ONE)
+                                 )
+                    + TWO;
+      return true;
+   }
+};
+
 int main(int argc, char** argv) {
   google::InitGoogleLogging(argv[0]);
 
   // The variable to solve for with its initial value. It will be
   // mutated in place by the solver.
-  double x = 0.5;
-  const double initial_x = x;
+   double x[2];
+   x[0] = 0.0;
+   x[1] = 0.0;
+  const double initial_x = x[0];
 
   // Build the problem.
   Problem problem;
@@ -67,8 +90,8 @@ int main(int argc, char** argv) {
   // Set up the only cost function (also known as residual). This uses
   // auto-differentiation to obtain the derivative (jacobian).
   CostFunction* cost_function =
-      new AutoDiffCostFunction<CostFunctor, 1, 1>(new CostFunctor);
-  problem.AddResidualBlock(cost_function, NULL, &x);
+      new AutoDiffCostFunction<CostFunctor1, 1, 2>(new CostFunctor1);
+  problem.AddResidualBlock(cost_function, NULL, x);
 
   // Run the solver!
   Solver::Options options;
