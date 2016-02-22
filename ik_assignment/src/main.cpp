@@ -12,6 +12,7 @@
 #include "Shape.h"
 #include "Texture.h"
 #include "Link.hpp"
+#include "CeresWrapper.hpp"
 
 using namespace std;
 using namespace Eigen;
@@ -174,12 +175,17 @@ void render()
 	auto MV = make_shared<MatrixStack>();
 	
 	// Apply camera transforms
+   MV->pushMatrix();
+   
+   Vector3f translation(0.0f, 0.0f, -1.0f);
+   MV->translate(translation);
+   
    float aspect = (float)width/height;
    P->pushMatrix();
    double s = 5.0;
    P->ortho(-s*aspect, s*aspect, -s, s, -2.0, 2.0);
-   MV->pushMatrix();
-   MV->translate(Vector3f(0, 0, -1));
+
+   solveAngles(0.0, 1.0);
 	
 	// Draw grid
 	progSimple->bind();

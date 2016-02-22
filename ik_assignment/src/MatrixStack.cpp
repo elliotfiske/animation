@@ -42,8 +42,8 @@ void MatrixStack::loadIdentity()
 
 void MatrixStack::translate(const Vector3f &trans)
 {
-	Matrix4f &top = mstack->top();
-	Matrix4f E = Matrix4f::Identity();
+   Matrix4f E = Matrix4f::Identity();
+   Matrix4f &top = mstack->top();
 	E(0,3) = trans(0);
 	E(1,3) = trans(1);
 	E(2,3) = trans(2);
