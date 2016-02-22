@@ -1,5 +1,5 @@
-dependencies: /Users/elliotfiske/animation/7_lab/src/Camera.cpp \
-  /Users/elliotfiske/animation/7_lab/src/Camera.h \
+dependencies: /Users/elliotfiske/animation/ik_assignment/src/Camera.cpp \
+  /Users/elliotfiske/animation/ik_assignment/src/Camera.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/Dense \
   /Users/elliotfiske/animation/deps/eigen/Eigen/Core \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Core/util/DisableStupidWarnings.h \
@@ -150,4 +150,4 @@ dependencies: /Users/elliotfiske/animation/7_lab/src/Camera.cpp \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/RealQZ.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /Users/elliotfiske/animation/deps/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
-  /Users/elliotfiske/animation/7_lab/src/MatrixStack.h
+  /Users/elliotfiske/animation/ik_assignment/src/MatrixStack.h
