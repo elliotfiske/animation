@@ -67,9 +67,9 @@ struct CostFunctor1 {
       
       residual[0] = POINT_TWO * (
                                  X_PLUS_ONE*X_PLUS_ONE + Y_PLUS_ONE*Y_PLUS_ONE
+                                )
                                  + sin(THREE*X_PLUS_ONE) + sin(THREE*Y_PLUS_ONE)
-                                 )
-                    + TWO;
+                                 + TWO;
       return true;
    }
 };
@@ -80,8 +80,8 @@ int main(int argc, char** argv) {
   // The variable to solve for with its initial value. It will be
   // mutated in place by the solver.
    double x[2];
-   x[0] = 0.0;
-   x[1] = 0.0;
+   x[0] = -1.2;
+   x[1] = -1.2;
   const double initial_x = x[0];
 
   // Build the problem.
@@ -101,6 +101,6 @@ int main(int argc, char** argv) {
 
   std::cout << summary.BriefReport() << "\n";
   std::cout << "x : " << initial_x
-            << " -> " << x << "\n";
+            << " RESULTS: (" << x[0] << ", " << x[1] << ") \n";
   return 0;
 }
