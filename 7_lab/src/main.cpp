@@ -11,6 +11,7 @@
 #include "MatrixStack.h"
 #include "Shape.h"
 #include "Texture.h"
+#include "Link.hpp"
 
 using namespace std;
 using namespace Eigen;
@@ -25,6 +26,8 @@ shared_ptr<Program> progTex;
 shared_ptr<Camera> camera;
 shared_ptr<Shape> shape;
 shared_ptr<Texture> texture;
+
+shared_ptr<Link> root_link;
 
 Vector2f mouse;
 
@@ -124,6 +127,8 @@ static void init()
 	shape = make_shared<Shape>();
 	shape->loadMesh(RESOURCE_DIR + "link.obj");
 	shape->init();
+   
+   root_link = make_shared<Link>();
 	
 	camera = make_shared<Camera>();
 	
@@ -215,8 +220,7 @@ void render()
 	progTex->bind();
 	texture->bind(progTex->getUniform("texture0"), 0);
 	glUniformMatrix4fv(progTex->getUniform("P"), 1, GL_FALSE, P->topMatrix().data());
-	glUniformMatrix4fv(progTex->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
-	shape->draw(progTex);
+   root_link->draw(MV.get(), progTex, shape);
 	texture->unbind(0);
 	progTex->unbind();
 	
@@ -246,7 +250,7 @@ int main(int argc, char **argv)
 		return -1;
 	}
 	// Create a windowed mode window and its OpenGL context.
-	window = glfwCreateWindow(640, 480, "YOUR NAME", NULL, NULL);
+	window = glfwCreateWindow(640, 480, "ELLIOT FISKE", NULL, NULL);
 	if(!window) {
 		glfwTerminate();
 		return -1;

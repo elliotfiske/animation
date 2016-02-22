@@ -7,50 +7,50 @@
        objects = {
 
 /* Begin PBXAggregateTarget section */
-              1A8FA057EEEE4F65A66845A7 /* ALL_BUILD */ = {
+              CEC6D30A7B924EF399B26601 /* ALL_BUILD */ = {
                      isa = PBXAggregateTarget;
-                     buildConfigurationList = 5D3FA88237EA41F7BF5D74CC /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+                     buildConfigurationList = 0684FAD3EDA144878209F204 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
                      buildPhases = (
-                            7836E52B91C145DDB56DEF82 /* CMake Rules */,
+                            1B4FEFB5111445F486DCFC84 /* CMake Rules */,
                      );
                      dependencies = (
-                            7AA4A106D7354A829EE45481 /* PBXTargetDependency */,
-                            84BCF2B4A14C4B7598E687B5 /* PBXTargetDependency */,
+                            662B4E3E1F634E649598A573 /* PBXTargetDependency */,
+                            07D364CEEB054B98B1D005D2 /* PBXTargetDependency */,
                      );
                      name = ALL_BUILD;
                      productName = ALL_BUILD;
               };
-              25DA1A91967F4787B72F6CC5 /* ZERO_CHECK */ = {
+              5663B3598E104C019F55A54B /* ZERO_CHECK */ = {
                      isa = PBXAggregateTarget;
-                     buildConfigurationList = 28EDE5DE03FE4B36AAF44579 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+                     buildConfigurationList = 1CC245A079364C26BCE912AD /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
                      buildPhases = (
-                            5CFC49A59B0F4A6DB5502F2F /* CMake Rules */,
+                            3161CDE4ECB74563AC587D87 /* CMake Rules */,
                      );
                      dependencies = (
                      );
                      name = ZERO_CHECK;
                      productName = ZERO_CHECK;
               };
-              6ECA233213A84637A2B44104 /* install */ = {
+              2039DEF99670410ABA59DEF1 /* install */ = {
                      isa = PBXAggregateTarget;
-                     buildConfigurationList = DAE8991D459E487893FD03EC /* Build configuration list for PBXAggregateTarget "install" */;
+                     buildConfigurationList = 89E3BCB1DB284E8B8F6EACC1 /* Build configuration list for PBXAggregateTarget "install" */;
                      buildPhases = (
-                            02F05ED9833A4889A6D3ED22 /* CMake PostBuild Rules */,
+                            BAB7EE6AB5764C7CBA31C6E0 /* CMake PostBuild Rules */,
                      );
                      dependencies = (
-                            A1FE8E8574754706BE73406A /* PBXTargetDependency */,
+                            C9F6630575D648C3B2083F38 /* PBXTargetDependency */,
                      );
                      name = install;
                      productName = install;
               };
-              C0B21CAD2A0346A5B7698C19 /* uninstall */ = {
+              E8E0F8E66D784CC6A637CA6A /* uninstall */ = {
                      isa = PBXAggregateTarget;
-                     buildConfigurationList = 97DE6155DB0542E78B58E84D /* Build configuration list for PBXAggregateTarget "uninstall" */;
+                     buildConfigurationList = 6004A3C526AF404385BB354C /* Build configuration list for PBXAggregateTarget "uninstall" */;
                      buildPhases = (
-                            3BD8F85CD4A54E01AD3D8720 /* CMake Rules */,
+                            95827A3E0C7A432F9911EA11 /* CMake Rules */,
                      );
                      dependencies = (
-                            E4A94A5E505B451791F24D87 /* PBXTargetDependency */,
+                            62FE7AD1A06A4A15B75ECCF6 /* PBXTargetDependency */,
                      );
                      name = uninstall;
                      productName = uninstall;
@@ -58,55 +58,55 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-4414110C1161463A9FECA29F /* /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/glfw_config.h */ = {isa = PBXBuildFile; fileRef = 7E1FBB215C21403989312A20 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/glfw_config.h */; settings = { COMPILER_FLAGS = ""; }; };
-011034588E7746FA998455AF /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3.h */ = {isa = PBXBuildFile; fileRef = 634220E8D51C4988AE262166 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3.h */; settings = { COMPILER_FLAGS = ""; }; };
-B1EC731CE660452894B78C64 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3native.h */ = {isa = PBXBuildFile; fileRef = 4A554FE9F12F40839C8A7FB3 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3native.h */; settings = { COMPILER_FLAGS = ""; }; };
-74AC53B638F44581A1D23174 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 3794B4E3A0B347E391AF00C4 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
-3E6DACA44CEA448E8E5C6E15 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */ = {isa = PBXBuildFile; fileRef = EB84DCF6E88F4861A1594A6A /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */; settings = { COMPILER_FLAGS = ""; }; };
-DA1C0B58449A44F88B81BA38 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */ = {isa = PBXBuildFile; fileRef = 9C7B53A86A74429F891F4C39 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */; settings = { COMPILER_FLAGS = ""; }; };
-E0F82F4A629D4E7BB3928162 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_platform.h */ = {isa = PBXBuildFile; fileRef = 5301BDFA499E4C858ED12AB3 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_platform.h */; settings = { COMPILER_FLAGS = ""; }; };
-39588E798AA74E5AABD77FE1 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */ = {isa = PBXBuildFile; fileRef = 9B6A0479B0964974A02A7049 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */; settings = { COMPILER_FLAGS = ""; }; };
-5809F81B55074D4493997BB2 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */ = {isa = PBXBuildFile; fileRef = C20D6CBDEDB44E2798A3896D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */; settings = { COMPILER_FLAGS = ""; }; };
-644E5AB13A7347DF98E02C8D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */ = {isa = PBXBuildFile; fileRef = 7815C76E10AF4AB08191FB69 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */; settings = { COMPILER_FLAGS = ""; }; };
-6CD6F050B36B495686C8B1BC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */ = {isa = PBXBuildFile; fileRef = 9531AF16B6DA40F893440293 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */; settings = { COMPILER_FLAGS = ""; }; };
-76ABAE8DFC5F4A50824F55D2 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h */ = {isa = PBXBuildFile; fileRef = 003A3052B23B421783AE5947 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h */; settings = { COMPILER_FLAGS = ""; }; };
-386FC4E30E134285836B2E35 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.h */ = {isa = PBXBuildFile; fileRef = F1ABD8F2BB154BA2AD4FD96E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.h */; settings = { COMPILER_FLAGS = ""; }; };
-8D12B891DE034E05A9CFECDE /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */ = {isa = PBXBuildFile; fileRef = 05875C84968143CA9570AAC7 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */; settings = { COMPILER_FLAGS = ""; }; };
-9CEE2381D6C04C178C8034EA /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */ = {isa = PBXBuildFile; fileRef = 4CF8E8922C0242BF8C655224 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */; settings = { COMPILER_FLAGS = ""; }; };
-78D9A84831204DBA8068EC20 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */ = {isa = PBXBuildFile; fileRef = AE3034F2910142809217EAB0 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */; settings = { COMPILER_FLAGS = ""; }; };
-32746F28A7E9444BA2856EE9 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h */ = {isa = PBXBuildFile; fileRef = 3E179DE8AC7F4981ACF9BE7D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h */; settings = { COMPILER_FLAGS = ""; }; };
-741BCF9D4640483CB399C9D8 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */ = {isa = PBXBuildFile; fileRef = DDDE1AB32D5B481BBDD7B1EF /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */; settings = { COMPILER_FLAGS = ""; }; };
-2262B26AD9134C468325C93F /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */ = {isa = PBXBuildFile; fileRef = EDB30005FD764B13BB19FF1E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */; settings = { COMPILER_FLAGS = ""; }; };
-74547FC764FC4B35AF426212 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.h */ = {isa = PBXBuildFile; fileRef = 52EF14C78EC146ADAC678CAF /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.h */; settings = { COMPILER_FLAGS = ""; }; };
-EC4917B64AD445219661827E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */ = {isa = PBXBuildFile; fileRef = 4FE15C5968CA46A481693E6B /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */; settings = { COMPILER_FLAGS = ""; }; };
+5FA16E3ABCC040EB93DCB113 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/glfw_config.h */ = {isa = PBXBuildFile; fileRef = 8A194CB877FD4C4E827300BB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/glfw_config.h */; settings = { COMPILER_FLAGS = ""; }; };
+326E711A2E9B44EF98100ECB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3.h */ = {isa = PBXBuildFile; fileRef = 88C4E201B00742649205EFA8 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3.h */; settings = { COMPILER_FLAGS = ""; }; };
+33E1AAA609024F63AD41A0CC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3native.h */ = {isa = PBXBuildFile; fileRef = A8A876E606BC4354B9BDBE17 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3native.h */; settings = { COMPILER_FLAGS = ""; }; };
+6F7C8FE0A98B46C2BB19AD52 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 5D722D968EE14E64BFA50BAB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+1686A0FE146642E5ABDAB2D8 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */ = {isa = PBXBuildFile; fileRef = F535665E751740BFB34F1DBC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */; settings = { COMPILER_FLAGS = ""; }; };
+2D7E6DD3D4C64C139D338598 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */ = {isa = PBXBuildFile; fileRef = C55D7E3D96F240FE8CC6BF02 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */; settings = { COMPILER_FLAGS = ""; }; };
+29B11FEF424F4CF28D45991C /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_platform.h */ = {isa = PBXBuildFile; fileRef = 46C695D22D404219892058A1 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_platform.h */; settings = { COMPILER_FLAGS = ""; }; };
+F6D454636DB34246A705B16A /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */ = {isa = PBXBuildFile; fileRef = BD3A3765F2AC46B081E342B9 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */; settings = { COMPILER_FLAGS = ""; }; };
+E265A266A18D4FD594FA5FF9 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */ = {isa = PBXBuildFile; fileRef = 0E566F5CA0D14A709D93B533 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */; settings = { COMPILER_FLAGS = ""; }; };
+476D19F7B6714A798AD9887E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */ = {isa = PBXBuildFile; fileRef = E4F3807384F94D22AC4E5831 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */; settings = { COMPILER_FLAGS = ""; }; };
+8DBB9951B38542CE80F57257 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */ = {isa = PBXBuildFile; fileRef = DF6BC6C2EB60458AAAB3A105 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */; settings = { COMPILER_FLAGS = ""; }; };
+C0083385732E434C8033D092 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h */ = {isa = PBXBuildFile; fileRef = 503C358DEA444DB994F700BC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h */; settings = { COMPILER_FLAGS = ""; }; };
+CF5DC23B2A9F49F6B21A8DFB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.h */ = {isa = PBXBuildFile; fileRef = E06FAD57F203412CB523EA08 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.h */; settings = { COMPILER_FLAGS = ""; }; };
+B3F32117E9A5499FBFD672BC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */ = {isa = PBXBuildFile; fileRef = 5DE183D11A8F49AEBF549966 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */; settings = { COMPILER_FLAGS = ""; }; };
+074DBE1FC97D4487B4229EB6 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */ = {isa = PBXBuildFile; fileRef = 491FE77491AC4806A23764DE /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */; settings = { COMPILER_FLAGS = ""; }; };
+0A755BC13F90430A978AD946 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */ = {isa = PBXBuildFile; fileRef = 33F4AFBE1AD14352B743D55D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */; settings = { COMPILER_FLAGS = ""; }; };
+14D440F298354EFE8F30ED82 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h */ = {isa = PBXBuildFile; fileRef = 64B69B05CED44D0997823C5C /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h */; settings = { COMPILER_FLAGS = ""; }; };
+A407C8EA0513487EBAFA5E4D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */ = {isa = PBXBuildFile; fileRef = 2FF6CE5C98634B8083680F7A /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */; settings = { COMPILER_FLAGS = ""; }; };
+EEFF1D99007547DB8AA67224 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */ = {isa = PBXBuildFile; fileRef = 11C80174405547E48607143F /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */; settings = { COMPILER_FLAGS = ""; }; };
+FD42EF4043AF43248C1D5E4A /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.h */ = {isa = PBXBuildFile; fileRef = 30CCDF5B0E404197BC3ECAA0 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.h */; settings = { COMPILER_FLAGS = ""; }; };
+2A5D52348B0F411AA03843BB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */ = {isa = PBXBuildFile; fileRef = 7E608FE86F494CEEB1ABB77D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */; settings = { COMPILER_FLAGS = ""; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-              B7761CDEC7E04996B7CE297C /*  */ = {
+              46BF57F4FBE84D67B6D2D2FA /*  */ = {
                      isa = PBXBuildStyle;
               };
-              03959811E8564F778820AE27 /* Debug */ = {
+              1FC3F67923C1484689E865B2 /* Debug */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
                      };
                      name = Debug;
               };
-              346C228D31984D34B8C25C12 /* Release */ = {
+              46AB20C3FFBB48F8853E07CA /* Release */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
                      };
                      name = Release;
               };
-              CC9D5F355A76456EA05001B1 /* MinSizeRel */ = {
+              892F1E49011247BBAC47D107 /* MinSizeRel */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
                      };
                      name = MinSizeRel;
               };
-              06DAE14168A94ED082513D3A /* RelWithDebInfo */ = {
+              4F35639FD09849F2A7A31B6A /* RelWithDebInfo */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
@@ -116,196 +116,196 @@ EC4917B64AD445219661827E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/win
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-              D2FEA1C1AF7847EE98A1FDA1 /* PBXContainerItemProxy */ = {
+              E99E3AFA1DFE406F9B6F0D49 /* PBXContainerItemProxy */ = {
                      isa = PBXContainerItemProxy;
-                     containerPortal = CA23B5F63B744D4992174E05 /* Project object */;
+                     containerPortal = D3A3BC66FE7C40DFBE4C3AA1 /* Project object */;
                      proxyType = 1;
-                     remoteGlobalIDString = 91D2FA7B7E6D44D382FFE607;
-                     remoteInfo = glfw;
-              };
-              634E53B474D34875AA3FE727 /* PBXContainerItemProxy */ = {
-                     isa = PBXContainerItemProxy;
-                     containerPortal = CA23B5F63B744D4992174E05 /* Project object */;
-                     proxyType = 1;
-                     remoteGlobalIDString = 25DA1A91967F4787B72F6CC5;
+                     remoteGlobalIDString = 5663B3598E104C019F55A54B;
                      remoteInfo = ZERO_CHECK;
               };
-              A7013679C15C421BA798A25A /* PBXContainerItemProxy */ = {
+              39BF28809C8F460E9322EF9D /* PBXContainerItemProxy */ = {
                      isa = PBXContainerItemProxy;
-                     containerPortal = CA23B5F63B744D4992174E05 /* Project object */;
+                     containerPortal = D3A3BC66FE7C40DFBE4C3AA1 /* Project object */;
                      proxyType = 1;
-                     remoteGlobalIDString = 1A8FA057EEEE4F65A66845A7;
+                     remoteGlobalIDString = E9D9D92074D3404383B3C303;
+                     remoteInfo = glfw;
+              };
+              BF8107C6410C4CFAAA99EB18 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = D3A3BC66FE7C40DFBE4C3AA1 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = CEC6D30A7B924EF399B26601;
                      remoteInfo = ALL_BUILD;
               };
-              20F2AD8709B84C69A4A72B9B /* PBXContainerItemProxy */ = {
+              C43DA23344AD400BB0AF5F36 /* PBXContainerItemProxy */ = {
                      isa = PBXContainerItemProxy;
-                     containerPortal = CA23B5F63B744D4992174E05 /* Project object */;
+                     containerPortal = D3A3BC66FE7C40DFBE4C3AA1 /* Project object */;
                      proxyType = 1;
-                     remoteGlobalIDString = 25DA1A91967F4787B72F6CC5;
+                     remoteGlobalIDString = 5663B3598E104C019F55A54B;
                      remoteInfo = ZERO_CHECK;
               };
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-D95CCA7242124D81BE894EBD /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
-7643D591613C480594422100 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
-6EFCCD71CECF46C7AC818021 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
-7E1FBB215C21403989312A20 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/glfw_config.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "glfw_config.h"; path = "debug/src/glfw_config.h"; sourceTree = SOURCE_ROOT; };
-634220E8D51C4988AE262166 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "glfw3.h"; path = "include/GLFW/glfw3.h"; sourceTree = SOURCE_ROOT; };
-4A554FE9F12F40839C8A7FB3 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3native.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "glfw3native.h"; path = "include/GLFW/glfw3native.h"; sourceTree = SOURCE_ROOT; };
-3794B4E3A0B347E391AF00C4 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "src/CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
-EB84DCF6E88F4861A1594A6A /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "cocoa_init.m"; path = "src/cocoa_init.m"; sourceTree = SOURCE_ROOT; };
-9C7B53A86A74429F891F4C39 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "cocoa_monitor.m"; path = "src/cocoa_monitor.m"; sourceTree = SOURCE_ROOT; };
-5301BDFA499E4C858ED12AB3 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_platform.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "cocoa_platform.h"; path = "src/cocoa_platform.h"; sourceTree = SOURCE_ROOT; };
-9B6A0479B0964974A02A7049 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "cocoa_window.m"; path = "src/cocoa_window.m"; sourceTree = SOURCE_ROOT; };
-C20D6CBDEDB44E2798A3896D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "context.c"; path = "src/context.c"; sourceTree = SOURCE_ROOT; };
-7815C76E10AF4AB08191FB69 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "init.c"; path = "src/init.c"; sourceTree = SOURCE_ROOT; };
-9531AF16B6DA40F893440293 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "input.c"; path = "src/input.c"; sourceTree = SOURCE_ROOT; };
-003A3052B23B421783AE5947 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "internal.h"; path = "src/internal.h"; sourceTree = SOURCE_ROOT; };
-F1ABD8F2BB154BA2AD4FD96E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "iokit_joystick.h"; path = "src/iokit_joystick.h"; sourceTree = SOURCE_ROOT; };
-05875C84968143CA9570AAC7 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "iokit_joystick.m"; path = "src/iokit_joystick.m"; sourceTree = SOURCE_ROOT; };
-4CF8E8922C0242BF8C655224 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "mach_time.c"; path = "src/mach_time.c"; sourceTree = SOURCE_ROOT; };
-AE3034F2910142809217EAB0 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "monitor.c"; path = "src/monitor.c"; sourceTree = SOURCE_ROOT; };
-3E179DE8AC7F4981ACF9BE7D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "nsgl_context.h"; path = "src/nsgl_context.h"; sourceTree = SOURCE_ROOT; };
-DDDE1AB32D5B481BBDD7B1EF /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "nsgl_context.m"; path = "src/nsgl_context.m"; sourceTree = SOURCE_ROOT; };
-EDB30005FD764B13BB19FF1E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "posix_tls.c"; path = "src/posix_tls.c"; sourceTree = SOURCE_ROOT; };
-52EF14C78EC146ADAC678CAF /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "posix_tls.h"; path = "src/posix_tls.h"; sourceTree = SOURCE_ROOT; };
-4FE15C5968CA46A481693E6B /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "window.c"; path = "src/window.c"; sourceTree = SOURCE_ROOT; };
-6CADFB2F0C7444069791D754 /* glfw */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libglfw3.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+17CDAFAA73EB4BF49F6D15B7 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+0B5072DE47EF4B74AEB8CDF2 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+E45F7C6C6E7A4C01BBFD1F88 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+8A194CB877FD4C4E827300BB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/glfw_config.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "glfw_config.h"; path = "debug/src/glfw_config.h"; sourceTree = SOURCE_ROOT; };
+88C4E201B00742649205EFA8 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "glfw3.h"; path = "include/GLFW/glfw3.h"; sourceTree = SOURCE_ROOT; };
+A8A876E606BC4354B9BDBE17 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3native.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "glfw3native.h"; path = "include/GLFW/glfw3native.h"; sourceTree = SOURCE_ROOT; };
+5D722D968EE14E64BFA50BAB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = "sourcecode.text"; fileEncoding = 4; name = "CMakeLists.txt"; path = "src/CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+F535665E751740BFB34F1DBC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "cocoa_init.m"; path = "src/cocoa_init.m"; sourceTree = SOURCE_ROOT; };
+C55D7E3D96F240FE8CC6BF02 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "cocoa_monitor.m"; path = "src/cocoa_monitor.m"; sourceTree = SOURCE_ROOT; };
+46C695D22D404219892058A1 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_platform.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "cocoa_platform.h"; path = "src/cocoa_platform.h"; sourceTree = SOURCE_ROOT; };
+BD3A3765F2AC46B081E342B9 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "cocoa_window.m"; path = "src/cocoa_window.m"; sourceTree = SOURCE_ROOT; };
+0E566F5CA0D14A709D93B533 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "context.c"; path = "src/context.c"; sourceTree = SOURCE_ROOT; };
+E4F3807384F94D22AC4E5831 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "init.c"; path = "src/init.c"; sourceTree = SOURCE_ROOT; };
+DF6BC6C2EB60458AAAB3A105 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "input.c"; path = "src/input.c"; sourceTree = SOURCE_ROOT; };
+503C358DEA444DB994F700BC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "internal.h"; path = "src/internal.h"; sourceTree = SOURCE_ROOT; };
+E06FAD57F203412CB523EA08 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "iokit_joystick.h"; path = "src/iokit_joystick.h"; sourceTree = SOURCE_ROOT; };
+5DE183D11A8F49AEBF549966 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "iokit_joystick.m"; path = "src/iokit_joystick.m"; sourceTree = SOURCE_ROOT; };
+491FE77491AC4806A23764DE /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "mach_time.c"; path = "src/mach_time.c"; sourceTree = SOURCE_ROOT; };
+33F4AFBE1AD14352B743D55D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "monitor.c"; path = "src/monitor.c"; sourceTree = SOURCE_ROOT; };
+64B69B05CED44D0997823C5C /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "nsgl_context.h"; path = "src/nsgl_context.h"; sourceTree = SOURCE_ROOT; };
+2FF6CE5C98634B8083680F7A /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.objc"; fileEncoding = 4; name = "nsgl_context.m"; path = "src/nsgl_context.m"; sourceTree = SOURCE_ROOT; };
+11C80174405547E48607143F /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "posix_tls.c"; path = "src/posix_tls.c"; sourceTree = SOURCE_ROOT; };
+30CCDF5B0E404197BC3ECAA0 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.h */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.h"; fileEncoding = 4; name = "posix_tls.h"; path = "src/posix_tls.h"; sourceTree = SOURCE_ROOT; };
+7E608FE86F494CEEB1ABB77D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */ = {isa = PBXFileReference; explicitFileType = "sourcecode.c.c"; fileEncoding = 4; name = "window.c"; path = "src/window.c"; sourceTree = SOURCE_ROOT; };
+F0D19AF5185F4B9A989A71BC /* glfw */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libglfw3.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-              42D6C01D513741D48973806C  = {
+              7438CB9E21904D4D8DECDAF7  = {
                      isa = PBXGroup;
                      children = (
-                            CA26B1EE158449A0B4B97797 /* Sources */,
-                            583475FEEE5C47E28EE98F26 /* Resources */,
-                            29B279E4F688473CB1B6A6B4 /* Products */,
+                            DBF37D93AFCC4EDD8F0CF236 /* Sources */,
+                            31BB55E22F9F4902A141AE77 /* Resources */,
+                            F7B6CF9539294AD190CC605A /* Products */,
                      );
                      sourceTree = "<group>";
               };
-              CA26B1EE158449A0B4B97797 /* Sources */ = {
+              DBF37D93AFCC4EDD8F0CF236 /* Sources */ = {
                      isa = PBXGroup;
                      children = (
-                            74412B66979E4AA896CAC0B9 /* uninstall */,
-                            C4ED42B5F39948BF958C96B8 /* ALL_BUILD */,
-                            A2F76853124A4463AFA806DE /* ZERO_CHECK */,
-                            8A8CA9B8E94A4FCD85B4F195 /* GLFW3 */,
+                            4B054097DF074973A8712171 /* uninstall */,
+                            EC43605594F54F80958CD9F6 /* ALL_BUILD */,
+                            05CA52B0C0FF4870AA09E84E /* ZERO_CHECK */,
+                            323427740A474CBE9088DC90 /* GLFW3 */,
                      );
                      name = Sources;
                      sourceTree = "<group>";
               };
-              583475FEEE5C47E28EE98F26 /* Resources */ = {
+              31BB55E22F9F4902A141AE77 /* Resources */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = Resources;
                      sourceTree = "<group>";
               };
-              74412B66979E4AA896CAC0B9 /* uninstall */ = {
+              4B054097DF074973A8712171 /* uninstall */ = {
                      isa = PBXGroup;
                      children = (
-                            196AFA2CC8D04E3497AA4258 /* CMake Rules */,
-                            6EFCCD71CECF46C7AC818021 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */,
+                            BCAF59B58A8C475CABCFA83B /* CMake Rules */,
+                            E45F7C6C6E7A4C01BBFD1F88 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */,
                      );
                      name = uninstall;
                      sourceTree = "<group>";
               };
-              196AFA2CC8D04E3497AA4258 /* CMake Rules */ = {
+              BCAF59B58A8C475CABCFA83B /* CMake Rules */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = "CMake Rules";
                      sourceTree = "<group>";
               };
-              C4ED42B5F39948BF958C96B8 /* ALL_BUILD */ = {
+              EC43605594F54F80958CD9F6 /* ALL_BUILD */ = {
                      isa = PBXGroup;
                      children = (
-                            E214E1A51BA34B0B83783AA7 /* CMake Rules */,
-                            D95CCA7242124D81BE894EBD /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */,
+                            42CA9901E2544DE39706BC2B /* CMake Rules */,
+                            17CDAFAA73EB4BF49F6D15B7 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */,
                      );
                      name = ALL_BUILD;
                      sourceTree = "<group>";
               };
-              E214E1A51BA34B0B83783AA7 /* CMake Rules */ = {
+              42CA9901E2544DE39706BC2B /* CMake Rules */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = "CMake Rules";
                      sourceTree = "<group>";
               };
-              A2F76853124A4463AFA806DE /* ZERO_CHECK */ = {
+              05CA52B0C0FF4870AA09E84E /* ZERO_CHECK */ = {
                      isa = PBXGroup;
                      children = (
-                            7B92BB1EB17348468AA4E4D3 /* CMake Rules */,
-                            7643D591613C480594422100 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */,
+                            837D20617C7A49FF971395A4 /* CMake Rules */,
+                            0B5072DE47EF4B74AEB8CDF2 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/CMakeLists.txt */,
                      );
                      name = ZERO_CHECK;
                      sourceTree = "<group>";
               };
-              7B92BB1EB17348468AA4E4D3 /* CMake Rules */ = {
+              837D20617C7A49FF971395A4 /* CMake Rules */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = "CMake Rules";
                      sourceTree = "<group>";
               };
-              8A8CA9B8E94A4FCD85B4F195 /* GLFW3 */ = {
+              323427740A474CBE9088DC90 /* GLFW3 */ = {
                      isa = PBXGroup;
                      children = (
-                            722EA216AD244EBC93802CD1 /* glfw */,
+                            E327D2ECA3BF4D049B5BA9D4 /* glfw */,
                      );
                      name = GLFW3;
                      sourceTree = "<group>";
               };
-              722EA216AD244EBC93802CD1 /* glfw */ = {
+              E327D2ECA3BF4D049B5BA9D4 /* glfw */ = {
                      isa = PBXGroup;
                      children = (
-                            0AD77DA537EB4ED4B6375A15 /* Source Files */,
-                            352690C723604E23A14AAC3E /* Header Files */,
-                            3794B4E3A0B347E391AF00C4 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/CMakeLists.txt */,
+                            B835E125C1E645E791BD8E99 /* Source Files */,
+                            B395516260A64F6BB79BBC4D /* Header Files */,
+                            5D722D968EE14E64BFA50BAB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/CMakeLists.txt */,
                      );
                      name = glfw;
                      sourceTree = "<group>";
               };
-              0AD77DA537EB4ED4B6375A15 /* Source Files */ = {
+              B835E125C1E645E791BD8E99 /* Source Files */ = {
                      isa = PBXGroup;
                      children = (
-                            EB84DCF6E88F4861A1594A6A /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */,
-                            9C7B53A86A74429F891F4C39 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */,
-                            9B6A0479B0964974A02A7049 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */,
-                            C20D6CBDEDB44E2798A3896D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */,
-                            7815C76E10AF4AB08191FB69 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */,
-                            9531AF16B6DA40F893440293 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */,
-                            05875C84968143CA9570AAC7 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */,
-                            4CF8E8922C0242BF8C655224 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */,
-                            AE3034F2910142809217EAB0 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */,
-                            DDDE1AB32D5B481BBDD7B1EF /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */,
-                            EDB30005FD764B13BB19FF1E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */,
-                            4FE15C5968CA46A481693E6B /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */,
+                            F535665E751740BFB34F1DBC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */,
+                            C55D7E3D96F240FE8CC6BF02 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */,
+                            BD3A3765F2AC46B081E342B9 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */,
+                            0E566F5CA0D14A709D93B533 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */,
+                            E4F3807384F94D22AC4E5831 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */,
+                            DF6BC6C2EB60458AAAB3A105 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */,
+                            5DE183D11A8F49AEBF549966 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */,
+                            491FE77491AC4806A23764DE /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */,
+                            33F4AFBE1AD14352B743D55D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */,
+                            2FF6CE5C98634B8083680F7A /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */,
+                            11C80174405547E48607143F /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */,
+                            7E608FE86F494CEEB1ABB77D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */,
                      );
                      name = "Source Files";
                      sourceTree = "<group>";
               };
-              352690C723604E23A14AAC3E /* Header Files */ = {
+              B395516260A64F6BB79BBC4D /* Header Files */ = {
                      isa = PBXGroup;
                      children = (
-                            7E1FBB215C21403989312A20 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/glfw_config.h */,
-                            634220E8D51C4988AE262166 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3.h */,
-                            4A554FE9F12F40839C8A7FB3 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3native.h */,
-                            5301BDFA499E4C858ED12AB3 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_platform.h */,
-                            003A3052B23B421783AE5947 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h */,
-                            F1ABD8F2BB154BA2AD4FD96E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.h */,
-                            3E179DE8AC7F4981ACF9BE7D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h */,
-                            52EF14C78EC146ADAC678CAF /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.h */,
+                            8A194CB877FD4C4E827300BB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/src/glfw_config.h */,
+                            88C4E201B00742649205EFA8 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3.h */,
+                            A8A876E606BC4354B9BDBE17 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/include/GLFW/glfw3native.h */,
+                            46C695D22D404219892058A1 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_platform.h */,
+                            503C358DEA444DB994F700BC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/internal.h */,
+                            E06FAD57F203412CB523EA08 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.h */,
+                            64B69B05CED44D0997823C5C /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.h */,
+                            30CCDF5B0E404197BC3ECAA0 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.h */,
                      );
                      name = "Header Files";
                      sourceTree = "<group>";
               };
-              29B279E4F688473CB1B6A6B4 /* Products */ = {
+              F7B6CF9539294AD190CC605A /* Products */ = {
                      isa = PBXGroup;
                      children = (
-                            6CADFB2F0C7444069791D754 /* glfw */,
+                            F0D19AF5185F4B9A989A71BC /* glfw */,
                      );
                      name = Products;
                      sourceTree = "<group>";
@@ -313,11 +313,11 @@ EDB30005FD764B13BB19FF1E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/pos
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-              91D2FA7B7E6D44D382FFE607 /* glfw */ = {
+              E9D9D92074D3404383B3C303 /* glfw */ = {
                      isa = PBXNativeTarget;
-                     buildConfigurationList = 10D2215F0AE5419891F372B5 /* Build configuration list for PBXNativeTarget "glfw" */;
+                     buildConfigurationList = 93D161DB7E8C4F37BE981434 /* Build configuration list for PBXNativeTarget "glfw" */;
                      buildPhases = (
-                            3A0234A730E64F0083727F55 /* Sources */,
+                            46ADC77A434A4350B7DCE57B /* Sources */,
                      );
                      buildRules = (
                      );
@@ -325,43 +325,43 @@ EDB30005FD764B13BB19FF1E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/pos
                      );
                      name = glfw;
                      productName = glfw;
-                     productReference = 6CADFB2F0C7444069791D754 /* glfw */;
+                     productReference = F0D19AF5185F4B9A989A71BC /* glfw */;
                      productType = "com.apple.product-type.library.static";
               };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-              CA23B5F63B744D4992174E05 /* Project object */ = {
+              D3A3BC66FE7C40DFBE4C3AA1 /* Project object */ = {
                      isa = PBXProject;
                      attributes = {
                             BuildIndependentTargetsInParallel = YES;
                      };
-                     buildConfigurationList = 021B80479A7A4F3FAF7E7927 /* Build configuration list for PBXProject  "GLFW" */;
+                     buildConfigurationList = B4B1CE2100344F16AC525106 /* Build configuration list for PBXProject  "GLFW" */;
                      buildSettings = {
                      };
                      buildStyles = (
-                            03959811E8564F778820AE27 /* Debug */,
-                            346C228D31984D34B8C25C12 /* Release */,
-                            CC9D5F355A76456EA05001B1 /* MinSizeRel */,
-                            06DAE14168A94ED082513D3A /* RelWithDebInfo */,
+                            1FC3F67923C1484689E865B2 /* Debug */,
+                            46AB20C3FFBB48F8853E07CA /* Release */,
+                            892F1E49011247BBAC47D107 /* MinSizeRel */,
+                            4F35639FD09849F2A7A31B6A /* RelWithDebInfo */,
                      );
                      compatibilityVersion = "Xcode 3.2";
                      hasScannedForEncodings = 0;
-                     mainGroup = 42D6C01D513741D48973806C;
+                     mainGroup = 7438CB9E21904D4D8DECDAF7;
                      projectDirPath = "..";
                      projectRoot = "";
                      targets = (
-                            1A8FA057EEEE4F65A66845A7 /* ALL_BUILD */,
-                            25DA1A91967F4787B72F6CC5 /* ZERO_CHECK */,
-                            6ECA233213A84637A2B44104 /* install */,
-                            C0B21CAD2A0346A5B7698C19 /* uninstall */,
-                            91D2FA7B7E6D44D382FFE607 /* glfw */,
+                            CEC6D30A7B924EF399B26601 /* ALL_BUILD */,
+                            5663B3598E104C019F55A54B /* ZERO_CHECK */,
+                            2039DEF99670410ABA59DEF1 /* install */,
+                            E8E0F8E66D784CC6A637CA6A /* uninstall */,
+                            E9D9D92074D3404383B3C303 /* glfw */,
                      );
               };
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-              DAF920BD58334AA2ACCBCEC1 /*  */ = {
+              9C08B748DBC54059A010F3EB /*  */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -376,7 +376,7 @@ EDB30005FD764B13BB19FF1E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/pos
 exit 0";
                      showEnvVarsInLog = 0;
               };
-              7836E52B91C145DDB56DEF82 /* CMake Rules */ = {
+              1B4FEFB5111445F486DCFC84 /* CMake Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -387,7 +387,7 @@ exit 0";
                      shellScript = "make -C /Users/elliotfiske/animation/deps/glfw-3.1.2/debug -f /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
                      showEnvVarsInLog = 0;
               };
-              FAAAC962572542AFB87E283E /*  */ = {
+              8E02152E724441CF943211AE /*  */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -402,7 +402,7 @@ exit 0";
 exit 0";
                      showEnvVarsInLog = 0;
               };
-              5CFC49A59B0F4A6DB5502F2F /* CMake Rules */ = {
+              3161CDE4ECB74563AC587D87 /* CMake Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -413,7 +413,7 @@ exit 0";
                      shellScript = "make -C /Users/elliotfiske/animation/deps/glfw-3.1.2/debug -f /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
                      showEnvVarsInLog = 0;
               };
-              3F7020469A314A61B5A7AC6B /*  */ = {
+              9F5DDD7E1EF1432D99B416FA /*  */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -428,7 +428,7 @@ exit 0";
 exit 0";
                      showEnvVarsInLog = 0;
               };
-              02F05ED9833A4889A6D3ED22 /* CMake PostBuild Rules */ = {
+              BAB7EE6AB5764C7CBA31C6E0 /* CMake PostBuild Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -439,7 +439,7 @@ exit 0";
                      shellScript = "make -C /Users/elliotfiske/animation/deps/glfw-3.1.2/debug -f /Users/elliotfiske/animation/deps/glfw-3.1.2/debug/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
                      showEnvVarsInLog = 0;
               };
-              ED366D4EE514441FBBE2D587 /*  */ = {
+              F557CBEEB17C444BAAE80247 /*  */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -454,7 +454,7 @@ exit 0";
 exit 0";
                      showEnvVarsInLog = 0;
               };
-              3BD8F85CD4A54E01AD3D8720 /* CMake Rules */ = {
+              95827A3E0C7A432F9911EA11 /* CMake Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -468,52 +468,52 @@ exit 0";
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-              3A0234A730E64F0083727F55 /* Sources */ = {
+              46ADC77A434A4350B7DCE57B /* Sources */ = {
                      isa = PBXSourcesBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
-                            3E6DACA44CEA448E8E5C6E15 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */,
-                            DA1C0B58449A44F88B81BA38 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */,
-                            39588E798AA74E5AABD77FE1 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */,
-                            5809F81B55074D4493997BB2 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */,
-                            644E5AB13A7347DF98E02C8D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */,
-                            6CD6F050B36B495686C8B1BC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */,
-                            8D12B891DE034E05A9CFECDE /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */,
-                            9CEE2381D6C04C178C8034EA /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */,
-                            78D9A84831204DBA8068EC20 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */,
-                            741BCF9D4640483CB399C9D8 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */,
-                            2262B26AD9134C468325C93F /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */,
-                            EC4917B64AD445219661827E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */,
+                            1686A0FE146642E5ABDAB2D8 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_init.m */,
+                            2D7E6DD3D4C64C139D338598 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_monitor.m */,
+                            F6D454636DB34246A705B16A /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/cocoa_window.m */,
+                            E265A266A18D4FD594FA5FF9 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/context.c */,
+                            476D19F7B6714A798AD9887E /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/init.c */,
+                            8DBB9951B38542CE80F57257 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/input.c */,
+                            B3F32117E9A5499FBFD672BC /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/iokit_joystick.m */,
+                            074DBE1FC97D4487B4229EB6 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/mach_time.c */,
+                            0A755BC13F90430A978AD946 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/monitor.c */,
+                            A407C8EA0513487EBAFA5E4D /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/nsgl_context.m */,
+                            EEFF1D99007547DB8AA67224 /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/posix_tls.c */,
+                            2A5D52348B0F411AA03843BB /* /Users/elliotfiske/animation/deps/glfw-3.1.2/src/window.c */,
                      );
                      runOnlyForDeploymentPostprocessing = 0;
               };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-              7AA4A106D7354A829EE45481 /* PBXTargetDependency */ = {
+              662B4E3E1F634E649598A573 /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 91D2FA7B7E6D44D382FFE607 /* glfw */;
-                     targetProxy = D2FEA1C1AF7847EE98A1FDA1 /* PBXContainerItemProxy */;
+                     target = 5663B3598E104C019F55A54B /* ZERO_CHECK */;
+                     targetProxy = E99E3AFA1DFE406F9B6F0D49 /* PBXContainerItemProxy */;
               };
-              84BCF2B4A14C4B7598E687B5 /* PBXTargetDependency */ = {
+              07D364CEEB054B98B1D005D2 /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 25DA1A91967F4787B72F6CC5 /* ZERO_CHECK */;
-                     targetProxy = 634E53B474D34875AA3FE727 /* PBXContainerItemProxy */;
+                     target = E9D9D92074D3404383B3C303 /* glfw */;
+                     targetProxy = 39BF28809C8F460E9322EF9D /* PBXContainerItemProxy */;
               };
-              A1FE8E8574754706BE73406A /* PBXTargetDependency */ = {
+              C9F6630575D648C3B2083F38 /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 1A8FA057EEEE4F65A66845A7 /* ALL_BUILD */;
-                     targetProxy = A7013679C15C421BA798A25A /* PBXContainerItemProxy */;
+                     target = CEC6D30A7B924EF399B26601 /* ALL_BUILD */;
+                     targetProxy = BF8107C6410C4CFAAA99EB18 /* PBXContainerItemProxy */;
               };
-              E4A94A5E505B451791F24D87 /* PBXTargetDependency */ = {
+              62FE7AD1A06A4A15B75ECCF6 /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 25DA1A91967F4787B72F6CC5 /* ZERO_CHECK */;
-                     targetProxy = 20F2AD8709B84C69A4A72B9B /* PBXContainerItemProxy */;
+                     target = 5663B3598E104C019F55A54B /* ZERO_CHECK */;
+                     targetProxy = C43DA23344AD400BB0AF5F36 /* PBXContainerItemProxy */;
               };
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-              F99EF8C8B019464488960385 /* Debug */ = {
+              3CDAB8AC63F04746A2892EA0 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -523,7 +523,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              2F5E7E787F9F470D8B40D615 /* Release */ = {
+              3AA51C91820A4BFD9F5B1CA8 /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -533,7 +533,7 @@ exit 0";
                      };
                      name = Release;
               };
-              7D32ED0FE6514FFD90D2413B /* MinSizeRel */ = {
+              25858156AA0144F592459DD0 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -543,7 +543,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              B755038451634EF2855E3AB4 /* RelWithDebInfo */ = {
+              4C88367949B5473EB178E700 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -553,7 +553,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              9AFB12A415464D308E057BCD /* Debug */ = {
+              25CE2060A16F4A158B212F36 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -575,7 +575,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              21C08629D8244EA3A24FA09B /* Release */ = {
+              73144AB4424D44399B13DE6F /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -597,7 +597,7 @@ exit 0";
                      };
                      name = Release;
               };
-              4136FAC1279247F8864292F5 /* MinSizeRel */ = {
+              746AB2E8C83A4DFC8B4205D1 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -619,7 +619,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              1642C6790E8F4C39BEE10BEB /* RelWithDebInfo */ = {
+              2629E97CDAF6436285178F01 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -641,7 +641,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              1AB489B6DF67434C8DB0726B /* Debug */ = {
+              7BC1D68E5DF64F279DD6896B /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -663,7 +663,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              C2C1297E60F24469831D99C8 /* Release */ = {
+              9C40825DE3E74DC990E40A5B /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -685,7 +685,7 @@ exit 0";
                      };
                      name = Release;
               };
-              1C0542AD6D654E64B527B821 /* MinSizeRel */ = {
+              3096637C7D114B8B957B7BD8 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -707,7 +707,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              E246E693A5C747EB830C7E40 /* RelWithDebInfo */ = {
+              82C8C80531874F1298DC361C /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -729,7 +729,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              E8077F5630CA401AA9AB896C /* Debug */ = {
+              8D32E33E23304C08AE45D599 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -751,7 +751,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              29BA5C497F7B4836972373D9 /* Release */ = {
+              357754FBD9AC4AB88885CEE8 /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -773,7 +773,7 @@ exit 0";
                      };
                      name = Release;
               };
-              696D81A013AC4CE18AADC555 /* MinSizeRel */ = {
+              20A0B2D856374E2D9FEC2D71 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -795,7 +795,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              9DE9B9AB9D3F4BD1B25E4CAB /* RelWithDebInfo */ = {
+              5B04E9555C3E43A6AB98B5C7 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -817,7 +817,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              3886467BA59A4213AF3A9B3A /* Debug */ = {
+              5D7FCE3FF3E44B6AB4F920A3 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -839,7 +839,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              2B05D93AD04F44A6BB776140 /* Release */ = {
+              72EDC0B5D8E3444DB6572044 /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -861,7 +861,7 @@ exit 0";
                      };
                      name = Release;
               };
-              3FFCFB62AC5B42BA85CF2CBC /* MinSizeRel */ = {
+              3AC968F35C2B473688D3F6E7 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -883,7 +883,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              17CB41F044074B9998E98C9A /* RelWithDebInfo */ = {
+              32E6BEB72D40492D958FAADF /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -905,7 +905,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              B2C8C800BD864AB7B9FBF551 /* Debug */ = {
+              9748E192AC4741E38793866A /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -930,7 +930,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              0D5EE6F7DDB74298974BCDF2 /* Release */ = {
+              CBDF2E91A4E048078ECE6B3C /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -955,7 +955,7 @@ exit 0";
                      };
                      name = Release;
               };
-              F783DE6C6F93482295720D26 /* MinSizeRel */ = {
+              A9849567EA474EDFAD07AE78 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -980,7 +980,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              CAE13F07A5A442C1B7211C40 /* RelWithDebInfo */ = {
+              B93D1BEF32484728A9B63671 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             COMBINE_HIDPI_IMAGES = YES;
@@ -1008,73 +1008,73 @@ exit 0";
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-              021B80479A7A4F3FAF7E7927 /* Build configuration list for PBXProject  "GLFW" */ = {
+              B4B1CE2100344F16AC525106 /* Build configuration list for PBXProject  "GLFW" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            F99EF8C8B019464488960385 /* Debug */,
-                            2F5E7E787F9F470D8B40D615 /* Release */,
-                            7D32ED0FE6514FFD90D2413B /* MinSizeRel */,
-                            B755038451634EF2855E3AB4 /* RelWithDebInfo */,
+                            3CDAB8AC63F04746A2892EA0 /* Debug */,
+                            3AA51C91820A4BFD9F5B1CA8 /* Release */,
+                            25858156AA0144F592459DD0 /* MinSizeRel */,
+                            4C88367949B5473EB178E700 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              5D3FA88237EA41F7BF5D74CC /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+              0684FAD3EDA144878209F204 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            9AFB12A415464D308E057BCD /* Debug */,
-                            21C08629D8244EA3A24FA09B /* Release */,
-                            4136FAC1279247F8864292F5 /* MinSizeRel */,
-                            1642C6790E8F4C39BEE10BEB /* RelWithDebInfo */,
+                            25CE2060A16F4A158B212F36 /* Debug */,
+                            73144AB4424D44399B13DE6F /* Release */,
+                            746AB2E8C83A4DFC8B4205D1 /* MinSizeRel */,
+                            2629E97CDAF6436285178F01 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              28EDE5DE03FE4B36AAF44579 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+              1CC245A079364C26BCE912AD /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            1AB489B6DF67434C8DB0726B /* Debug */,
-                            C2C1297E60F24469831D99C8 /* Release */,
-                            1C0542AD6D654E64B527B821 /* MinSizeRel */,
-                            E246E693A5C747EB830C7E40 /* RelWithDebInfo */,
+                            7BC1D68E5DF64F279DD6896B /* Debug */,
+                            9C40825DE3E74DC990E40A5B /* Release */,
+                            3096637C7D114B8B957B7BD8 /* MinSizeRel */,
+                            82C8C80531874F1298DC361C /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              DAE8991D459E487893FD03EC /* Build configuration list for PBXAggregateTarget "install" */ = {
+              89E3BCB1DB284E8B8F6EACC1 /* Build configuration list for PBXAggregateTarget "install" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            E8077F5630CA401AA9AB896C /* Debug */,
-                            29BA5C497F7B4836972373D9 /* Release */,
-                            696D81A013AC4CE18AADC555 /* MinSizeRel */,
-                            9DE9B9AB9D3F4BD1B25E4CAB /* RelWithDebInfo */,
+                            8D32E33E23304C08AE45D599 /* Debug */,
+                            357754FBD9AC4AB88885CEE8 /* Release */,
+                            20A0B2D856374E2D9FEC2D71 /* MinSizeRel */,
+                            5B04E9555C3E43A6AB98B5C7 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              97DE6155DB0542E78B58E84D /* Build configuration list for PBXAggregateTarget "uninstall" */ = {
+              6004A3C526AF404385BB354C /* Build configuration list for PBXAggregateTarget "uninstall" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            3886467BA59A4213AF3A9B3A /* Debug */,
-                            2B05D93AD04F44A6BB776140 /* Release */,
-                            3FFCFB62AC5B42BA85CF2CBC /* MinSizeRel */,
-                            17CB41F044074B9998E98C9A /* RelWithDebInfo */,
+                            5D7FCE3FF3E44B6AB4F920A3 /* Debug */,
+                            72EDC0B5D8E3444DB6572044 /* Release */,
+                            3AC968F35C2B473688D3F6E7 /* MinSizeRel */,
+                            32E6BEB72D40492D958FAADF /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              10D2215F0AE5419891F372B5 /* Build configuration list for PBXNativeTarget "glfw" */ = {
+              93D161DB7E8C4F37BE981434 /* Build configuration list for PBXNativeTarget "glfw" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            B2C8C800BD864AB7B9FBF551 /* Debug */,
-                            0D5EE6F7DDB74298974BCDF2 /* Release */,
-                            F783DE6C6F93482295720D26 /* MinSizeRel */,
-                            CAE13F07A5A442C1B7211C40 /* RelWithDebInfo */,
+                            9748E192AC4741E38793866A /* Debug */,
+                            CBDF2E91A4E048078ECE6B3C /* Release */,
+                            A9849567EA474EDFAD07AE78 /* MinSizeRel */,
+                            B93D1BEF32484728A9B63671 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
 /* End XCConfigurationList section */
        };
-       rootObject = CA23B5F63B744D4992174E05;
+       rootObject = D3A3BC66FE7C40DFBE4C3AA1;
 }
