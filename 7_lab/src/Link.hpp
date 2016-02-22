@@ -27,10 +27,9 @@ public:
    std::vector<Link> children;
    
    float angle;
-   Eigen::Matrix4f i_to_p_E;
-   Eigen::Matrix4f mesh_to_i_E;
+//   Eigen::Matrix4f i_to_p_E;
+//   Eigen::Matrix4f mesh_to_i_E;
    
-   void setAngle(float new_angle);
    void draw(MatrixStack *M, const std::shared_ptr<Program> prog, const std::shared_ptr<Shape> shape);
    
    // What shape to draw when we draw this Link

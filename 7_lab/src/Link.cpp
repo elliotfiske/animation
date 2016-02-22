@@ -20,8 +20,6 @@ using namespace Eigen;
 Link::Link() :
    angle(0)
 {
-   i_to_p_E = Matrix4f::Identity();
-   mesh_to_i_E = Matrix4f::Identity();
 }
 
 Link::~Link()
@@ -29,28 +27,26 @@ Link::~Link()
    
 }
 
-void Link::setAngle(float new_angle) {
-   angle = new_angle;
-   
-   // TODO: set i_to_p_E here
-   
-}
-
 void Link::draw(MatrixStack *M, const std::shared_ptr<Program> prog, const std::shared_ptr<Shape> shape){
-//   M->pushMatrix();
-//   M->multMatrix(i_to_p_E);
-//   M->pushMatrix();
-//   M->multMatrix(mesh_to_i_E);
+   
+   Matrix4f i_to_p_E = Matrix4f::Identity();
+   Matrix4f mesh_to_i_E = Matrix4f::Identity();
+   
+   
+   M->pushMatrix();
+   M->multMatrix(i_to_p_E);
+   M->pushMatrix();
+   M->multMatrix(mesh_to_i_E);
    
    glUniformMatrix4fv(prog->getUniform("MV"), 1, GL_FALSE, M->topMatrix().data());
    
    shape->draw(prog);
    
-//   M->popMatrix();
+   M->popMatrix();
    
    for (int ndx = 0; ndx < children.size(); ndx++) {
       children[ndx].draw(M, prog, shape);
    }
    
-//   M->popMatrix();
+   M->popMatrix();
 }
