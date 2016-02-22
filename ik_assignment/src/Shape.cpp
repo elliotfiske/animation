@@ -45,16 +45,10 @@ void Shape::loadMesh(const string &meshName)
 
 void Shape::init()
 {
-	// Send the position array to the GPU, chopped in half. Lazy solution for the win!
-   vector<float> shrunken_pos_buf;
-   
-   for (int ndx = 0; ndx < posBuf.size(); ndx++) {
-      shrunken_pos_buf.push_back(posBuf[ndx]/2.5f);
-   }
-   
+	// Send the position array to the GPU
 	glGenBuffers(1, &posBufID);
 	glBindBuffer(GL_ARRAY_BUFFER, posBufID);
-	glBufferData(GL_ARRAY_BUFFER, shrunken_pos_buf.size()*sizeof(float), &shrunken_pos_buf[0], GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, posBuf.size()*sizeof(float), &posBuf[0], GL_STATIC_DRAW);
 	
 	// Send the normal array to the GPU
 	if(!norBuf.empty()) {

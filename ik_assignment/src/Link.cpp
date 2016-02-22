@@ -19,8 +19,11 @@
 using namespace Eigen;
 using namespace std;
 
+#define SEGMENT_WIDTH 1.0f
+
 Link::Link() :
-   angle(M_PI * 0.0f)
+   angle(M_PI * 0.1f),
+   parent_offset(SEGMENT_WIDTH)
 {
 }
 
@@ -45,12 +48,13 @@ void Link::add_child(std::shared_ptr<Link> me, int how_many) {
 
 void Link::draw(MatrixStack *M, const std::shared_ptr<Program> prog, const std::shared_ptr<Shape> shape){
    
-   Affine3f transform(Translation3f(0.5, 0, 0));
-   Matrix4f i_to_p_E = transform.matrix();
-   Matrix4f mesh_to_i_E = Matrix4f::Identity();
-   
+   Affine3f to_parent(Translation3f(parent_offset, 0, 0));
+   Matrix4f i_to_p_E = to_parent.matrix();
    Matrix3f rot_matrix = AngleAxisf(angle, Vector3f::UnitZ()).matrix();
    i_to_p_E.block<3,3>(0,0) = rot_matrix;
+   
+   Affine3f transform(Translation3f(SEGMENT_WIDTH / 2.0f, 0, 0));
+   Matrix4f mesh_to_i_E = transform.matrix();
    
    M->pushMatrix();
    M->multMatrix(i_to_p_E);

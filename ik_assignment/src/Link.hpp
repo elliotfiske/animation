@@ -29,8 +29,7 @@ public:
    void add_child(std::shared_ptr<Link> me, int how_many);
    
    float angle;
-//   Eigen::Matrix4f i_to_p_E;
-//   Eigen::Matrix4f mesh_to_i_E; // TODO: figure out why having these as member variables crashes everything
+   float parent_offset; // How far the mesh center is away from the joint
    
    void draw(MatrixStack *M, const std::shared_ptr<Program> prog, const std::shared_ptr<Shape> shape);
    

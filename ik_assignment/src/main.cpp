@@ -129,6 +129,8 @@ static void init()
 	shape->init();
    
    root_link = make_shared<Link>();
+   root_link->angle = M_PI * 0.2f;
+   root_link->parent_offset = 0.0f; // Root link is smack dab in the center
    root_link->add_child(root_link, 5);
 	
 	camera = make_shared<Camera>();
@@ -144,6 +146,8 @@ static void init()
 
 void render()
 {
+   root_link->angle += 0.01f;
+   root_link->children[0]->angle += 0.005f;
 	// Get current frame buffer size.
 	int width, height;
 	glfwGetFramebufferSize(window, &width, &height);
@@ -170,20 +174,22 @@ void render()
 	auto MV = make_shared<MatrixStack>();
 	
 	// Apply camera transforms
-	P->pushMatrix();
-	camera->applyProjectionMatrix(P);
-	MV->pushMatrix();
-	camera->applyViewMatrix(MV);
+   float aspect = (float)width/height;
+   P->pushMatrix();
+   double s = 5.0;
+   P->ortho(-s*aspect, s*aspect, -s, s, -2.0, 2.0);
+   MV->pushMatrix();
+   MV->translate(Vector3f(0, 0, -1));
 	
 	// Draw grid
 	progSimple->bind();
 	glUniformMatrix4fv(progSimple->getUniform("P"), 1, GL_FALSE, P->topMatrix().data());
 	glUniformMatrix4fv(progSimple->getUniform("MV"), 1, GL_FALSE, MV->topMatrix().data());
 	glLineWidth(2.0f);
-	float x0 = -2.0f;
-	float x1 = 2.0f;
-	float y0 = -2.0f;
-	float y1 = 2.0f;
+	float x0 = -5.0f;
+	float x1 = 5.0f;
+	float y0 = -5.0f;
+	float y1 = 5.0f;
 	glColor3f(0.2f, 0.2f, 0.2f);
 	glBegin(GL_LINE_LOOP);
 	glVertex2f(x0, y0);
@@ -191,7 +197,7 @@ void render()
 	glVertex2f(x1, y1);
 	glVertex2f(x0, y1);
 	glEnd();
-	int gridSize = 8;
+	int gridSize = 10;
 	glLineWidth(1.0f);
 	glBegin(GL_LINES);
 	for(int i = 1; i < gridSize; ++i) {
