@@ -319,6 +319,7 @@ void createParticles()
 
 #define G 1.0f
 
+/** TODO: PARALLELIZE */
 void stepParticles()
 {
    // Stores the components of each particle's summed forces
