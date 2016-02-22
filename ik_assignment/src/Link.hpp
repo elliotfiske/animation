@@ -27,6 +27,7 @@ public:
    std::vector<std::shared_ptr<Link> > children;
    
    void add_child(std::shared_ptr<Link> me, int how_many);
+   void set_nth_angle(int ndx, double angle);
    
    float angle;
    float parent_offset; // How far the mesh center is away from the joint

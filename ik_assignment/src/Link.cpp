@@ -46,6 +46,11 @@ void Link::add_child(std::shared_ptr<Link> me, int how_many) {
    new_link->add_child(new_link, how_many);
 }
 
+// Set the angle of a particular segment.
+void Link::set_nth_angle(int ndx, double angle) {
+   
+}
+
 void Link::draw(MatrixStack *M, const std::shared_ptr<Program> prog, const std::shared_ptr<Shape> shape){
    
    Affine3f to_parent(Translation3f(parent_offset, 0, 0));
