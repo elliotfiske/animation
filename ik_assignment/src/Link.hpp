@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <memory>
 #include <vector>
+
+#define EIGEN_DONT_ALIGN_STATICALLY
 #include <Eigen/Dense>
 #include "MatrixStack.h"
 #include "Shape.h"
@@ -19,6 +21,7 @@
 class Link: public std::enable_shared_from_this<Link>
 {
 public:
+   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
    Link();
    virtual ~Link();
    

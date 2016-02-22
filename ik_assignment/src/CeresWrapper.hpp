@@ -20,6 +20,6 @@ typedef struct SolvedAngles {
    double ang_4;
 } SolvedAngles;
 
-SolvedAngles solveAngles(float target_x, float target_y);
+SolvedAngles solveAngles(double target_x, double target_y);
 
 #endif /* CeresWrapper_hpp */

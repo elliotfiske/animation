@@ -49,8 +49,29 @@ static void char_callback(GLFWwindow *window, unsigned int key)
 	keyToggles[key] = !keyToggles[key];
 }
 
+double curr_mouse_x = 0;
+double curr_mouse_y = 0;
+
+
+
+void window2world(double xmouse, double ymouse)
+{
+   // Get current window size.
+   int width, height;
+   glfwGetWindowSize(window, &width, &height);
+   // Convert from window coord to world coord assuming that we're
+   // using an orthgraphic projection from -s to s.
+   double s = 5.0; // window size
+   float aspect = (float)width/height;
+   //   Vector2f x;
+   curr_mouse_x = s * 2.0f * ((xmouse / width) - 0.5f)* aspect;
+   curr_mouse_y = s * 2.0f * (((height - ymouse) / height) - 0.5f);
+   //   return x;
+}
+
 static void cursor_position_callback(GLFWwindow* window, double xmouse, double ymouse)
 {
+   window2world(xmouse, ymouse);
 	int state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
 	if(state == GLFW_PRESS) {
 		bool altL = glfwGetKey(window, GLFW_KEY_LEFT_ALT) == GLFW_PRESS;
@@ -147,8 +168,6 @@ static void init()
 
 void render()
 {
-   root_link->angle += 0.01f;
-   root_link->children[0]->angle += 0.005f;
 	// Get current frame buffer size.
 	int width, height;
 	glfwGetFramebufferSize(window, &width, &height);
@@ -170,6 +189,11 @@ void render()
 	} else {
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	}
+   
+   
+   SolvedAngles sang = solveAngles(curr_mouse_x, curr_mouse_y);
+   cout << mouse(0) << endl;
+   root_link->angle = sang.ang_0;
 	
 	auto P = make_shared<MatrixStack>();
 	auto MV = make_shared<MatrixStack>();
@@ -185,7 +209,6 @@ void render()
    double s = 5.0;
    P->ortho(-s*aspect, s*aspect, -s, s, -2.0, 2.0);
 
-   solveAngles(0.0, 1.0);
 	
 	// Draw grid
 	progSimple->bind();

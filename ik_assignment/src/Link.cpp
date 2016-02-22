@@ -22,7 +22,7 @@ using namespace std;
 #define SEGMENT_WIDTH 1.0f
 
 Link::Link() :
-   angle(M_PI * 0.1f),
+   angle(M_PI * 0.0f),
    parent_offset(SEGMENT_WIDTH)
 {
 }
