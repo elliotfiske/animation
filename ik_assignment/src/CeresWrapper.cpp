@@ -90,6 +90,8 @@ struct IKFunctor {
 //bool
 double last_angle;
 
+double weights[] = { 0, 3, 1, 1, 6 };
+
 struct StraightLines {
    int spring_ndx;
    
@@ -99,30 +101,26 @@ struct StraightLines {
       // We don't care about the root link, but we want
       //  all the next angles to be kinda close to 0.
       
-//      if (x[spring_ndx] < T(0)) {
-      if (spring_ndx == 0) {
-//         residual[0] = x[0] - atan2(mouse_y, mouse_x);
-//         return true;
+
+   
+//         T spring_val = (spring_ndx % 2 == 0) ? T(-M_PI_4) : T(M_PI_4);
+      T spring_val = T(0.0);
+      T curr_x = x[spring_ndx];
+   
+      while (curr_x > T(M_PI)) {
+         curr_x -= T(M_2_PI);
+      }
+   
+      while (curr_x < T(-M_PI)) {
+         curr_x += T(M_2_PI);
       }
       
-//         T spring_val = (spring_ndx % 2 == 0) ? T(-M_PI_4) : T(M_PI_4);
-         T spring_val = T(0.0);
-         T curr_x = x[spring_ndx];
-      
-         while (curr_x > T(M_2_PI)) {
-            curr_x -= T(M_2_PI);
-         }
-      
-         while (curr_x < T(-M_2_PI)) {
-            curr_x += T(M_2_PI);
-         }
-      
-      residual[0] = T(0.01) * ( spring_val - curr_x );
-//      residual[0] = T(0.01) * ( curr_x - x[spring_ndx-1]);
-//      }
-//      else {
+//      if (curr_x < T(0)) {
 //         residual[0] = T(0.2);
+//         return true;
 //      }
+      
+      residual[0] = T(0.01) * ( curr_x );// * (weights[spring_ndx]);
       return true;
    }
 };
