@@ -81,7 +81,7 @@ struct IKFunctor {
       residual[0] = T(mouse_x) - result(0, 0);
       
       // y residual
-      residual[1] = T(mouse_y) - result(1, 0);
+      residual[1] = T(mouse_y) - result(1, 0) + residual[0];
       
       return true;
    }
@@ -90,7 +90,8 @@ struct IKFunctor {
 //bool
 double last_angle;
 
-double weights[] = { 0, 3, 1, 1, 6 };
+double weights[] = { 0, 2, 0.5, 0.5, 2 };
+//         T spring_val = (spring_ndx % 2 == 0) ? T(-M_PI_4) : T(M_PI_4);
 
 struct StraightLines {
    int spring_ndx;
@@ -100,11 +101,6 @@ struct StraightLines {
       
       // We don't care about the root link, but we want
       //  all the next angles to be kinda close to 0.
-      
-
-   
-//         T spring_val = (spring_ndx % 2 == 0) ? T(-M_PI_4) : T(M_PI_4);
-      T spring_val = T(0.0);
       T curr_x = x[spring_ndx];
    
       while (curr_x > T(M_PI)) {
@@ -115,12 +111,9 @@ struct StraightLines {
          curr_x += T(M_2_PI);
       }
       
-//      if (curr_x < T(0)) {
-//         residual[0] = T(0.2);
-//         return true;
-//      }
+      curr_x /= T(M_PI);
       
-      residual[0] = T(0.01) * ( curr_x );// * (weights[spring_ndx]);
+      residual[0] = T(0.01) * ( curr_x * curr_x * curr_x );// * (weights[spring_ndx]);
       return true;
    }
 };
@@ -136,6 +129,13 @@ SolvedAngles solveAngles(double target_x, double target_y) {
    x[2] = 0;
    x[3] = 0;
    x[4] = 0;
+   
+   int flipped = 1;
+   
+   if (target_y > 0) {
+      target_y *= -1;
+      flipped = -1;
+   }
    
    mouse_x = target_x;
    mouse_y = target_y;
@@ -167,10 +167,10 @@ SolvedAngles solveAngles(double target_x, double target_y) {
    std::cout << " RESULTS: (" << x[0] << ", " << x[1] << ", " << x[2] << ", " << x[3] << ", " << x[4] << ") \n";
    
    SolvedAngles result;
-   result.ang_0 = x[0];
-   result.ang_1 = x[1];
-   result.ang_2 = x[2];
-   result.ang_3 = x[3];
-   result.ang_4 = x[4];
+   result.ang_0 = x[0] * flipped;
+   result.ang_1 = x[1] * flipped;
+   result.ang_2 = x[2] * flipped;
+   result.ang_3 = x[3] * flipped;
+   result.ang_4 = x[4] * flipped;
    return result;
 }
