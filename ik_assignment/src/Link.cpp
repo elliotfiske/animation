@@ -47,8 +47,13 @@ void Link::add_child(std::shared_ptr<Link> me, int how_many) {
 }
 
 // Set the angle of a particular segment.
-void Link::set_nth_angle(int ndx, double angle) {
-   
+void Link::set_nth_angle(int ndx, double new_angle) {
+   if (ndx == 0) {
+      angle = new_angle;
+   }
+   else {
+      children[0]->set_nth_angle(ndx - 1, new_angle);
+   }
 }
 
 void Link::draw(MatrixStack *M, const std::shared_ptr<Program> prog, const std::shared_ptr<Shape> shape){

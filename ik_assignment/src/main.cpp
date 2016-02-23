@@ -151,7 +151,6 @@ static void init()
 	shape->init();
    
    root_link = make_shared<Link>();
-   root_link->angle = M_PI * 0.2f;
    root_link->parent_offset = 0.0f; // Root link is smack dab in the center
    root_link->add_child(root_link, 5);
 	
@@ -193,7 +192,11 @@ void render()
    
    SolvedAngles sang = solveAngles(curr_mouse_x, curr_mouse_y);
    cout << mouse(0) << endl;
-   root_link->angle = sang.ang_0;
+   root_link->set_nth_angle(0, sang.ang_0);
+   root_link->set_nth_angle(1, sang.ang_1);
+   root_link->set_nth_angle(2, sang.ang_2);
+   root_link->set_nth_angle(3, sang.ang_3);
+   root_link->set_nth_angle(4, sang.ang_4);
 	
 	auto P = make_shared<MatrixStack>();
 	auto MV = make_shared<MatrixStack>();

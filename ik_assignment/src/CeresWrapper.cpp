@@ -52,44 +52,77 @@ struct IKFunctor {
    template <typename T>
    bool operator()(const T* const x, T* residual) const {
       // Input: 5 angles
+      Matrix<T, 3, 1> result;
+      result << T(1), T(0), T(1);
       
-      // test with just one joint
-      Matrix<T, 3, 3> my_frame_to_parent;
-      T cos_angle = cos(x[0]);
-      T sin_angle = sin(x[0]);
-      
-      my_frame_to_parent(0, 0) =  cos_angle;
-      my_frame_to_parent(0, 1) = -sin_angle;
-      my_frame_to_parent(0, 2) = T(0);
-      
-      my_frame_to_parent(1, 0) =  sin_angle;
-      my_frame_to_parent(1, 1) =  cos_angle;
-      my_frame_to_parent(1, 2) = T(0);
-      
-      my_frame_to_parent(2, 0) = T(0);
-      my_frame_to_parent(2, 1) = T(0);
-      my_frame_to_parent(2, 2) = T(1);
-      
-      Matrix<T, 3, 1> curr_point;
-      curr_point << T(1), T(0), T(0);
-      
-      Matrix<T, 3, 1> result = my_frame_to_parent * curr_point;
-      
-      for (int ndx = 0; ndx < 5; ndx++) {
+      for (int ndx = 4; ndx >= 0; ndx--) {
          
+         Matrix<T, 3, 3> my_frame_to_parent;
+         T cos_angle = cos(x[ndx]);
+         T sin_angle = sin(x[ndx]);
+         
+         my_frame_to_parent(0, 0) =  cos_angle;
+         my_frame_to_parent(0, 1) = -sin_angle;
+         T offset = (ndx == 0) ? T(0) : T(1);
+         my_frame_to_parent(0, 2) = offset;
+         
+         my_frame_to_parent(1, 0) =  sin_angle;
+         my_frame_to_parent(1, 1) =  cos_angle;
+         my_frame_to_parent(1, 2) = T(0);
+         
+         my_frame_to_parent(2, 0) = T(0);
+         my_frame_to_parent(2, 1) = T(0);
+         my_frame_to_parent(2, 2) = T(1);
+         
+         result = my_frame_to_parent * result;
       }
       
       // x residual
-      residual[0] = mouse_x - result(0, 0);
+      residual[0] = T(mouse_x) - result(0, 0);
       
       // y residual
-      residual[1] = mouse_y - result(1, 0);
+      residual[1] = T(mouse_y) - result(1, 0);
+      
+      return true;
+   }
+};
 
+//bool
+double last_angle;
+
+struct StraightLines {
+   int spring_ndx;
+   
+   template <typename T>
+   bool operator()(const T* const x, T* residual) const {
       
-      // Calculate final position of x_curr
+      // We don't care about the root link, but we want
+      //  all the next angles to be kinda close to 0.
       
-      // Residual is the distance between x_curr and x_goal
+//      if (x[spring_ndx] < T(0)) {
+      if (spring_ndx == 0) {
+//         residual[0] = x[0] - atan2(mouse_y, mouse_x);
+//         return true;
+      }
       
+//         T spring_val = (spring_ndx % 2 == 0) ? T(-M_PI_4) : T(M_PI_4);
+         T spring_val = T(0.0);
+         T curr_x = x[spring_ndx];
+      
+         while (curr_x > T(M_2_PI)) {
+            curr_x -= T(M_2_PI);
+         }
+      
+         while (curr_x < T(-M_2_PI)) {
+            curr_x += T(M_2_PI);
+         }
+      
+      residual[0] = T(0.01) * ( spring_val - curr_x );
+//      residual[0] = T(0.01) * ( curr_x - x[spring_ndx-1]);
+//      }
+//      else {
+//         residual[0] = T(0.2);
+//      }
       return true;
    }
 };
@@ -99,7 +132,7 @@ SolvedAngles solveAngles(double target_x, double target_y) {
    
    // The variable to solve for with its initial value. It will be
    // mutated in place by the solver.
-   double x[7];
+   double x[5];
    x[0] = 0;
    x[1] = 0;
    x[2] = 0;
@@ -108,7 +141,6 @@ SolvedAngles solveAngles(double target_x, double target_y) {
    
    mouse_x = target_x;
    mouse_y = target_y;
-   const double initial_x = x[0];
    
    // Build the problem.
    Problem problem;
@@ -119,6 +151,14 @@ SolvedAngles solveAngles(double target_x, double target_y) {
    new AutoDiffCostFunction<IKFunctor, 2, 5>(new IKFunctor);
    problem.AddResidualBlock(cost_function, NULL, x);
    
+   for (int ndx = 1; ndx < 5; ndx++) {
+      StraightLines *functor = new StraightLines;
+      functor->spring_ndx = ndx;
+      CostFunction* spring_function =
+         new AutoDiffCostFunction<StraightLines, 1, 5>(functor);
+      problem.AddResidualBlock(spring_function, NULL, x);
+   }
+   
    // Run the solver!
    Solver::Options options;
    options.minimizer_progress_to_stdout = false;
@@ -126,8 +166,7 @@ SolvedAngles solveAngles(double target_x, double target_y) {
    Solve(options, &problem, &summary);
    
 //   std::cout << summary.BriefReport() << "\n";
-   std::cout << "x : " << initial_x
-   << " RESULTS: (" << x[0] << ", " << x[1] << ") \n";
+   std::cout << " RESULTS: (" << x[0] << ", " << x[1] << ", " << x[2] << ", " << x[3] << ", " << x[4] << ") \n";
    
    SolvedAngles result;
    result.ang_0 = x[0];
