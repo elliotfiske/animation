@@ -44,17 +44,21 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
 	}
 }
 
+int joint_state = 0;
+
 static void char_callback(GLFWwindow *window, unsigned int key)
 {
 	keyToggles[key] = !keyToggles[key];
-   
+   if (key == 's') {
+      joint_state ++;
+      joint_state %= 3;
+   }
 }
 
 double curr_mouse_x = 0;
 double curr_mouse_y = 0;
 
-
-int joint_state = 0;
+SolvedAngles curr_angles;
 
 void window2world(double xmouse, double ymouse)
 {
@@ -65,54 +69,43 @@ void window2world(double xmouse, double ymouse)
    // using an orthgraphic projection from -s to s.
    double s = 5.0; // window size
    float aspect = (float)width/height;
-   //   Vector2f x;
+
    curr_mouse_x = s * 2.0f * ((xmouse / width) - 0.5f)* aspect;
    curr_mouse_y = s * 2.0f * (((height - ymouse) / height) - 0.5f);
-   //   return x;
+
+   curr_angles = solveAngles(curr_mouse_x, curr_mouse_y, joint_state);
+   
+   root_link->set_nth_angle(0, curr_angles.ang_0);
+   root_link->set_nth_angle(1, curr_angles.ang_1);
+   root_link->set_nth_angle(2, curr_angles.ang_2);
+   root_link->set_nth_angle(3, curr_angles.ang_3);
+   root_link->set_nth_angle(4, curr_angles.ang_4);
 }
+
+bool mouse_is_down = false;
 
 static void cursor_position_callback(GLFWwindow* window, double xmouse, double ymouse)
 {
-   window2world(xmouse, ymouse);
-	int state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
-	if(state == GLFW_PRESS) {
-		bool altL = glfwGetKey(window, GLFW_KEY_LEFT_ALT) == GLFW_PRESS;
-		bool altR = glfwGetKey(window, GLFW_KEY_RIGHT_ALT) == GLFW_PRESS;
-		bool alt = altL || altR;
-		if(alt) {
-			// Move the links
-			if(mouse(0) == 0.0f && mouse(1) == 0.0f) {
-				// Initial call
-				mouse << xmouse, ymouse;
-			}
-			float dx = xmouse - mouse(0);
-			float dy = ymouse - mouse(1);
-			float s = 1.0f;
-			//
-			// Use dx and dy to change the joint angles
-			//
-			cout << dx << " " << dy << endl;
-			mouse << xmouse, ymouse;
-		} else {
-			camera->mouseMoved(xmouse, ymouse);
-		}
-	}
+   if (mouse_is_down) {
+      window2world(xmouse, ymouse);
+   }
 }
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-	// Get the current mouse position.
-	double xmouse, ymouse;
-	glfwGetCursorPos(window, &xmouse, &ymouse);
-	// Get current window size.
-	int width, height;
-	glfwGetWindowSize(window, &width, &height);
-	if(action == GLFW_PRESS) {
-		bool shift = mods & GLFW_MOD_SHIFT;
-		bool ctrl  = mods & GLFW_MOD_CONTROL;
-		bool alt   = mods & GLFW_MOD_ALT;
-		camera->mouseClicked(xmouse, ymouse, shift, ctrl, alt);
-	}
+   // Get the current mouse position.
+   double xmouse, ymouse;
+   glfwGetCursorPos(window, &xmouse, &ymouse);
+   // Get current window size.
+   int width, height;
+   glfwGetWindowSize(window, &width, &height);
+   if(action == GLFW_PRESS) {
+      window2world(xmouse, ymouse);
+      mouse_is_down = true;
+   }
+   else if (action == GLFW_RELEASE) {
+      mouse_is_down = false;
+   }
 }
 
 static void init()
@@ -190,15 +183,6 @@ void render()
 	} else {
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	}
-   
-   
-   SolvedAngles sang = solveAngles(curr_mouse_x, curr_mouse_y);
-   cout << mouse(0) << endl;
-   root_link->set_nth_angle(0, sang.ang_0);
-   root_link->set_nth_angle(1, sang.ang_1);
-   root_link->set_nth_angle(2, sang.ang_2);
-   root_link->set_nth_angle(3, sang.ang_3);
-   root_link->set_nth_angle(4, sang.ang_4);
 	
 	auto P = make_shared<MatrixStack>();
 	auto MV = make_shared<MatrixStack>();
@@ -313,10 +297,10 @@ int main(int argc, char **argv)
 	glfwSetKeyCallback(window, key_callback);
 	// Set char callback.
 	glfwSetCharCallback(window, char_callback);
-	// Set cursor position callback.
-	glfwSetCursorPosCallback(window, cursor_position_callback);
-	// Set mouse button callback.
-	glfwSetMouseButtonCallback(window, mouse_button_callback);
+   // Set cursor position callback.
+   glfwSetCursorPosCallback(window, cursor_position_callback);
+   // Set mouse button callback.
+   glfwSetMouseButtonCallback(window, mouse_button_callback);
 	// Initialize scene.
 	init();
 	// Loop until the user closes the window.

@@ -11,6 +11,9 @@
 
 #include <stdio.h>
 
+#define NO_SPRING 0
+#define STRAIGHT 1
+#define JAGGED 2
 
 typedef struct SolvedAngles {
    double ang_0;
@@ -20,6 +23,6 @@ typedef struct SolvedAngles {
    double ang_4;
 } SolvedAngles;
 
-SolvedAngles solveAngles(double target_x, double target_y);
+SolvedAngles solveAngles(double target_x, double target_y, int joint_state);
 
 #endif /* CeresWrapper_hpp */

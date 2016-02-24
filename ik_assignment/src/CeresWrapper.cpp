@@ -48,6 +48,8 @@ struct CostFunctor1 {
 double mouse_x = 0;
 double mouse_y = 0;
 
+int ceres_joint_state = 0;
+
 struct IKFunctor {
    template <typename T>
    bool operator()(const T* const x, T* residual) const {
@@ -81,17 +83,11 @@ struct IKFunctor {
       residual[0] = T(mouse_x) - result(0, 0);
       
       // y residual
-      residual[1] = T(mouse_y) - result(1, 0) + residual[0];
+      residual[1] = T(mouse_y) - result(1, 0) + residual[0];// * (ceres_joint_state == NO_SPRING ? T(0) : T(1));
       
       return true;
    }
 };
-
-//bool
-double last_angle;
-
-double weights[] = { 0, 2, 0.5, 0.5, 2 };
-//         T spring_val = (spring_ndx % 2 == 0) ? T(-M_PI_4) : T(M_PI_4);
 
 struct StraightLines {
    int spring_ndx;
@@ -99,11 +95,21 @@ struct StraightLines {
    template <typename T>
    bool operator()(const T* const x, T* residual) const {
       
+      // Don't care about this if it's NO_SPRING mode
+      if (ceres_joint_state == NO_SPRING) {
+         residual[0] = T(0);
+         return true;
+      }
+      
       // We don't care about the root link, but we want
       //  all the next angles to be kinda close to the target.
       T curr_x = x[spring_ndx];
       
       T target_val = (spring_ndx % 2 == 0) ? T(-M_PI_2) : T(M_PI_2);
+      
+      if (ceres_joint_state == STRAIGHT) {
+         target_val = T(0);
+      }
    
       while (curr_x > T(M_PI)) {
          curr_x -= T(M_2_PI);
@@ -117,13 +123,13 @@ struct StraightLines {
       
       diff /= T(M_PI);
       
-      residual[0] = T(2.9) * ( diff * diff * diff );// * (weights[spring_ndx]);
+      residual[0] = T(2.9) * ( diff * diff * diff );
       return true;
    }
 };
 
-SolvedAngles solveAngles(double target_x, double target_y) {
-//   google::InitGoogleLogging("you don't matter haha"); TODO: delete me
+SolvedAngles solveAngles(double target_x, double target_y, int curr_joint_state) {
+   ceres_joint_state = curr_joint_state;
    
    // The variable to solve for with its initial value. It will be
    // mutated in place by the solver.
@@ -134,18 +140,25 @@ SolvedAngles solveAngles(double target_x, double target_y) {
    x[3] = 0;
    x[4] = 0;
    
-   target_x = fmin(fmax(target_x,-5),5);
-   target_y = fmin(fmax(target_y,-5),5);
-   
-   int flipped = 1;
-   
-   if (target_y > 0) {
-      target_y *= -1;
-      flipped = -1;
+   Vector2d target(target_x, target_y);
+   if ( target.norm() > 5 ) {
+      target.normalize();
+      target *= 4.9999;
    }
    
-   mouse_x = target_x;
-   mouse_y = target_y;
+   int flipped = 1;
+   double lol = 0;
+   
+   double angle = atan2(target_y, target_x);
+   
+   if (target_y > 0) {
+      target(1) *= -1;
+      flipped = 1;
+      lol = angle * 2;
+   }
+   
+   mouse_x = target(0);
+   mouse_y = target(1);
    
    // Build the problem.
    Problem problem;
@@ -174,10 +187,10 @@ SolvedAngles solveAngles(double target_x, double target_y) {
    std::cout << " RESULTS: (" << x[0] << ", " << x[1] << ", " << x[2] << ", " << x[3] << ", " << x[4] << ") \n";
    
    SolvedAngles result;
-   result.ang_0 = x[0] * flipped;
-   result.ang_1 = x[1] * flipped;
-   result.ang_2 = x[2] * flipped;
-   result.ang_3 = x[3] * flipped;
-   result.ang_4 = x[4] * flipped;
+   result.ang_0 = x[0] * flipped + lol;
+   result.ang_1 = x[1];// * flipped;
+   result.ang_2 = x[2];// * flipped;
+   result.ang_3 = x[3];// * flipped;
+   result.ang_4 = x[4];// * flipped;
    return result;
 }

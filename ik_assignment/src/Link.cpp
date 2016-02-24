@@ -29,7 +29,6 @@ Link::Link() :
 
 Link::~Link()
 {
-   
 }
 
 void Link::add_child(std::shared_ptr<Link> me, int how_many) {
@@ -46,7 +45,7 @@ void Link::add_child(std::shared_ptr<Link> me, int how_many) {
    new_link->add_child(new_link, how_many);
 }
 
-// Set the angle of a particular segment.
+// Set the angle of a child n-steps down my child-stack
 void Link::set_nth_angle(int ndx, double new_angle) {
    if (ndx == 0) {
       angle = new_angle;
