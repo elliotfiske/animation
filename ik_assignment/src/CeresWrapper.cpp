@@ -100,8 +100,10 @@ struct StraightLines {
    bool operator()(const T* const x, T* residual) const {
       
       // We don't care about the root link, but we want
-      //  all the next angles to be kinda close to 0.
+      //  all the next angles to be kinda close to the target.
       T curr_x = x[spring_ndx];
+      
+      T target_val = (spring_ndx % 2 == 0) ? T(-M_PI_2) : T(M_PI_2);
    
       while (curr_x > T(M_PI)) {
          curr_x -= T(M_2_PI);
@@ -111,9 +113,11 @@ struct StraightLines {
          curr_x += T(M_2_PI);
       }
       
-      curr_x /= T(M_PI);
+      T diff = (target_val - curr_x);
       
-      residual[0] = T(0.01) * ( curr_x * curr_x * curr_x );// * (weights[spring_ndx]);
+      diff /= T(M_PI);
+      
+      residual[0] = T(2.9) * ( diff * diff * diff );// * (weights[spring_ndx]);
       return true;
    }
 };
@@ -129,6 +133,9 @@ SolvedAngles solveAngles(double target_x, double target_y) {
    x[2] = 0;
    x[3] = 0;
    x[4] = 0;
+   
+   target_x = fmin(fmax(target_x,-5),5);
+   target_y = fmin(fmax(target_y,-5),5);
    
    int flipped = 1;
    

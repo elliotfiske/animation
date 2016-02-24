@@ -47,12 +47,14 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
 static void char_callback(GLFWwindow *window, unsigned int key)
 {
 	keyToggles[key] = !keyToggles[key];
+   
 }
 
 double curr_mouse_x = 0;
 double curr_mouse_y = 0;
 
 
+int joint_state = 0;
 
 void window2world(double xmouse, double ymouse)
 {
