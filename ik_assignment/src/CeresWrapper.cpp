@@ -19,32 +19,6 @@ using ceres::Solve;
 
 using namespace Eigen;
 
-// A templated cost functor that implements the residual r = 10 -
-// x. The method operator() is templated so that we can then use an
-// automatic differentiation wrapper around it to generate its
-// derivatives.
-struct CostFunctor1 {
-   template <typename T>
-   bool operator()(const T* const x, T* residual) const {
-      T POINT_TWO = T(0.2);
-      T ONE = T(1.0);
-      T TWO = T(2.0);
-      T THREE = T(3.0);
-      
-      T X_PLUS_ONE = x[0] + ONE;
-      T Y_PLUS_ONE = x[1] + ONE;
-      
-      residual[0] = POINT_TWO * (
-                                 X_PLUS_ONE*X_PLUS_ONE + Y_PLUS_ONE*Y_PLUS_ONE
-                                 )
-      + sin(THREE*X_PLUS_ONE) + sin(THREE*Y_PLUS_ONE)
-      + TWO;
-      return true;
-   }
-};
-
-
-
 double mouse_x = 0;
 double mouse_y = 0;
 
@@ -83,7 +57,7 @@ struct IKFunctor {
       residual[0] = T(mouse_x) - result(0, 0);
       
       // y residual
-      residual[1] = T(mouse_y) - result(1, 0) + residual[0];// * (ceres_joint_state == NO_SPRING ? T(0) : T(1));
+      residual[1] = T(mouse_y) - result(1, 0) + residual[0];
       
       return true;
    }
@@ -169,6 +143,7 @@ SolvedAngles solveAngles(double target_x, double target_y, int curr_joint_state)
    new AutoDiffCostFunction<IKFunctor, 2, 5>(new IKFunctor);
    problem.AddResidualBlock(cost_function, NULL, x);
    
+   // Add the cost functions that make the joints springy
    for (int ndx = 1; ndx < 5; ndx++) {
       StraightLines *functor = new StraightLines;
       functor->spring_ndx = ndx;
@@ -182,9 +157,6 @@ SolvedAngles solveAngles(double target_x, double target_y, int curr_joint_state)
    options.minimizer_progress_to_stdout = false;
    Solver::Summary summary;
    Solve(options, &problem, &summary);
-   
-//   std::cout << summary.BriefReport() << "\n";
-   std::cout << " RESULTS: (" << x[0] << ", " << x[1] << ", " << x[2] << ", " << x[3] << ", " << x[4] << ") \n";
    
    SolvedAngles result;
    result.ang_0 = x[0] * flipped + lol;
