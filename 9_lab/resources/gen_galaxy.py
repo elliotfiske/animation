@@ -3,7 +3,7 @@ import numpy as np
 
 with open("elliot_galaxy.txt", "w") as output:
 	# n, h, whatever
-	output.write("8502 0.002 0.0001\n")
+	output.write("1502 0.0004 0.0001\n")
 
 	# Big guy in center
 	output.write("0.75 -2 -0.5 0 1 0 0 0.533884 0.9966563 0.742154 0.05\n")
